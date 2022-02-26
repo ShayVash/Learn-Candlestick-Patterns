@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_simulator">
+
+    <fragment
+        android:id="@+id/navigation_simulator"
+        android:name="com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment"
+        android:label="Simulator"
+        tools:layout="@layout/fragment_simulator" />
+    <fragment
+        android:id="@+id/navigation_lessons"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment"
+        android:label="fragment_lessons"
+        tools:layout="@layout/fragment_lessons" />
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.kovetstech.candlestickpatterns.ui.settings.settingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
