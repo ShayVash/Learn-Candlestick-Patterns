@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.CandleStickChart;
 import com.github.mikephil.charting.components.Legend;
@@ -26,7 +29,7 @@ import com.kovetstech.candlestickpatterns.R;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
+                                                   /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SimulatorFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -49,6 +52,10 @@ public class SimulatorFragment extends Fragment {
     SimulatorHelper sh;
 
     Button next_button;
+
+    TextView simu_title;
+    Spinner DebugSpinnerPatterns;
+    boolean debug = false;
 
     public SimulatorFragment() {
         // Required empty public constructor
@@ -85,14 +92,6 @@ public class SimulatorFragment extends Fragment {
         up_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //CandleData newdata = candleStickChart.getData();
-                //newdata.removeEntry(0,0);
-
-                //newdata.addEntry(sh.GetUpEntry(newdata.getDataSets().get(0).getEntryForIndex(newdata.getDataSets().get(0).getEntryCount() -1)) , 0);
-
-                //candleStickChart.setData(newdata);
-                //candleStickChart.invalidate();
-
                 UserInter("UP");
             }
         });
@@ -101,14 +100,6 @@ public class SimulatorFragment extends Fragment {
         down_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //CandleData newdata = candleStickChart.getData();
-                //newdata.removeEntry(0,0);
-
-                //newdata.addEntry(sh.GetDownEntry(newdata.getDataSets().get(0).getEntryForIndex(newdata.getDataSets().get(0).getEntryCount() -1)) , 0);
-
-                //candleStickChart.setData(newdata);
-                //candleStickChart.invalidate();
-
                 UserInter("DOWN");
             }
         });
@@ -118,9 +109,27 @@ public class SimulatorFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 next_button.setVisibility(View.INVISIBLE);
-                GetRandomPattern();
+                DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
+
+                if(debug){
+                    GetPattern(DebugSpinnerPatterns.getSelectedItem().toString());
+                }else{
+                    GetRandomPattern();
+                }
+
             }
         });
+
+        simu_title = v.findViewById(R.id.simulator_title);
+        simu_title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                debug = !debug;
+                Toast.makeText(getContext(), "Debug Mode " + debug, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        DebugSpinnerPatterns = v.findViewById(R.id.spinner);
         return v;
     }
     // Set
@@ -164,7 +173,7 @@ public class SimulatorFragment extends Fragment {
 
         candleStickChart.setData(data);
         candleStickChart.invalidate();
-        candleStickChart.setVisibleXRangeMaximum(15);
+        candleStickChart.setVisibleXRangeMaximum(25);
 
         GetRandomPattern();
     }
@@ -192,7 +201,7 @@ public class SimulatorFragment extends Fragment {
     public void GetRandomPattern(){
         Random rnd = new Random();
 
-        switch (rnd.nextInt(4)){
+        switch (rnd.nextInt(9)){
             case 0:
                 AddHammer();
 
@@ -218,6 +227,97 @@ public class SimulatorFragment extends Fragment {
                 last_pattern = "HANGINGMAN";
                 last_answer = "DOWN";
                 break;
+            case 4:
+                AddThreeWhiteSoldiers();
+
+                last_pattern = "THREEWHITESOLDIERS";
+                last_answer = "UP";
+                break;
+            case 5:
+                AddThreeBlackCrows();
+
+                last_pattern = "THREEBLACKCROWS";
+                last_answer = "DOWN";
+                break;
+            case 6:
+                AddShootingStar();
+
+                last_pattern = "SHOOTINGSTAR";
+                last_answer = "DOWN";
+                break;
+            case 7:
+                AddBullishEngulfing();
+
+                last_pattern = "BULLISHENGULFING";
+                last_answer = "UP";
+                break;
+            case 8:
+                AddBearishEngulfing();
+
+                last_pattern = "BEARISHENGULFING";
+                last_answer = "DOWN";
+                break;
+        }
+
+        Log.w("SimulatorFragment", "Got " + last_pattern + " Pattern");
+    }
+    public void GetPattern(String name){
+        switch (name){
+            case "HAMMER":
+                AddHammer();
+
+                last_pattern = "HAMMER";
+                last_answer = "UP";
+
+                break;
+            case "MORNINGSTAR":
+                AddMorningStar();
+
+                last_pattern = "MORNINGSTAR";
+                last_answer = "UP";
+                break;
+            case "EVENINGSTAR":
+                AddEveningStar();
+
+                last_pattern = "EVENINGSTAR";
+                last_answer = "DOWN";
+                break;
+            case "HANGINGMAN":
+                AddHangingMan();
+
+                last_pattern = "HANGINGMAN";
+                last_answer = "DOWN";
+                break;
+            case "THREEWHITESOLDIERS":
+                AddThreeWhiteSoldiers();
+
+                last_pattern = "THREEWHITESOLDIERS";
+                last_answer = "UP";
+                break;
+            case "THREEBLACKCROWS":
+                AddThreeBlackCrows();
+
+                last_pattern = "THREEBLACKCROWS";
+                last_answer = "DOWN";
+                break;
+            case "SHOOTINGSTAR":
+                AddShootingStar();
+
+                last_pattern = "SHOOTINGSTAR";
+                last_answer = "DOWN";
+                break;
+            case "BULLISHENGULFING":
+                AddBullishEngulfing();
+
+                last_pattern = "BULLISHENGULFING";
+                last_answer = "UP";
+                break;
+            case "BEARISHENGULFING":
+                AddBearishEngulfing();
+
+                last_pattern = "BEARISHENGULFING";
+                last_answer = "DOWN";
+                break;
         }
 
         Log.w("SimulatorFragment", "Got " + last_pattern + " Pattern");
@@ -230,7 +330,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(3000, 500) {
+        new CountDownTimer(2500, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -262,9 +362,48 @@ public class SimulatorFragment extends Fragment {
             }
         }.start();
     }
+    public void AddThreeWhiteSoldiers(){
+        ArrayList<CandleEntry> result = sh.getThreeWhiteSoldiers(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        final int[] i = {0};
+        new CountDownTimer(3000, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
+    public void AddBullishEngulfing(){
+        ArrayList<CandleEntry> result = sh.getBullishEngulfing(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        final int[] i = {0};
+        new CountDownTimer(2500, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
+
     // Down Patterns
     public void AddEveningStar(){
-        ArrayList<CandleEntry> result = sh.getEveningStar(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+        ArrayList<CandleEntry> result = sh.getEveningStar(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount()-1));
 
         clickable = false;
 
@@ -301,6 +440,63 @@ public class SimulatorFragment extends Fragment {
             }
         }.start();
     }
+    public void AddShootingStar(){
+        ArrayList<CandleEntry> result = sh.getShootingStar(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        final int[] i = {0};
+        new CountDownTimer(2000, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
+    public void AddThreeBlackCrows(){
+        ArrayList<CandleEntry> result = sh.getThreeBlackCrows(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        final int[] i = {0};
+        new CountDownTimer(3000, 500) {
+
+                                                               public void onTick(long millisUntilFinished) {
+                                                                   AddCandle(result.get(i[0]));
+                                                                   i[0]++;
+                                                                   candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                                                               }
+
+                                                               public void onFinish() {
+                                                                   clickable = true;
+                                                               }
+                                                           }.start();
+    }
+    public void AddBearishEngulfing(){
+        ArrayList<CandleEntry> result = sh.getBearishEngulfing(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        final int[] i = {0};
+        new CountDownTimer(2500, 500) {
+
+        public void onTick(long millisUntilFinished) {
+                                                                   AddCandle(result.get(i[0]));
+                                                                   i[0]++;
+                                                                   candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                                                               }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
 
     // Up/Down
     public void Go(){
@@ -312,47 +508,14 @@ public class SimulatorFragment extends Fragment {
         }
     }
     public void GoUp(){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
-        Random rnd = new Random();
+        ArrayList<CandleEntry> result = sh.GetUpTrend(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
-        result.add(sh.GetUpEntry(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1)));
-        result.add(sh.GetUpEntry(result.get(result.size()-1)));
-        result.add(sh.GetUpEntry(result.get(result.size()-1)));
-        result.add(sh.GetUpEntry(result.get(result.size()-1)));
-        result.add(sh.GetUpEntry(result.get(result.size()-1)));
-        result.add(sh.GetUpEntry(result.get(result.size()-1)));
+        clickable = false;
 
-        if(rnd.nextBoolean()) {
-            int place = rnd.nextInt(5) + 1;
-            int index = (int) result.get(place).getX();
-
-            CandleEntry ce = sh.GetDownEntry(result.get(place - 1));
-            ce.setX(index);
-
-            result.set(place, ce);
-            sh.CurrentIndex--;
-        }else{
-            int place = rnd.nextInt(5) + 1;
-            int index = (int) result.get(place).getX();
-
-            CandleEntry ce = sh.GetDownEntry(result.get(place - 1));
-            ce.setX(index);
-
-            result.set(place, ce);
-            sh.CurrentIndex--;
-
-            place = rnd.nextInt(5) + 1;
-            index = (int) result.get(place).getX();
-
-            ce = sh.GetDownEntry(result.get(place - 1));
-            ce.setX(index);
-
-            result.set(place, ce);
-            sh.CurrentIndex--;
-        }
+        int time = 500 * result.size();
 
         final int[] i = {0};
-        new CountDownTimer(3000, 500) {
+        new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -362,51 +525,23 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 next_button.setVisibility(View.VISIBLE);
+                if(debug){
+                    DebugSpinnerPatterns.setVisibility(View.VISIBLE);
+                }else{
+                    DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
+                }
             }
         }.start();
     }
     public void GoDown(){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
-        Random rnd = new Random();
+        ArrayList<CandleEntry> result = sh.GetDownTrend(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
-        result.add(sh.GetDownEntry(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1)));
-        result.add(sh.GetDownEntry(result.get(result.size()-1)));
-        result.add(sh.GetDownEntry(result.get(result.size()-1)));
-        result.add(sh.GetDownEntry(result.get(result.size()-1)));
-        result.add(sh.GetDownEntry(result.get(result.size()-1)));
-        result.add(sh.GetDownEntry(result.get(result.size()-1)));
+        clickable = false;
 
-        if(rnd.nextBoolean()) {
-            int place = rnd.nextInt(5) + 1;
-            int index = (int) result.get(place).getX();
-
-            CandleEntry ce = sh.GetUpEntry(result.get(place - 1));
-            ce.setX(index);
-
-            result.set(place, ce);
-            sh.CurrentIndex--;
-        }else{
-            int place = rnd.nextInt(5) + 1;
-            int index = (int) result.get(place).getX();
-
-            CandleEntry ce = sh.GetUpEntry(result.get(place - 1));
-            ce.setX(index);
-
-            result.set(place, ce);
-            sh.CurrentIndex--;
-
-            place = rnd.nextInt(6) + 1;
-            index = (int) result.get(place).getX();
-
-            ce = sh.GetUpEntry(result.get(place - 1));
-            ce.setX(index);
-
-            result.set(place, ce);
-            sh.CurrentIndex--;
-        }
+        int time = 500 * result.size();
 
         final int[] i = {0};
-        new CountDownTimer(3000, 500) {
+        new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -416,6 +551,11 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 next_button.setVisibility(View.VISIBLE);
+                if(debug){
+                    DebugSpinnerPatterns.setVisibility(View.VISIBLE);
+                }else{
+                    DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
+                }
             }
         }.start();
     }

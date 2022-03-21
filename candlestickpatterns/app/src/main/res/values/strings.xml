@@ -6,4 +6,16 @@
     <string name="lessons">lessons</string>
     <string name="simulator">Simulator</string>
     <string name="settings">Settings</string>
+
+    <string-array name="patterns">
+        <item>HAMMER</item>
+        <item>MORNINGSTAR</item>
+        <item>HANGINGMAN</item>
+        <item>EVENINGSTAR</item>
+        <item>THREEWHITESOLDIERS</item>
+        <item>THREEBLACKCROWS</item>
+        <item>SHOOTINGSTAR</item>
+        <item>BULLISHENGULFING</item>
+        <item>BEARISHENGULFING</item>
+    </string-array>
 </resources>
