@@ -1,5 +1,7 @@
 package com.kovetstech.candlestickpatterns.ui.simulator;
 
+import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -147,7 +149,6 @@ public class SimulatorFragment extends Fragment {
 
         xAxis.setDrawGridLines(false);// disable x axis grid lines
         xAxis.setDrawLabels(false);
-        rightAxis.setTextColor(Color.WHITE);
         yAxis.setDrawLabels(false);
         xAxis.setGranularity(1f);
         xAxis.setGranularityEnabled(true);
@@ -174,6 +175,17 @@ public class SimulatorFragment extends Fragment {
         candleStickChart.setData(data);
         candleStickChart.invalidate();
         candleStickChart.setVisibleXRangeMaximum(25);
+
+
+        switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                rightAxis.setTextColor(Color.WHITE);
+                break;
+            case Configuration.UI_MODE_NIGHT_NO:
+                rightAxis.setTextColor(Color.BLACK);
+                break;
+        }
+
 
         GetRandomPattern();
     }

@@ -14,10 +14,31 @@
         android:id="@+id/navigation_lessons"
         android:name="com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment"
         android:label="fragment_lessons"
-        tools:layout="@layout/fragment_lessons" />
+        tools:layout="@layout/fragment_lessons" >
+        <action
+            android:id="@+id/action_navigation_lessons_to_quiz"
+            app:destination="@id/quiz" />
+        <action
+            android:id="@+id/action_navigation_lessons_to_lesson"
+            app:destination="@id/lesson" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_settings"
         android:name="com.kovetstech.candlestickpatterns.ui.settings.settingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/quiz"
+        android:name="com.kovetstech.candlestickpatterns.Quiz"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/lesson"
+        android:name="com.kovetstech.candlestickpatterns.lesson"
+        android:label="Lesson"
+        tools:layout="@layout/fragment_lesson" >
+        <argument
+            android:name="param1"
+            app:argType="string" />
+    </fragment>
 </navigation>

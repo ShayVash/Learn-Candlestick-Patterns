@@ -1,12 +1,18 @@
 package com.kovetstech.candlestickpatterns.ui.lessons;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.kovetstech.candlestickpatterns.R;
 
@@ -15,8 +21,11 @@ import com.kovetstech.candlestickpatterns.R;
  * Use the {@link LessonsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LessonsFragment extends Fragment {
+public class LessonsFragment extends Fragment{
 
+
+    Button Quiz;
+    View v;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -60,7 +69,64 @@ public class LessonsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lessons, container, false);
+        v = inflater.inflate(R.layout.fragment_lessons, container, false);
+
+        Quiz = v.findViewById(R.id.QuizButton);
+        Quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_navigation_lessons_to_quiz);
+            }
+        });
+
+        Button how = v.findViewById(R.id.HowToLessonButton);
+        how.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("HOW");
+            }
+        });
+        Button hammer = v.findViewById(R.id.HammerLessonButton);
+        hammer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("HAMMER");
+            }
+        });
+        Button evening = v.findViewById(R.id.EveningStarLessonButton);
+        evening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("EVENING");
+            }
+        });
+        Button morning = v.findViewById(R.id.MorningStarLessonButton);
+        morning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("MORNING");
+            }
+        });
+        Button crows = v.findViewById(R.id.ThreeBlackCrowslessonButton);
+        crows.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("CROWS");
+            }
+        });
+        Button soldiers = v.findViewById(R.id.ThreeWhiteSoldiersLessonButton);
+        soldiers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("SOLDIERS");
+            }
+        });
+        return v;
     }
+    public void LoadLesson(String lesson){
+        Bundle bundle = new Bundle();
+        bundle.putString("param1", lesson);
+        Navigation.findNavController(v).navigate(R.id.action_navigation_lessons_to_lesson, bundle);
+    }
+
 }

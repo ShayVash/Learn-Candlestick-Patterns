@@ -7,24 +7,250 @@
     android:layout_height="match_parent"
     tools:context=".ui.lessons.LessonsFragment">
 
-    <View
-        android:id="@+id/var_sep2"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
-        android:id="@+id/button"
+        android:id="@+id/QuizButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Quiz"
+        android:layout_marginBottom="8dp"
+        android:text="Try The Quiz"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/QuizButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/hor_sep3"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/HowToLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/howto"
+                android:onClick="OpenLesson"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/hor_sep3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/HammerLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/hammer"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/hor_sep3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/MorningStarLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/morningstar"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/hor_sep3"
+                app:layout_constraintTop_toBottomOf="@+id/HammerLessonText" />
+
+            <Button
+                android:id="@+id/EveningStarLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/eveningstar"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/hor_sep3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/HowToLessonText" />
+
+            <Button
+                android:id="@+id/ThreeWhiteSoldiersLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/threewhitesoldiers"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/hor_sep3"
+                app:layout_constraintTop_toBottomOf="@+id/MorningStarLessonText" />
+
+            <Button
+                android:id="@+id/ThreeBlackCrowslessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:foreground="@drawable/threeblackcrows"
+                android:background="@drawable/rounded"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/hor_sep3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/EveningStarLessonText" />
+
+            <Button
+                android:id="@+id/BearishEngulfingLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/threeblackcrows"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/hor_sep3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ThreeBlackCrowsLessonText" />
+
+            <Button
+                android:id="@+id/BullishEngulfingLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/threeblackcrows"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/ThreeWhiteSoldiersLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/ThreeWhiteSoldiersLessonText" />
+
+            <TextView
+                android:id="@+id/HowToLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="How To"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/HowToLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/HowToLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/HowToLessonButton" />
+
+            <TextView
+                android:id="@+id/ThreeBlackCrowsLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Three Black Crows"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/ThreeBlackCrowslessonButton"
+                app:layout_constraintStart_toStartOf="@+id/ThreeBlackCrowslessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/ThreeBlackCrowslessonButton" />
+
+            <TextView
+                android:id="@+id/BearishEngulfingLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bearish Engulfing"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/BearishEngulfingLessonButton"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="@+id/BearishEngulfingLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/BearishEngulfingLessonButton" />
+
+            <TextView
+                android:id="@+id/BullishEngulfingLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Three Black Crows"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/BullishEngulfingLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/BullishEngulfingLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/BullishEngulfingLessonButton" />
+
+            <TextView
+                android:id="@+id/ThreeWhiteSoldiersLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Three White Soldiers"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/ThreeWhiteSoldiersLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/ThreeWhiteSoldiersLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/ThreeWhiteSoldiersLessonButton" />
+
+            <TextView
+                android:id="@+id/EveningStarLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Evening Star"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/EveningStarLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/EveningStarLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/EveningStarLessonButton" />
+
+            <TextView
+                android:id="@+id/MorningStarLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Morning Star"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/MorningStarLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/MorningStarLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/MorningStarLessonButton" />
+
+            <TextView
+                android:id="@+id/HammerLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Hammer"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/HammerLessonButton"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/HammerLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/HammerLessonButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

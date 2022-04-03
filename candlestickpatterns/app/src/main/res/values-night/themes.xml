@@ -2,15 +2,67 @@
     <!-- Base application theme. -->
     <style name="Theme.CandlestickPatterns" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryVariant">#1F1F1F</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Styles -->
+        <item name="editTextStyle">@style/Widget.Custom.EditText</item>
+
+        <item name="alertDialogStyle">@style/Widget.Custom.AlertDialog</item>
+
+        <item name="android:textColorPrimary">#B3FFFFFF</item>
+
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:colorControlActivated">@color/white</item>
+        <item name="android:colorControlHighlight">@color/white</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">#000000</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">#121212</item>
+
+        <!-- card view -->
+        <item name="cardViewStyle">@style/Widget.Custom.CardView</item>
+
+        <item name="bottomAppBarStyle">@style/Widget.Custom.BottomAppBar</item>
+
+        <!-- Bottom nav -->
+        <item name="bottomNavigationStyle">@style/ThemeOverlay.Custom.BottomNavigationView</item>
+    </style>
+
+
+    <style name="Widget.Custom.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:editTextColor">#80FFFFFF</item>
+        <item name="android:colorAccent">#DFFFFFFF</item>
+        <item name="android:backgroundTint">#DFFFFFFF</item>
+    </style>
+    <style name="Widget.Custom.CardView" parent="CardView.Dark">
+        <item name="android:backgroundTint">#1F1F1F</item>
+    </style>
+    <style name="Widget.Custom.AlertDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:background">@drawable/rounded</item>
+        <item name="android:backgroundTint">#1F1F1F</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="alertDialogCenterButtons">true</item>
+    </style>
+    <style name="ThemeOverlay.Custom.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextColor">@color/bottom_nav_dark</item>
+        <item name="itemIconTint">@color/bottom_nav_dark</item>
+        <item name="itemBackground">@color/black</item>
+    </style>
+    <style name="Widget.Custom.BottomAppBar" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">#1E1E1E</item>
+    </style>
+    <style name="Widget.Custom.ActionBar" parent="Widget.MaterialComponents.ActionBar.Primary">
+        <item name="backgroundTint">#000000</item>
+    </style>
+
+    <style name="Widget.Custom.ProfileList" parent="">
+        <item name="android:backgroundTint">#1F1F1F</item>
     </style>
 </resources>

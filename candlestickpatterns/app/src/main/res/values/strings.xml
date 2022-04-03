@@ -18,4 +18,85 @@
         <item>BULLISHENGULFING</item>
         <item>BEARISHENGULFING</item>
     </string-array>
+
+    <string-array name="Q1">
+        <item>hammer</item>
+        <item>What Is The Name Of This Pattern?</item>
+        <item>Hammer</item>
+        <item>Shooting Star</item>
+        <item>Weird Stick</item>
+        <item>Bullish Hammer</item>
+    </string-array>
+    <string-array name="Q2">
+        <item>hammer</item>
+        <item>What is the most ideal length of the lower shadow of a hammer?</item>
+        <item>2x longer than the real body</item>
+        <item>1x longer than the real body</item>
+        <item>half of the length of the real body</item>
+        <item>1.5x longer than the real body</item>
+    </string-array>
+    <string-array name="Q3">
+        <item>hammer</item>
+        <item>What is Hammer signaling</item>
+        <item>Potential upword reversal movement</item>
+        <item>Potential downward reversal movement</item>
+        <item>Assured upword reversal movement</item>
+        <item>Assured downward reversal movement</item>
+    </string-array>
+    <string-array name="Q4">
+        <item>threewhitesoldiers</item>
+        <item>The color of the candles in three white soldiers is not importent</item>
+        <item>false</item>
+        <item>true</item>
+    </string-array>
+    <string-array name="Q5">
+        <item>hammer</item>
+        <item>What is the color of the real body of a hammer</item>
+        <item>Red Or Green</item>
+        <item>Red</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="Q6">
+        <item>NONE</item>
+        <item>It has a long upper shadow with a tiny real body, when it appears with a confirmation the price is likely to fall. it is…</item>
+        <item>Shooting Star</item>
+        <item>Hammer</item>
+        <item>Three White Soldiers</item>
+        <item>Morning Star</item>
+    </string-array>
+    <string-array name="Q7">
+        <item>quizdoji</item>
+        <item>What type of candle is this?</item>
+        <item>Doji</item>
+        <item>Dragonfly Doji</item>
+        <item>Long Legged Doji</item>
+        <item>Marubozu</item>
+    </string-array>
+    <string-array name="Q8">
+        <item>morningstar</item>
+        <item>What is it? What does it show?</item>
+        <item>Morning Star - strong buying pressure</item>
+        <item>Hammer - strong buying pressure</item>
+        <item>Shooting Star - strong selling pressure</item>
+        <item>Evening Star - strong selling pressure</item>
+    </string-array>
+    <string-array name="Q9">
+        <item>NONE</item>
+        <item>Dragonfly Doji is a _________ signal</item>
+        <item>Bullish</item>
+        <item>Bearish</item>
+    </string-array>
+    <string-array name="Q10">
+        <item>NONE</item>
+        <item>Gravestone Doji is a _________ signal</item>
+        <item>Bearish</item>
+        <item>Bullish</item>
+    </string-array>
+    <string-array name="Q11">
+        <item>quizinvertedhammer</item>
+        <item>What pattern is this?</item>
+        <item>Inverted Hammer Pattern</item>
+        <item>Shooting Star Pattern</item>
+        <item>This isn\'t a pattern</item>
+    </string-array>
 </resources>

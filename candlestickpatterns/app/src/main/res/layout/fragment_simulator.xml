@@ -5,7 +5,6 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
     tools:context=".ui.simulator.SimulatorFragment">
 
     <Button
@@ -15,6 +14,7 @@
         android:layout_marginBottom="32dp"
         android:backgroundTint="#E23531"
         android:text="Down"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/var_sep"
         app:layout_constraintStart_toStartOf="parent" />
@@ -26,48 +26,10 @@
         android:layout_marginBottom="32dp"
         android:backgroundTint="#2EC284"
         android:text="Up"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/var_sep" />
-
-    <View
-        android:id="@+id/hor_sep"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/var_sep"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.github.mikephil.charting.charts.CandleStickChart
-        android:id="@+id/candle_stick_chart"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="32dp"
-        android:background="#1F1F1F"
-        app:layout_constraintBottom_toTopOf="@+id/hor_sep"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/simulator_title" />
-
-    <TextView
-        android:id="@+id/simulator_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Which Way Is The Graph Going?"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/next_button"
@@ -78,6 +40,7 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="#E0AC00"
         android:text="Next Pattern"
+        android:textColor="@color/black"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/down_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +55,46 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/next_button"
         app:layout_constraintEnd_toEndOf="@+id/next_button"
-        app:layout_constraintStart_toStartOf="@+id/next_button" /><![CDATA[
+        app:layout_constraintStart_toStartOf="@+id/next_button" />
+
+    <TextView
+        android:id="@+id/simulator_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Which Way Is The Graph Going?"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/var_sep"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/hor_sep"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.mikephil.charting.charts.CandleStickChart
+        android:id="@+id/candle_stick_chart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:theme="@style/Widget.Custom.CardView"
+        app:layout_constraintBottom_toTopOf="@+id/hor_sep"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/simulator_title" /><![CDATA[
 
 
 

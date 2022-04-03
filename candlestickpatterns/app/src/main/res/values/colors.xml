@@ -10,4 +10,10 @@
 
     <color name="upGreen">#2EC284</color>
     <color name="downRed">#E23531</color>
+
+    <color name="BackgroundWhite">#ADADAD</color>
+    <color name="colorPrimary">#E5E6E4</color>
+
+    <color name="buttonColorLight">#EFF0EE</color>
+    <color name="buttonColorDark">#0A0A0A</color>
 </resources>
