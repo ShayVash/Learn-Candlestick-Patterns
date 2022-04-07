@@ -62,19 +62,18 @@ public class lesson extends Fragment {
         if(mParam1.equals("EVENING")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-eveningstar-pattern?authuser=1");
         }
-        if(mParam1.equals("HANGING")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hanging-man-pattern?authuser=1");
-        }
         if(mParam1.equals("SOLDIERS")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-white-soldiers-pattern?authuser=1");
         }
         if(mParam1.equals("CROWS")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-black-crows-pattern?authuser=1");
         }
-        if(mParam1.equals("SHOOTINGSTAR")) {
+        if(mParam1.equals("HANGING")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hanging-man-pattern?authuser=1");
+        }
+        if(mParam1.equals("SHOOTING")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-shooting-star-pattern?authuser=1");
         }
-
         return v;
     }
 

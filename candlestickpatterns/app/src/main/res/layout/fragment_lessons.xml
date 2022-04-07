@@ -131,14 +131,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/EveningStarLessonText" />
 
             <Button
-                android:id="@+id/BearishEngulfingLessonButton"
+                android:id="@+id/HangingManLessonButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/rounded"
-                android:foreground="@drawable/threeblackcrows"
+                android:foreground="@drawable/hangingman"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toStartOf="@+id/hor_sep3"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -146,13 +146,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/ThreeBlackCrowsLessonText" />
 
             <Button
-                android:id="@+id/BullishEngulfingLessonButton"
+                android:id="@+id/ShootingStarLessonButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/rounded"
-                android:foreground="@drawable/threeblackcrows"
+                android:foreground="@drawable/shootingstar"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -182,27 +182,27 @@
                 app:layout_constraintTop_toBottomOf="@+id/ThreeBlackCrowslessonButton" />
 
             <TextView
-                android:id="@+id/BearishEngulfingLessonText"
+                android:id="@+id/HangingManLessonText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Bearish Engulfing"
+                android:text="Hanging Man"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/BearishEngulfingLessonButton"
+                app:layout_constraintEnd_toEndOf="@+id/HangingManLessonButton"
                 app:layout_constraintHorizontal_bias="0.512"
-                app:layout_constraintStart_toStartOf="@+id/BearishEngulfingLessonButton"
-                app:layout_constraintTop_toBottomOf="@+id/BearishEngulfingLessonButton" />
+                app:layout_constraintStart_toStartOf="@+id/HangingManLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/HangingManLessonButton" />
 
             <TextView
-                android:id="@+id/BullishEngulfingLessonText"
+                android:id="@+id/ShootingStarLessonText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Three Black Crows"
+                android:text="Shooting Star"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@+id/BullishEngulfingLessonButton"
-                app:layout_constraintStart_toStartOf="@+id/BullishEngulfingLessonButton"
-                app:layout_constraintTop_toBottomOf="@+id/BullishEngulfingLessonButton" />
+                app:layout_constraintEnd_toEndOf="@+id/ShootingStarLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/ShootingStarLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/ShootingStarLessonButton" />
 
             <TextView
                 android:id="@+id/ThreeWhiteSoldiersLessonText"

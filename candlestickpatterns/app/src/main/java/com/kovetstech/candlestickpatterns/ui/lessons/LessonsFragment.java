@@ -121,6 +121,20 @@ public class LessonsFragment extends Fragment{
                 LoadLesson("SOLDIERS");
             }
         });
+        Button hanging = v.findViewById(R.id.HangingManLessonButton);
+        hanging.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("HANGING");
+            }
+        });
+        Button shooting = v.findViewById(R.id.ShootingStarLessonButton);
+        shooting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("SHOOTING");
+            }
+        });
         return v;
     }
     public void LoadLesson(String lesson){
