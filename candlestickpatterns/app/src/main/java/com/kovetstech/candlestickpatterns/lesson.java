@@ -51,28 +51,34 @@ public class lesson extends Fragment {
         webSettings.setJavaScriptEnabled(true);
 
         if(mParam1.equals("HOW")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/intro-to-candle-sticks?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/intro-to-candle-sticks");
         }
         if(mParam1.equals("HAMMER")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hammer-pattern?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hammer-pattern");
         }
         if(mParam1.equals("MORNING")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-morning-star-pattern?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-morning-star-pattern");
         }
         if(mParam1.equals("EVENING")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-eveningstar-pattern?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-eveningstar-pattern");
         }
         if(mParam1.equals("SOLDIERS")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-white-soldiers-pattern?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-white-soldiers-pattern");
         }
         if(mParam1.equals("CROWS")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-black-crows-pattern?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-black-crows-pattern");
         }
         if(mParam1.equals("HANGING")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hanging-man-pattern?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hanging-man-pattern");
         }
         if(mParam1.equals("SHOOTING")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-shooting-star-pattern?authuser=1");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-shooting-star-pattern");
+        }
+        if(mParam1.equals("BULLISHENG")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bullish-engulfing");
+        }
+        if(mParam1.equals("BEARISHENG")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bearishengulfing");
         }
         return v;
     }

@@ -3,6 +3,11 @@ package com.kovetstech.candlestickpatterns.ui.simulator;
 import android.util.Log;
 
 import com.github.mikephil.charting.data.CandleEntry;
+import com.github.mikephil.charting.data.Entry;
+
+
+import org.ojalgo.random.process.GeometricBrownianMotion;
+import org.ojalgo.random.process.RandomProcess;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -413,6 +418,8 @@ public class SimulatorHelper {
         Random rnd = new Random();
         ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
 
+        float GoBelow = LastEntry.getLow();
+
         result.add(GetDownEntry(LastEntry));
 
         int UpCounter = 3;
@@ -425,11 +432,34 @@ public class SimulatorHelper {
             }
         }
 
+        if(!(result.get(result.size()-1).getLow() <= GoBelow)){
+            int StartingPrice;
+            if(LastEntry.getClose() > LastEntry.getOpen()){
+                StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getOpen();
+            }else{
+                StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getClose();
+            }
+
+            int Open = StartingPrice;
+            int Close;
+            int ShadowL;
+            int ShadowH;
+
+            Close = (int) GoBelow - (rnd.nextInt(50) + 25);
+            ShadowL = Open - rnd.nextInt(75);
+            ShadowH = Close + rnd.nextInt(75);
+
+
+            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+        }
+
         return result;
     }
     public ArrayList<CandleEntry> GetUpTrend(CandleEntry LastEntry){
         Random rnd = new Random();
         ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+
+        float GoAbove = LastEntry.getHigh();
 
         result.add(GetUpEntry(LastEntry));
 
@@ -443,6 +473,268 @@ public class SimulatorHelper {
             }
         }
 
+        if(result.get(result.size()-1).getHigh() <= GoAbove){
+            int StartingPrice;
+            if(LastEntry.getClose() > LastEntry.getOpen()){
+                StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getOpen();
+            }else{
+                StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getClose();
+            }
+
+            int Open = StartingPrice;
+            int Close;
+            int ShadowL;
+            int ShadowH;
+
+            Close = (int) GoAbove + (rnd.nextInt(50) + 25);
+            ShadowL = Open - rnd.nextInt(75);
+            ShadowH = Close + rnd.nextInt(75);
+
+
+            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+        }
+
+
+        return result;
+    }
+
+    public ArrayList<CandleEntry> GetNewDownTrend(CandleEntry LastEntry){
+        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        Random rnd = new Random();
+        TrendHelper th = new TrendHelper();
+
+        int StartingPrice = (int) LastEntry.getClose();
+
+        if(LastEntry.getClose() > LastEntry.getOpen()){
+            StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getOpen();
+        }else{
+            StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getClose();
+        }
+
+        int Open = StartingPrice ;
+        int Close = Open - (rnd.nextInt(100) + 25);
+        int ShadowL = Close - rnd.nextInt(35);;
+        int ShadowH = Open + rnd.nextInt(35);
+
+        int amount = rnd.nextInt(7)+5;
+        for(int i = 0; i < amount; i++){
+            ArrayList<Integer> candles = th.DownTrendEntrys.get(rnd.nextInt(th.DownTrendEntrys.size()) + 1);
+
+            for(int j = 0; j < candles.size(); j++){
+                LastEntry = result.get(result.size()-1);
+                if(LastEntry.getClose() > LastEntry.getOpen()){
+                    StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getOpen();
+                }else{
+                    StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getClose();
+                }
+
+                Open = StartingPrice;
+
+                if(candles.get(1) > 0){
+                    Close = Open + candles.get(1);
+                    ShadowL = Open - candles.get(2);
+                    ShadowH = Close + candles.get(0);
+                }else{
+                    Close = Open + candles.get(1);
+                    ShadowL = Close - candles.get(2);
+                    ShadowH = Open + candles.get(1);
+                }
+
+                result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+            }
+        }
+        return result;
+    }
+
+    // New System
+    public ArrayList<CandleEntry> getRandomCandleChart(ArrayList<Entry> BrownianChart){
+        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        Random rnd = new Random();
+
+        int StartingPrice = 5000;
+        result.add(GetFirstEntry(StartingPrice));
+
+        for(int i = 0; i<BrownianChart.size()-1; i += 1){
+            CandleEntry LastEntry = result.get(result.size()-1);
+
+            try{
+                if (LastEntry.getClose() > LastEntry.getOpen()) {
+                    StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getOpen();
+                } else {
+                    StartingPrice = rnd.nextInt((int) (LastEntry.getBodyRange())) + (int) LastEntry.getClose();
+                }
+            }catch (Exception e){
+
+            }
+
+            int Open = StartingPrice;
+            int Close;
+            int ShadowL;
+            int ShadowH;
+
+            if((i > 0) && (BrownianChart.get(i).getY() > BrownianChart.get(i-1).getY())) {
+                Close = Open +  ((int) (BrownianChart.get(i).getY()));
+                ShadowL = Open - rnd.nextInt(75);
+                ShadowH = Close + rnd.nextInt(75);
+            }else{
+                Close = Open - ((int) (BrownianChart.get(i).getY()));
+                ShadowL = Close - rnd.nextInt(75);
+                ShadowH = Open + rnd.nextInt(75);
+            }
+
+            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+        }
+
+        result.remove(0);
+        return result;
+    }
+
+    public ArrayList<Entry> GetRandomChartWithBrownian(double drift, double diffusion, double stepSize){
+        ArrayList<Entry> result = new ArrayList<Entry>();
+
+        double localDrift = drift;
+        double diffusionFunction = diffusion;
+
+        GeometricBrownianMotion gbm = new GeometricBrownianMotion(localDrift, diffusionFunction);
+        gbm.setValue(200);
+        RandomProcess.SimulationResults sr =  gbm.simulate(1,25, stepSize);
+
+        for(int i = 0; i<=25; i++){
+            Log.w("GBM", ""+ sr.getScenario(0).get(i));
+            result.add(new Entry(i, sr.getScenario(0).get(i).floatValue()));
+        }
+
+        return result;
+    }
+    public ArrayList<Entry> GetRandomChartWithBrownian(int start, double drift, double diffusion, double stepSize){
+        ArrayList<Entry> result = new ArrayList<Entry>();
+
+        double localDrift = drift;
+        double diffusionFunction = diffusion;
+
+        GeometricBrownianMotion gbm = new GeometricBrownianMotion(localDrift, diffusionFunction);
+        gbm.setValue(start);
+        RandomProcess.SimulationResults sr =  gbm.simulate(1,40, stepSize);
+
+        for(int i = 0; i<=40; i++){
+            Log.w("GBM", ""+ sr.getScenario(0).get(i));
+            result.add(new Entry(i, sr.getScenario(0).get(i).floatValue()));
+        }
+
+        return result;
+    }
+
+    public ArrayList<CandleEntry> GetDownTrendWithBrownian(CandleEntry LastEntry){
+        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        Random rnd = new Random();
+        int StartingPrice = (int) LastEntry.getClose();
+
+        // Line
+        ArrayList<Entry> BrownianDownTrend = new ArrayList<Entry>();
+
+        double localDrift = -0.15;
+        double diffusionFunction = 0.2;
+
+        GeometricBrownianMotion gbm = new GeometricBrownianMotion(localDrift, diffusionFunction);
+        if(LastEntry.getClose() <= 1000){
+            gbm.setValue(50);
+        }else gbm.setValue(200);
+
+        RandomProcess.SimulationResults sr =  gbm.simulate(1,7, 1);
+
+        for(int i = 0; i<=7; i++){
+            BrownianDownTrend.add(new Entry(i, sr.getScenario(0).get(i).floatValue()));
+        }
+
+
+        result.add(LastEntry);
+        for(int i = 0; i<BrownianDownTrend.size()-1; i += 1){
+            LastEntry = result.get(result.size()-1);
+            try{
+                if (LastEntry.getClose() > LastEntry.getOpen()) {
+                    StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getOpen();
+                } else {
+                    StartingPrice = rnd.nextInt((int) (LastEntry.getBodyRange())) + (int) LastEntry.getClose();
+                }
+            }catch (Exception e){
+
+            }
+
+            int Open = StartingPrice;
+            int Close;
+            int ShadowL;
+            int ShadowH;
+
+            if((i > 0) && (BrownianDownTrend.get(i).getY() > BrownianDownTrend.get(i-1).getY())) {
+                Close = Open + ((int) (BrownianDownTrend.get(i).getY()));
+                ShadowL = Open - rnd.nextInt(75);
+                ShadowH = Close + rnd.nextInt(75);
+            }else{
+                Close = Open - ((int) (BrownianDownTrend.get(i).getY()));
+                ShadowL = Close - rnd.nextInt(75);
+                ShadowH = Open + rnd.nextInt(75);
+            }
+
+            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+        }
+
+        result.remove(0);
+        return result;
+    }
+    public ArrayList<CandleEntry> GetUpTrendWithBrownian(CandleEntry LastEntry){
+        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        Random rnd = new Random();
+        int StartingPrice = (int) LastEntry.getClose();
+
+        // Line
+        ArrayList<Entry> BrownianDownTrend = new ArrayList<Entry>();
+
+        double localDrift = 0.15;
+        double diffusionFunction = 0.2;
+
+        GeometricBrownianMotion gbm = new GeometricBrownianMotion(localDrift, diffusionFunction);
+        if(LastEntry.getClose() >= 9000){
+            gbm.setValue(50);
+        }else gbm.setValue(200);
+        RandomProcess.SimulationResults sr =  gbm.simulate(1,7, 1);
+
+        for(int i = 0; i<=7; i++){
+            BrownianDownTrend.add(new Entry(i, sr.getScenario(0).get(i).floatValue()));
+        }
+
+
+        result.add(LastEntry);
+        for(int i = 0; i<BrownianDownTrend.size()-1; i += 1){
+            LastEntry = result.get(result.size()-1);
+            try{
+                if (LastEntry.getClose() > LastEntry.getOpen()) {
+                    StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getOpen();
+                } else {
+                    StartingPrice = rnd.nextInt((int) (LastEntry.getBodyRange())) + (int) LastEntry.getClose();
+                }
+            }catch (Exception e){
+
+            }
+
+            int Open = StartingPrice;
+            int Close;
+            int ShadowL;
+            int ShadowH;
+
+            if((i > 0) && (BrownianDownTrend.get(i).getY() > BrownianDownTrend.get(i-1).getY())) {
+                Close = Open + ((int) (BrownianDownTrend.get(i).getY()));
+                ShadowL = Open - rnd.nextInt(75);
+                ShadowH = Close + rnd.nextInt(75);
+            }else{
+                Close = Open - ((int) (BrownianDownTrend.get(i).getY()));
+                ShadowL = Close - rnd.nextInt(75);
+                ShadowH = Open + rnd.nextInt(75);
+            }
+
+            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+        }
+
+        result.remove(0);
         return result;
     }
 }

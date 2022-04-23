@@ -4,9 +4,11 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -26,6 +28,8 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.CandleData;
 import com.github.mikephil.charting.data.CandleDataSet;
 import com.github.mikephil.charting.data.CandleEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.kovetstech.candlestickpatterns.R;
 
 import java.util.ArrayList;
@@ -53,12 +57,16 @@ public class SimulatorFragment extends Fragment {
 
     SimulatorHelper sh;
 
+    Button up_button;
+    Button down_button;
     Button next_button;
 
     TextView simu_title;
     Spinner DebugSpinnerPatterns;
     boolean debug = false;
 
+    CountDownTimer cdt;
+    MediaPlayer mp;
     public SimulatorFragment() {
         // Required empty public constructor
     }
@@ -90,7 +98,7 @@ public class SimulatorFragment extends Fragment {
 
         SetCandleGraph();
 
-        Button up_button = v.findViewById(R.id.up_button);
+        up_button = v.findViewById(R.id.up_button);
         up_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,7 +106,7 @@ public class SimulatorFragment extends Fragment {
             }
         });
 
-        Button down_button = v.findViewById(R.id.down_button);
+        down_button = v.findViewById(R.id.down_button);
         down_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,6 +144,8 @@ public class SimulatorFragment extends Fragment {
     }
     // Set
     public void SetCandleGraph(){
+        candleStickChart.clear();
+
         candleStickChart.setHighlightPerDragEnabled(true);
 
         candleStickChart.setDrawBorders(true);
@@ -157,9 +167,10 @@ public class SimulatorFragment extends Fragment {
         Legend l = candleStickChart.getLegend();
         l.setEnabled(false);
 
-        ArrayList<CandleEntry> yValsCandleStick = sh.getRandomStartingChart() ;
+        ArrayList<Entry> LineyValsCandleStick = sh.GetRandomChartWithBrownian(0, 0.2, 1);
+        ArrayList<CandleEntry> CandleyValsCandleStick = sh.getRandomCandleChart(LineyValsCandleStick) ;
 
-        CandleDataSet set1 = new CandleDataSet(yValsCandleStick, "");
+        CandleDataSet set1 = new CandleDataSet(CandleyValsCandleStick, "");
         set1.setShadowColor(Color.GRAY);
         set1.setShadowWidth(0.8f);
         set1.setDecreasingColor(getResources().getColor(R.color.downRed));
@@ -174,7 +185,8 @@ public class SimulatorFragment extends Fragment {
 
         candleStickChart.setData(data);
         candleStickChart.invalidate();
-        candleStickChart.setVisibleXRangeMaximum(25);
+        candleStickChart.setVisibleXRangeMaximum(20);
+
 
 
         switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
@@ -186,20 +198,22 @@ public class SimulatorFragment extends Fragment {
                 break;
         }
 
-
         GetRandomPattern();
     }
 
     // Interaction
     public void UserInter(String result){
         if(clickable) {
+            Go();
             if (CheckIfUserIsRight(result)) {
-
+                mp = MediaPlayer.create(getContext(), R.raw.correct);
+                mp.start();
             } else {
-                // user was wrong
+                mp = MediaPlayer.create(getContext(), R.raw.wrong);
+                mp.start();
             }
 
-            Go();
+
         }
     }
     public boolean CheckIfUserIsRight(String res){
@@ -342,7 +356,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(2500, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -361,7 +375,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(2500, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -380,7 +394,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(3000, 500) {
+        cdt = new CountDownTimer(3000, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -399,7 +413,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(2500, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -420,7 +434,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(2500, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -439,7 +453,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(2000, 500) {
+        cdt = new CountDownTimer(2000, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -458,7 +472,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(2000, 500) {
+        cdt = new CountDownTimer(2000, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -477,7 +491,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(3000, 500) {
+        cdt = new CountDownTimer(3000, 500) {
 
                                                                public void onTick(long millisUntilFinished) {
                                                                    AddCandle(result.get(i[0]));
@@ -496,7 +510,7 @@ public class SimulatorFragment extends Fragment {
         clickable = false;
 
         final int[] i = {0};
-        new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(2500, 500) {
 
         public void onTick(long millisUntilFinished) {
                                                                    AddCandle(result.get(i[0]));
@@ -514,13 +528,15 @@ public class SimulatorFragment extends Fragment {
     public void Go(){
         clickable = false;
         if(last_answer.equals("UP")){
+            down_button.setBackgroundTintList(ColorStateList.valueOf(Color.GRAY));
             GoUp();
         }else{
+            up_button.setBackgroundTintList(ColorStateList.valueOf(Color.GRAY));
             GoDown();
         }
     }
     public void GoUp(){
-        ArrayList<CandleEntry> result = sh.GetUpTrend(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+        ArrayList<CandleEntry> result = sh.GetUpTrendWithBrownian(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
 
@@ -537,6 +553,8 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 next_button.setVisibility(View.VISIBLE);
+                down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed)));
+                up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen)));
                 if(debug){
                     DebugSpinnerPatterns.setVisibility(View.VISIBLE);
                 }else{
@@ -546,7 +564,7 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void GoDown(){
-        ArrayList<CandleEntry> result = sh.GetDownTrend(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+        ArrayList<CandleEntry> result = sh.GetDownTrendWithBrownian(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
 
@@ -561,7 +579,10 @@ public class SimulatorFragment extends Fragment {
                 candleStickChart.moveViewToX(Integer.MAX_VALUE);
             }
 
-            public void onFinish() {
+            public void onFinish()
+            {
+                down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed)));
+                up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen)));
                 next_button.setVisibility(View.VISIBLE);
                 if(debug){
                     DebugSpinnerPatterns.setVisibility(View.VISIBLE);
@@ -583,4 +604,15 @@ public class SimulatorFragment extends Fragment {
         candleStickChart.setData(newdata);
         candleStickChart.invalidate();
     }
+
+    @Override
+    public void onPause() {
+        candleStickChart.invalidate();
+        candleStickChart.clear();
+        if(cdt != null){
+            cdt.cancel();
+        }
+        super.onPause();
+    }
+
 }

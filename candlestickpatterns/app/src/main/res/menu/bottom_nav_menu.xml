@@ -12,8 +12,8 @@
         android:title="@string/simulator" />
 
     <item
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_nav_settings"
-        android:title="@string/settings" />
+        android:id="@+id/navigation_quiz"
+        android:icon="@drawable/ic_nav_quiz"
+        android:title="@string/quiz" />
 
 </menu>

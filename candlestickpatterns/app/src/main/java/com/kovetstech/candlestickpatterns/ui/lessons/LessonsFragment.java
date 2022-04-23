@@ -71,14 +71,6 @@ public class LessonsFragment extends Fragment{
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_lessons, container, false);
 
-        Quiz = v.findViewById(R.id.QuizButton);
-        Quiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_navigation_lessons_to_quiz);
-            }
-        });
-
         Button how = v.findViewById(R.id.HowToLessonButton);
         how.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +125,20 @@ public class LessonsFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 LoadLesson("SHOOTING");
+            }
+        });
+        Button bullishEng = v.findViewById(R.id.BullishEngulfingLessonButton);
+        bullishEng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("BULLISHENG");
+            }
+        });
+        Button bearishEng = v.findViewById(R.id.BearishEngulfingLessonButton);
+        bearishEng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("BEARISHENG");
             }
         });
         return v;
