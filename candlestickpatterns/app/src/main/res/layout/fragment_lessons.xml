@@ -7,58 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.lessons.LessonsFragment">
 
-    <Button
-        android:id="@+id/shootingStarLessonButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded"
-        android:foreground="@drawable/shootingstar"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/ThreeWhiteSoldiersLessonButton"
-        app:layout_constraintTop_toBottomOf="@+id/ThreeWhiteSoldiersLessonText" />
-
-    <Button
-        android:id="@+id/hangingManLessonButton"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded"
-        android:foreground="@drawable/hangingman"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/hor_sep3"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ThreeBlackCrowsLessonText" />
-
-    <TextView
-        android:id="@+id/shootingStarLessonText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Shooting Star"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/ShootingStarLessonButton"
-        app:layout_constraintStart_toStartOf="@+id/ShootingStarLessonButton"
-        app:layout_constraintTop_toBottomOf="@+id/ShootingStarLessonButton" />
-
-    <TextView
-        android:id="@+id/hangingManLessonText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Hanging Man"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/HangingManLessonButton"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="@+id/HangingManLessonButton"
-        app:layout_constraintTop_toBottomOf="@+id/HangingManLessonButton" />
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
