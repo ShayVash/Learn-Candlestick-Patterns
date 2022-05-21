@@ -3,6 +3,7 @@ package com.kovetstech.candlestickpatterns;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -47,6 +48,8 @@ public class Quiz extends Fragment {
     Random rnd;
 
     ColorStateList DefultButtonColor;
+
+    MediaPlayer mp;
 
     public Quiz() {
         // Required empty public constructor
@@ -186,6 +189,8 @@ public class Quiz extends Fragment {
     }
 
     public void CorrectAnim(){
+        mp = MediaPlayer.create(getContext(), R.raw.correct);
+        mp.start();
         new CountDownTimer(1000, 500) {
 
             public void onTick(long millisUntilFinished) {
@@ -199,6 +204,8 @@ public class Quiz extends Fragment {
         }.start();
     }
     public void WrongAnim(){
+        mp = MediaPlayer.create(getContext(), R.raw.wrong);
+        mp.start();
         new CountDownTimer(1000, 500) {
 
             public void onTick(long millisUntilFinished) {
