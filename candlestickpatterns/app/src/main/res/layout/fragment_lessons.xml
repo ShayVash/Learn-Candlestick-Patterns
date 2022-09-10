@@ -139,6 +139,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/HangingManLessonText" />
 
             <Button
+                android:id="@+id/bearishThreeLineStrikeLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/bullishthreelinestrike"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/hor_sep3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/BearishEngulfingLessonText" />
+
+            <Button
                 android:id="@+id/ShootingStarLessonButton"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
@@ -165,6 +180,20 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/ThreeWhiteSoldiersLessonButton"
                 app:layout_constraintTop_toBottomOf="@+id/ShootingStarLessonText" />
+
+            <Button
+                android:id="@+id/bullishThreeLineStrikeLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/bearishthreelinestrike"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/ThreeWhiteSoldiersLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/BullishEngulfingLessonText" />
 
             <TextView
                 android:id="@+id/HowToLessonText"
@@ -213,6 +242,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/BearishEngulfingLessonButton" />
 
             <TextView
+                android:id="@+id/bearishThreeLineStrikeLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bearish Three Line Strike"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/HangingManLessonButton"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="@+id/HangingManLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/bearishThreeLineStrikeLessonButton" />
+
+            <TextView
                 android:id="@+id/ShootingStarLessonText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -233,6 +274,17 @@
                 app:layout_constraintEnd_toEndOf="@+id/BullishEngulfingLessonButton"
                 app:layout_constraintStart_toStartOf="@+id/BullishEngulfingLessonButton"
                 app:layout_constraintTop_toBottomOf="@+id/BullishEngulfingLessonButton" />
+
+            <TextView
+                android:id="@+id/bullishThreeLineStrikeLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bullish Three Line Strike"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/BullishEngulfingLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/BullishEngulfingLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/bullishThreeLineStrikeLessonButton" />
 
             <TextView
                 android:id="@+id/ThreeWhiteSoldiersLessonText"

@@ -17,6 +17,8 @@
         <item>SHOOTINGSTAR</item>
         <item>BULLISHENGULFING</item>
         <item>BEARISHENGULFING</item>
+        <item>BULLISHTHREELINESTRIKE</item>
+        <item>BEARISHTHREELINESTRIKE</item>
     </string-array>
 
     <string-array name="Q1">

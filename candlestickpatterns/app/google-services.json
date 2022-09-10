@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522869568217",
+    "project_id": "candlestick-patterns-bf867",
+    "storage_bucket": "candlestick-patterns-bf867.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522869568217:android:daa9333a6b386d56d304c8",
+        "android_client_info": {
+          "package_name": "com.kovetstech.candlestickpatterns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522869568217-k0cqfh8g2c8ht3g8ukuio3au0jf4jt72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPcTxUyubtQYdldEKgSUioDUe0FedtYk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522869568217-k0cqfh8g2c8ht3g8ukuio3au0jf4jt72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

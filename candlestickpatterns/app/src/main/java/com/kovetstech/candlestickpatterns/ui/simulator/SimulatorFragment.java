@@ -94,9 +94,15 @@ public class SimulatorFragment extends Fragment {
 
         sh = new SimulatorHelper();
 
-        candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        if(candleStickChart == null) {
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+            SetCandleGraph();
+        }else {
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+            candleStickChart.invalidate();
 
-        SetCandleGraph();
+            SetCandleGraph();
+        }
 
         up_button = v.findViewById(R.id.up_button);
         up_button.setOnClickListener(new View.OnClickListener() {
@@ -227,7 +233,7 @@ public class SimulatorFragment extends Fragment {
     public void GetRandomPattern(){
         Random rnd = new Random();
 
-        switch (rnd.nextInt(9)){
+        switch (rnd.nextInt(10)){
             case 0:
                 AddHammer();
 
@@ -281,6 +287,18 @@ public class SimulatorFragment extends Fragment {
                 AddBearishEngulfing();
 
                 last_pattern = "BEARISHENGULFING";
+                last_answer = "DOWN";
+                break;
+            case 9:
+                AddBullishThreeLineStrike();
+
+                last_pattern = "BULLISHTHREELINESTRIKE";
+                last_answer = "UP";
+                break;
+            case 10:
+                AddBearishThreeLineStrike();
+
+                last_pattern = "BEARISHTHREELINESTRIKE";
                 last_answer = "DOWN";
                 break;
         }
@@ -342,6 +360,18 @@ public class SimulatorFragment extends Fragment {
                 AddBearishEngulfing();
 
                 last_pattern = "BEARISHENGULFING";
+                last_answer = "DOWN";
+                break;
+            case "BULLISHTHREELINESTRIKE":
+                AddBullishThreeLineStrike();
+
+                last_pattern = "BULLISHTHREELINESTRIKE";
+                last_answer = "UP";
+                break;
+            case "BEARISHTHREELINESTRIKE":
+                AddBearishThreeLineStrike();
+
+                last_pattern = "BEARISHTHREELINESTRIKE";
                 last_answer = "DOWN";
                 break;
         }
@@ -414,6 +444,25 @@ public class SimulatorFragment extends Fragment {
 
         final int[] i = {0};
         cdt = new CountDownTimer(2500, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
+    public void AddBullishThreeLineStrike(){
+        ArrayList<CandleEntry> result = sh.getBullishThreeLineStrike(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        final int[] i = {0};
+        cdt = new CountDownTimer(3500, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -523,6 +572,25 @@ public class SimulatorFragment extends Fragment {
             }
         }.start();
     }
+    public void AddBearishThreeLineStrike(){
+        ArrayList<CandleEntry> result = sh.getBearishThreeLineStrike(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        final int[] i = {0};
+        cdt = new CountDownTimer(3500, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
 
     // Up/Down
     public void Go(){
@@ -534,16 +602,18 @@ public class SimulatorFragment extends Fragment {
             up_button.setBackgroundTintList(ColorStateList.valueOf(Color.GRAY));
             GoDown();
         }
+
+
     }
     public void GoUp(){
         ArrayList<CandleEntry> result = sh.GetUpTrendWithBrownian(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
 
-        int time = 500 * result.size();
+        int time = 500 * result.size()-2;
 
         final int[] i = {0};
-        new CountDownTimer(time, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -568,10 +638,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
-        int time = 500 * result.size();
+        int time = 500 * result.size()-2;
 
         final int[] i = {0};
-        new CountDownTimer(time, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -595,14 +665,18 @@ public class SimulatorFragment extends Fragment {
 
     // Helpers
     public void AddCandle(CandleEntry ce){
-        CandleData newdata = candleStickChart.getData();
+        try {
+            CandleData newdata = candleStickChart.getData();
 
-        newdata.removeEntry(0,0);
+            newdata.removeEntry(0, 0);
 
-        newdata.addEntry(ce, 0);
+            newdata.addEntry(ce, 0);
 
-        candleStickChart.setData(newdata);
-        candleStickChart.invalidate();
+            candleStickChart.setData(newdata);
+            candleStickChart.invalidate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -614,5 +688,13 @@ public class SimulatorFragment extends Fragment {
         }
         super.onPause();
     }
-
+    @Override
+    public void onDetach() {
+        candleStickChart.invalidate();
+        candleStickChart.clear();
+        if(cdt != null){
+            cdt.cancel();
+        }
+        super.onDetach();
+    }
 }

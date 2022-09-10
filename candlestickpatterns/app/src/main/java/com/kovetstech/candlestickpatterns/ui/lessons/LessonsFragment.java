@@ -141,6 +141,20 @@ public class LessonsFragment extends Fragment{
                 LoadLesson("BEARISHENG");
             }
         });
+        Button bullishthree = v.findViewById(R.id.bullishThreeLineStrikeLessonButton);
+        bullishthree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("BULLISHTHREELINE");
+            }
+        });
+        Button bearishthree = v.findViewById(R.id.bearishThreeLineStrikeLessonButton);
+        bearishthree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoadLesson("BEARISHTHREELINE");
+            }
+        });
         return v;
     }
     public void LoadLesson(String lesson){

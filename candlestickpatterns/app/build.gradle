@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -9,8 +11,8 @@ android {
         applicationId "com.kovetstech.candlestickpatterns"
         minSdk 28
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 5
+        versionName "1.6"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -31,6 +33,10 @@ android {
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'org.ojalgo:ojalgo:51.2.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

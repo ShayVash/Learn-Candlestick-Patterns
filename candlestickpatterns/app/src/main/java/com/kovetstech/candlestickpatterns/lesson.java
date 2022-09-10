@@ -78,7 +78,13 @@ public class lesson extends Fragment {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bullish-engulfing");
         }
         if(mParam1.equals("BEARISHENG")) {
-            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bearishengulfing");
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bearish-engulfing");
+        }
+        if(mParam1.equals("BULLISHTHREELINE")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bullish-three-line-strike");
+        }
+        if(mParam1.equals("BEARISHTHREELINE")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bearish-three-line-strike");
         }
         return v;
     }

@@ -171,7 +171,47 @@ public class SimulatorHelper {
 
         return result;
     }
+    public ArrayList<CandleEntry> getBullishThreeLineStrike(CandleEntry LastEntry){
+        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
 
+        Random rnd = new Random();
+
+        result.add(GetUpEntry(LastEntry));
+        result.add(GetUpEntry(result.get(result.size()-1)));
+
+        int Top;
+
+        int ShadowH = (int) result.get(result.size()-1).getClose() + (rnd.nextInt(50) + 85);
+        int Open = ShadowH - rnd.nextInt(50) - 15;
+        Top = Open;
+        int LClose = Open - (rnd.nextInt(150) + 100);
+        int ShadowL = LClose - (rnd.nextInt(50) + 15);
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, LClose)); // Big Up
+
+        Open = rnd.nextInt(Open - LClose) + (LClose - 15);
+        int Close = LClose - (rnd.nextInt(150) + 100);
+        ShadowL = Close - (rnd.nextInt(50) + 15);
+        ShadowH = Open + (rnd.nextInt(15));
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close)); // Big Up
+
+        int Radded = (rnd.nextInt(50) + 85);
+
+
+        Open -= Radded;
+        Close -= Radded;
+        ShadowL -= Radded;
+        ShadowH = Open + (rnd.nextInt(15));
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close)); // Big Up
+
+        Open = ShadowL - rnd.nextInt(20) - 15;
+        LClose = Top + (rnd.nextInt(100) + 50);
+        ShadowL = LClose - (rnd.nextInt(50) + 15);
+        ShadowH = (int) result.get(result.size()-1).getClose() + (rnd.nextInt(50) + 85);
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, LClose)); // Big Up
+
+        result.add(GetDownEntry(result.get(result.size()-1)));
+        return result;
+    }
 
     // Down
     public ArrayList<CandleEntry> getEveningStar(CandleEntry LastEntry){
@@ -338,7 +378,45 @@ public class SimulatorHelper {
 
         return result;
     }
+    public ArrayList<CandleEntry> getBearishThreeLineStrike(CandleEntry LastEntry){
+        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
 
+        Random rnd = new Random();
+
+        result.add(GetDownEntry(LastEntry));
+        result.add(GetDownEntry(result.get(result.size()-1)));
+
+        int Top;
+
+        int ShadowH = (int) result.get(result.size()-1).getClose() + (rnd.nextInt(50) + 85);
+        int Close = ShadowH - rnd.nextInt(50) - 15;
+        int Open = Close - (rnd.nextInt(150) + 100);
+        Top = Open;
+        int ShadowL = Close - (rnd.nextInt(50) + 15);
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close)); // Big Up
+
+        Open = rnd.nextInt(Close - Open) + (Open + 15) ;
+        Close = Close + rnd.nextInt(150) + 100;
+        ShadowL = Open - (rnd.nextInt(50));
+        ShadowH = Close + (rnd.nextInt(50));
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close)); // Big Up
+
+        Open = rnd.nextInt(Close - Open) + (Open + 15);
+        Close = Close + rnd.nextInt(150) + 100;
+        ShadowL = Open - (rnd.nextInt(50));
+        ShadowH = Close + (rnd.nextInt(50));
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close)); // Big Up
+
+        Open = Close + (rnd.nextInt(75) + 30);
+        Close = Top - rnd.nextInt(75) + 55;
+        ShadowL = Close - (rnd.nextInt(50));
+        ShadowH = Open + (rnd.nextInt(50));
+        result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close)); // Big Up
+
+        result.add(GetUpEntry(result.get(result.size()-1)));
+
+        return result;
+    }
 
     public CandleEntry GetUpEntry(CandleEntry LastEntry){
         Random rnd = new Random();
@@ -498,54 +576,6 @@ public class SimulatorHelper {
         return result;
     }
 
-    public ArrayList<CandleEntry> GetNewDownTrend(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
-        Random rnd = new Random();
-        TrendHelper th = new TrendHelper();
-
-        int StartingPrice = (int) LastEntry.getClose();
-
-        if(LastEntry.getClose() > LastEntry.getOpen()){
-            StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getOpen();
-        }else{
-            StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getClose();
-        }
-
-        int Open = StartingPrice ;
-        int Close = Open - (rnd.nextInt(100) + 25);
-        int ShadowL = Close - rnd.nextInt(35);;
-        int ShadowH = Open + rnd.nextInt(35);
-
-        int amount = rnd.nextInt(7)+5;
-        for(int i = 0; i < amount; i++){
-            ArrayList<Integer> candles = th.DownTrendEntrys.get(rnd.nextInt(th.DownTrendEntrys.size()) + 1);
-
-            for(int j = 0; j < candles.size(); j++){
-                LastEntry = result.get(result.size()-1);
-                if(LastEntry.getClose() > LastEntry.getOpen()){
-                    StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getOpen();
-                }else{
-                    StartingPrice = rnd.nextInt((int) LastEntry.getBodyRange()) + (int) LastEntry.getClose();
-                }
-
-                Open = StartingPrice;
-
-                if(candles.get(1) > 0){
-                    Close = Open + candles.get(1);
-                    ShadowL = Open - candles.get(2);
-                    ShadowH = Close + candles.get(0);
-                }else{
-                    Close = Open + candles.get(1);
-                    ShadowL = Close - candles.get(2);
-                    ShadowH = Open + candles.get(1);
-                }
-
-                result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
-            }
-        }
-        return result;
-    }
-
     // New System
     public ArrayList<CandleEntry> getRandomCandleChart(ArrayList<Entry> BrownianChart){
         ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
@@ -632,7 +662,7 @@ public class SimulatorHelper {
         // Line
         ArrayList<Entry> BrownianDownTrend = new ArrayList<Entry>();
 
-        double localDrift = -0.15;
+        double localDrift = -0.2;
         double diffusionFunction = 0.2;
 
         GeometricBrownianMotion gbm = new GeometricBrownianMotion(localDrift, diffusionFunction);
