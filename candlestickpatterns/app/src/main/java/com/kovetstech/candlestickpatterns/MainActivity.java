@@ -4,6 +4,9 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.ActionBar;
@@ -15,6 +18,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.kovetstech.candlestickpatterns.databinding.ActivityMainBinding;
 import com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment;
+
+import io.doorbell.android.Doorbell;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +46,15 @@ public class MainActivity extends AppCompatActivity {
             ActionBar actionBar = getSupportActionBar();
             actionBar.setDisplayHomeAsUpEnabled(false);
         }
-    }
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+     }
 
 
 

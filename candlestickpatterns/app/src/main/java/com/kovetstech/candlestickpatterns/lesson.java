@@ -86,6 +86,12 @@ public class lesson extends Fragment {
         if(mParam1.equals("BEARISHTHREELINE")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bearish-three-line-strike");
         }
+        if(mParam1.equals("THREEINSIDEDOWN")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/three-inside-down");
+        }
+        if(mParam1.equals("THREEINSIDEUP")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/three-inside-up");
+        }
         return v;
     }
 

@@ -195,6 +195,33 @@
                 app:layout_constraintStart_toStartOf="@+id/ThreeWhiteSoldiersLessonButton"
                 app:layout_constraintTop_toBottomOf="@+id/BullishEngulfingLessonText" />
 
+            <Button
+                android:id="@+id/threeInsideUpLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/threeinsideup"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/ThreeWhiteSoldiersLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/bullishThreeLineStrikeLessonText" />
+
+            <Button
+                android:id="@+id/threeInsideDownLessonButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded"
+                android:foreground="@drawable/threeinsidedown"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="@+id/bearishThreeLineStrikeLessonButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bearishThreeLineStrikeLessonText" />
+
             <TextView
                 android:id="@+id/HowToLessonText"
                 android:layout_width="wrap_content"
@@ -285,6 +312,28 @@
                 app:layout_constraintEnd_toEndOf="@+id/BullishEngulfingLessonButton"
                 app:layout_constraintStart_toStartOf="@+id/BullishEngulfingLessonButton"
                 app:layout_constraintTop_toBottomOf="@+id/bullishThreeLineStrikeLessonButton" />
+
+            <TextView
+                android:id="@+id/threeInsideUpLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Three Inside Up"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/BullishEngulfingLessonButton"
+                app:layout_constraintStart_toStartOf="@+id/BullishEngulfingLessonButton"
+                app:layout_constraintTop_toBottomOf="@+id/threeInsideUpLessonButton" />
+
+            <TextView
+                android:id="@+id/threeInsideDownLessonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Three Inside Down"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/bearishThreeLineStrikeLessonText"
+                app:layout_constraintStart_toStartOf="@+id/bearishThreeLineStrikeLessonText"
+                app:layout_constraintTop_toBottomOf="@+id/threeInsideUpLessonButton" />
 
             <TextView
                 android:id="@+id/ThreeWhiteSoldiersLessonText"

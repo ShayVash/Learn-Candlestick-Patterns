@@ -19,6 +19,8 @@
         <item>BEARISHENGULFING</item>
         <item>BULLISHTHREELINESTRIKE</item>
         <item>BEARISHTHREELINESTRIKE</item>
+        <item>THREEINSIDEUP</item>
+        <item>THREEINSIDEDOWN</item>
     </string-array>
 
     <string-array name="Q1">

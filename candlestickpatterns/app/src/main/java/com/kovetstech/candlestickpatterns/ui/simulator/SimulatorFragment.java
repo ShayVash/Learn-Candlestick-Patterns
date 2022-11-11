@@ -1,5 +1,6 @@
 package com.kovetstech.candlestickpatterns.ui.simulator;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -7,6 +8,8 @@ import android.graphics.Paint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -30,16 +33,20 @@ import com.github.mikephil.charting.data.CandleDataSet;
 import com.github.mikephil.charting.data.CandleEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.kovetstech.candlestickpatterns.MainActivity;
 import com.kovetstech.candlestickpatterns.R;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-                                                   /**
- * A simple {@link Fragment} subclass.
- * Use the {@link SimulatorFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
+import io.doorbell.android.Doorbell;
+
+
 public class SimulatorFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
@@ -67,16 +74,12 @@ public class SimulatorFragment extends Fragment {
 
     CountDownTimer cdt;
     MediaPlayer mp;
+
+    private InterstitialAd mInterstitialAd;
+
+
     public SimulatorFragment() {
         // Required empty public constructor
-    }
-    public static SimulatorFragment newInstance(String param1, String param2) {
-        SimulatorFragment fragment = new SimulatorFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,12 +99,12 @@ public class SimulatorFragment extends Fragment {
 
         if(candleStickChart == null) {
             candleStickChart = v.findViewById(R.id.candle_stick_chart);
-            SetCandleGraph();
+            //SetCandleGraph();
         }else {
             candleStickChart = v.findViewById(R.id.candle_stick_chart);
             candleStickChart.invalidate();
 
-            SetCandleGraph();
+            //SetCandleGraph();
         }
 
         up_button = v.findViewById(R.id.up_button);
@@ -146,8 +149,40 @@ public class SimulatorFragment extends Fragment {
         });
 
         DebugSpinnerPatterns = v.findViewById(R.id.spinner);
+
+
+        // !-- ADS --!
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(getContext(),"ca-app-pub-1929848249759273/1613723827", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i("SIMULATOR", "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d("SIMULATOR", loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
+
+
+        // !-- Doorbell --!
         return v;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        new Doorbell(getActivity(), 13479, "E4xMPuAFLX60C3CWWJ3Vl5dJNvOIFxXZaFPyccHyffeNIxsjStYk5zOCS92aQp0F").show();
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     // Set
     public void SetCandleGraph(){
         candleStickChart.clear();
@@ -233,7 +268,10 @@ public class SimulatorFragment extends Fragment {
     public void GetRandomPattern(){
         Random rnd = new Random();
 
-        switch (rnd.nextInt(10)){
+        if(candleStickChart == null){
+            SetCandleGraph();
+        }
+        switch (rnd.nextInt(12)){
             case 0:
                 AddHammer();
 
@@ -300,6 +338,18 @@ public class SimulatorFragment extends Fragment {
 
                 last_pattern = "BEARISHTHREELINESTRIKE";
                 last_answer = "DOWN";
+                break;
+            case 11:
+                AddThreeInsideUp();
+
+                last_pattern = "THREEINSIDEUP";
+                last_answer = "UP";
+                break;
+            case 12:
+                AddThreeInsideDown();
+
+                last_pattern = "THREEINSIDEUP";
+                last_answer = "UP";
                 break;
         }
 
@@ -374,6 +424,18 @@ public class SimulatorFragment extends Fragment {
                 last_pattern = "BEARISHTHREELINESTRIKE";
                 last_answer = "DOWN";
                 break;
+            case "THREEINSIDEUP":
+                AddThreeInsideUp();
+
+                last_pattern = "THREEINSIDEUP";
+                last_answer = "UP";
+                break;
+            case "THREEINSIDEDOWN":
+                AddThreeInsideDown();
+
+                last_pattern = "THREEINSIDEDOWN";
+                last_answer = "DOWN";
+                break;
         }
 
         Log.w("SimulatorFragment", "Got " + last_pattern + " Pattern");
@@ -385,8 +447,9 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
         final int[] i = {0};
-        cdt = new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -404,8 +467,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -423,8 +488,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(3000, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -442,8 +509,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -461,8 +530,31 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(3500, 500) {
+        cdt = new CountDownTimer(time, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
+    public void AddThreeInsideUp(){
+        ArrayList<CandleEntry> result = sh.getThreeInsideUp(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        int time = 500 * result.size();
+
+        final int[] i = {0};
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -476,14 +568,17 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
 
+
     // Down Patterns
     public void AddEveningStar(){
         ArrayList<CandleEntry> result = sh.getEveningStar(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount()-1));
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -501,8 +596,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(2000, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -520,8 +617,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(2000, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -539,8 +638,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(3000, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
                                                                public void onTick(long millisUntilFinished) {
                                                                    AddCandle(result.get(i[0]));
@@ -558,8 +659,10 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(2500, 500) {
+        cdt = new CountDownTimer(time, 500) {
 
         public void onTick(long millisUntilFinished) {
                                                                    AddCandle(result.get(i[0]));
@@ -577,8 +680,31 @@ public class SimulatorFragment extends Fragment {
 
         clickable = false;
 
+        int time = 500 * result.size();
+
         final int[] i = {0};
-        cdt = new CountDownTimer(3500, 500) {
+        cdt = new CountDownTimer(time, 500) {
+
+            public void onTick(long millisUntilFinished) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+
+            public void onFinish() {
+                clickable = true;
+            }
+        }.start();
+    }
+    public void AddThreeInsideDown(){
+        ArrayList<CandleEntry> result = sh.getThreeInsideDown(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
+
+        clickable = false;
+
+        int time = 500 * result.size();
+
+        final int[] i = {0};
+        cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
                 AddCandle(result.get(i[0]));
@@ -592,8 +718,13 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
 
+
     // Up/Down
     public void Go(){
+        if(candleStickChart == null){
+            SetCandleGraph();
+        }
+
         clickable = false;
         if(last_answer.equals("UP")){
             down_button.setBackgroundTintList(ColorStateList.valueOf(Color.GRAY));
@@ -602,21 +733,23 @@ public class SimulatorFragment extends Fragment {
             up_button.setBackgroundTintList(ColorStateList.valueOf(Color.GRAY));
             GoDown();
         }
-
-
     }
     public void GoUp(){
         ArrayList<CandleEntry> result = sh.GetUpTrendWithBrownian(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
 
-        int time = 500 * result.size()-2;
+        int time = 500 * result.size();
 
         final int[] i = {0};
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
+                if(i[0] != time) {
+                    AddCandle(result.get(i[0]));
+                    Log.w("GoUP", i[0] + "");
+                    Log.w("GoUP", result.get(i[0]).getBodyRange() + "");
+                }
                 i[0]++;
                 candleStickChart.moveViewToX(Integer.MAX_VALUE);
             }
@@ -630,21 +763,29 @@ public class SimulatorFragment extends Fragment {
                 }else{
                     DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
                 }
+
+                DisplayInterstitial();
             }
         }.start();
+
+
     }
     public void GoDown(){
         ArrayList<CandleEntry> result = sh.GetDownTrendWithBrownian(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
 
-        int time = 500 * result.size()-2;
+        int time = 500 * result.size();
 
         final int[] i = {0};
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
+                if(i[0] != time) {
+                    AddCandle(result.get(i[0]));
+                    Log.w("GoDOWN", i[0] + "");
+                    Log.w("GoDOWN", result.get(i[0]).getBodyRange() + "");
+                }
                 i[0]++;
                 candleStickChart.moveViewToX(Integer.MAX_VALUE);
             }
@@ -659,8 +800,42 @@ public class SimulatorFragment extends Fragment {
                 }else{
                     DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
                 }
+
+                DisplayInterstitial();
             }
         }.start();
+
+
+    }
+
+    // Ads
+    public void DisplayInterstitial(){
+        if (mInterstitialAd != null) {
+            mInterstitialAd.show(getActivity());
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+        }
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(getContext(),"ca-app-pub-1929848249759273/1613723827", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i("LOAD AD", "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d("LOAD AD", loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
+
     }
 
     // Helpers
@@ -681,8 +856,10 @@ public class SimulatorFragment extends Fragment {
 
     @Override
     public void onPause() {
-        candleStickChart.invalidate();
-        candleStickChart.clear();
+        if(candleStickChart != null) {
+            candleStickChart.invalidate();
+            candleStickChart.clear();
+        }
         if(cdt != null){
             cdt.cancel();
         }
@@ -690,11 +867,21 @@ public class SimulatorFragment extends Fragment {
     }
     @Override
     public void onDetach() {
-        candleStickChart.invalidate();
-        candleStickChart.clear();
+        if(candleStickChart != null) {
+            candleStickChart.invalidate();
+            candleStickChart.clear();
+        }
         if(cdt != null){
             cdt.cancel();
         }
         super.onDetach();
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        SetCandleGraph();
+        down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed)));
+        up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen)));
+        next_button.setVisibility(View.INVISIBLE);
     }
 }
