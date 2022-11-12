@@ -79,9 +79,7 @@ public class SimulatorFragment extends Fragment {
 
     private InterstitialAd mInterstitialAd;
 
-    // Doorbell
-    int appId = 13479;
-    String apiKey = "E4xMPuAFLX60C3CWWJ3Vl5dJNvOIFxXZaFPyccHyffeNIxsjStYk5zOCS92aQp0F";
+
 
     public SimulatorFragment() {
         // Required empty public constructor
@@ -177,14 +175,7 @@ public class SimulatorFragment extends Fragment {
                     }
                 });
 
-
-        // !-- Doorbell --!
         return v;
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
     }
 
     // Set

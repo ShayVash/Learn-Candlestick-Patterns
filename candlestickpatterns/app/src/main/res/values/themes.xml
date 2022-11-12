@@ -72,5 +72,5 @@
         <item name="android:backgroundTint">#3C3C3C</item>
         <item name="android:background">@drawable/rounded</item>
     </style>
-    
+
 </resources>
