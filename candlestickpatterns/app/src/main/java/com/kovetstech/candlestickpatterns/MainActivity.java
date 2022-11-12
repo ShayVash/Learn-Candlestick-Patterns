@@ -18,12 +18,13 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.kovetstech.candlestickpatterns.databinding.ActivityMainBinding;
 import com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment;
+import com.onesignal.OneSignal;
 
-import io.doorbell.android.Doorbell;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private static final String ONESIGNAL_APP_ID = "2ed0a473-11cf-46a3-b082-410a992360f7";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,16 @@ public class MainActivity extends AppCompatActivity {
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
         });
+
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
+
+        // promptForPushNotifications will show the native Android notification permission prompt.
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 7)
+        OneSignal.promptForPushNotifications();
 
      }
 

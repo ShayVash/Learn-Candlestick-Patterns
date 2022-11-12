@@ -1,5 +1,6 @@
 package com.kovetstech.candlestickpatterns.ui.simulator;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
@@ -35,16 +36,17 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.kovetstech.candlestickpatterns.MainActivity;
 import com.kovetstech.candlestickpatterns.R;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
-import io.doorbell.android.Doorbell;
 
 
 public class SimulatorFragment extends Fragment {
@@ -77,6 +79,9 @@ public class SimulatorFragment extends Fragment {
 
     private InterstitialAd mInterstitialAd;
 
+    // Doorbell
+    int appId = 13479;
+    String apiKey = "E4xMPuAFLX60C3CWWJ3Vl5dJNvOIFxXZaFPyccHyffeNIxsjStYk5zOCS92aQp0F";
 
     public SimulatorFragment() {
         // Required empty public constructor
@@ -179,7 +184,6 @@ public class SimulatorFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        new Doorbell(getActivity(), 13479, "E4xMPuAFLX60C3CWWJ3Vl5dJNvOIFxXZaFPyccHyffeNIxsjStYk5zOCS92aQp0F").show();
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -764,7 +768,7 @@ public class SimulatorFragment extends Fragment {
                     DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
                 }
 
-                DisplayInterstitial();
+                displayInterstitial();
             }
         }.start();
 
@@ -801,7 +805,7 @@ public class SimulatorFragment extends Fragment {
                     DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
                 }
 
-                DisplayInterstitial();
+                displayInterstitial();
             }
         }.start();
 
@@ -809,33 +813,37 @@ public class SimulatorFragment extends Fragment {
     }
 
     // Ads
-    public void DisplayInterstitial(){
-        if (mInterstitialAd != null) {
-            mInterstitialAd.show(getActivity());
-        } else {
-            Log.d("TAG", "The interstitial ad wasn't ready yet.");
+    public void displayInterstitial() {
+        Random rnd = new Random();
+        int ac = rnd.nextInt(7);
+        // If Ads are loaded, show Interstitial else show nothing.
+        if(ac == 2) {
+            if (mInterstitialAd != null) {
+                mInterstitialAd.show(getActivity());
+                Log.w("MainActivity", "Banner adapter class name: " + mInterstitialAd.getResponseInfo().getMediationAdapterClassName());
+                mInterstitialAd = null;
+            } else {
+                AdRequest adRequest = new AdRequest.Builder().build();
+                InterstitialAd.load(getContext(), "ca-app-pub-1929848249759273/1613723827", adRequest,
+                        new InterstitialAdLoadCallback() {
+                            @Override
+                            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                                // The mInterstitialAd reference will be null until
+                                // an ad is loaded.
+                                mInterstitialAd = interstitialAd;
+                                Log.i("LOAD AD", "onAdLoaded");
+                            }
+
+                            @Override
+                            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                                // Handle the error
+                                Log.d("LOAD AD", loadAdError.toString());
+                                mInterstitialAd = null;
+                            }
+                        });
+                Log.d("TAG", "The interstitial ad wasn't ready yet.");
+            }
         }
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getContext(),"ca-app-pub-1929848249759273/1613723827", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                        Log.i("LOAD AD", "onAdLoaded");
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        Log.d("LOAD AD", loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
-
     }
 
     // Helpers
