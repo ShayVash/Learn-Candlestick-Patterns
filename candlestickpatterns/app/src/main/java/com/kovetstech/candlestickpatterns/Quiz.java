@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
@@ -20,16 +21,12 @@ import android.widget.Toast;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Quiz#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class Quiz extends Fragment {
 
-    int NumberOfQuestions = 11;
+    final int NumberOfQuestions = 11;
 
     ImageView QuestionImage;
     TextView Question;
@@ -54,10 +51,7 @@ public class Quiz extends Fragment {
     public Quiz() {
         // Required empty public constructor
     }
-    public static Quiz newInstance(String param1, String param2) {
-        Quiz fragment = new Quiz();
-        return fragment;
-    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,41 +70,29 @@ public class Quiz extends Fragment {
         AnswerThree = v.findViewById(R.id.quiz_answer_3);
         AnswerFour = v.findViewById(R.id.quiz_answer_4);
 
-        AnswerOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                UserAnswered(AnswerOne);
-                ButtonClicked = AnswerOne;
-            }
+        AnswerOne.setOnClickListener(view -> {
+            UserAnswered(AnswerOne);
+            ButtonClicked = AnswerOne;
         });
-        AnswerTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                UserAnswered(AnswerTwo);
-                ButtonClicked = AnswerTwo;
-            }
+        AnswerTwo.setOnClickListener(view -> {
+            UserAnswered(AnswerTwo);
+            ButtonClicked = AnswerTwo;
         });
-        AnswerThree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                UserAnswered(AnswerThree);
-                ButtonClicked = AnswerThree;
-            }
+        AnswerThree.setOnClickListener(view -> {
+            UserAnswered(AnswerThree);
+            ButtonClicked = AnswerThree;
         });
-        AnswerFour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                UserAnswered(AnswerFour);
-                ButtonClicked = AnswerFour;
-            }
+        AnswerFour.setOnClickListener(view -> {
+            UserAnswered(AnswerFour);
+            ButtonClicked = AnswerFour;
         });
 
         switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
             case Configuration.UI_MODE_NIGHT_YES:
-                DefultButtonColor = ColorStateList.valueOf(getResources().getColor(R.color.buttonColorDark));
+                DefultButtonColor = ColorStateList.valueOf(getResources().getColor(R.color.buttonColorDark, null));
                 break;
             case Configuration.UI_MODE_NIGHT_NO:
-                DefultButtonColor = ColorStateList.valueOf(getResources().getColor(R.color.buttonColorLight));
+                DefultButtonColor = ColorStateList.valueOf(getResources().getColor(R.color.buttonColorLight, null));
                 break;
         }
 
@@ -137,14 +119,14 @@ public class Quiz extends Fragment {
         int number = rnd.nextInt(NumberOfQuestions) + 1;
 
         String resource = "Q" + number;
-        int ID = this.getResources().getIdentifier(resource, "array", getContext().getPackageName());
+        int ID = this.getResources().getIdentifier(resource, "array", Objects.requireNonNull(getContext()).getPackageName());
         String[] Qdata = getResources().getStringArray(ID);
 
         if(!Qdata[0].equals("NONE")) {
             String DrawableResource = Qdata[0];
             int DrawableID = this.getResources().getIdentifier(DrawableResource, "drawable", getContext().getPackageName());
 
-            QuestionImageDrawable = getResources().getDrawable(DrawableID);
+            QuestionImageDrawable = ContextCompat.getDrawable(getContext(), DrawableID);
         }else{
             QuestionImageDrawable = null;
         }
@@ -194,7 +176,7 @@ public class Quiz extends Fragment {
         new CountDownTimer(1000, 500) {
 
             public void onTick(long millisUntilFinished) {
-                ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen)));
+                ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen, null)));
             }
 
             public void onFinish() {
@@ -209,7 +191,7 @@ public class Quiz extends Fragment {
         new CountDownTimer(1000, 500) {
 
             public void onTick(long millisUntilFinished) {
-                ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed)));
+                ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed, null)));
             }
 
             public void onFinish() {

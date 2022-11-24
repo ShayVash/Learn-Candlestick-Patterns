@@ -1,6 +1,6 @@
 package com.kovetstech.candlestickpatterns;
 
-import android.content.Context;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,13 +18,9 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
+import java.util.Objects;
 import java.util.Random;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link lesson#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class lesson extends Fragment {
 
     private static final String ARG_PAGE = "param1";
@@ -37,13 +33,6 @@ public class lesson extends Fragment {
     public lesson() {
         // Required empty public constructor
     }
-    public static lesson newInstance(String param1, String param2) {
-        lesson fragment = new lesson();
-        Bundle args = new Bundle();
-        args.putString(ARG_PAGE, param1);
-        fragment.setArguments(args);
-        return fragment;
-    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +40,7 @@ public class lesson extends Fragment {
             mParam1 = getArguments().getString(ARG_PAGE);
         }
     }
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -64,7 +54,7 @@ public class lesson extends Fragment {
         // !-- ADS --!
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(getContext(),"ca-app-pub-1929848249759273/1613723827", adRequest,
+        InterstitialAd.load(Objects.requireNonNull(getContext()),"ca-app-pub-1929848249759273/1613723827", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -141,12 +131,12 @@ public class lesson extends Fragment {
 
         if(ac == 2) {
             if (mInterstitialAd != null) {
-                mInterstitialAd.show(getActivity());
+                mInterstitialAd.show(Objects.requireNonNull(getActivity()));
                 Log.w("MainActivity", "Banner adapter class name: " + mInterstitialAd.getResponseInfo().getMediationAdapterClassName());
                 mInterstitialAd = null;
             } else {
                 AdRequest adRequest = new AdRequest.Builder().build();
-                InterstitialAd.load(getContext(), "ca-app-pub-1929848249759273/1613723827", adRequest,
+                InterstitialAd.load(Objects.requireNonNull(getContext()), "ca-app-pub-1929848249759273/1613723827", adRequest,
                         new InterstitialAdLoadCallback() {
                             @Override
                             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {

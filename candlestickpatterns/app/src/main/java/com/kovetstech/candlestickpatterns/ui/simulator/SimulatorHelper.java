@@ -18,7 +18,7 @@ public class SimulatorHelper {
 
     // Up
     public ArrayList<CandleEntry> getHammer(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -45,7 +45,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getMorningStar(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -84,7 +84,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getThreeWhiteSoldiers(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -115,7 +115,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getBullishEngulfing(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -149,7 +149,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getBullishThreeLineStrike(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -190,7 +190,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getThreeInsideUp(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -198,12 +198,6 @@ public class SimulatorHelper {
         result.add(GetUpEntry(result.get(result.size()-1)));
 
 
-        int StartingPrice;
-        if(result.get(result.size()-1).getClose() > result.get(result.size()-1).getOpen()){
-            StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getOpen();
-        }else{
-            StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getClose();
-        }
 
         int WickSize = rnd.nextInt(50) + 25;
 
@@ -230,7 +224,7 @@ public class SimulatorHelper {
 
     // Down
     public ArrayList<CandleEntry> getEveningStar(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -269,7 +263,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getHangingMan(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -280,23 +274,21 @@ public class SimulatorHelper {
 
         if(rnd.nextBoolean()) {
             int ShadowH = (int) result.get(result.size() - 1).getClose() + (rnd.nextInt(15)+ 15);
-            int Open = ShadowH;
-            int Close = Open - (rnd.nextInt(30) + 80);
+            int Close = ShadowH - (rnd.nextInt(30) + 80);
             int ShadowL = Close - (rnd.nextInt(150) + 200);
-            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, ShadowH, Close));
         }else{
             int ShadowH = (int) result.get(result.size() - 1).getClose() + (rnd.nextInt(15)+ 15);
-            int Close = ShadowH;
-            int Open = Close - (rnd.nextInt(30) + 80);
-            int ShadowL = Close - (rnd.nextInt(150) + 200);
-            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
+            int Open = ShadowH - (rnd.nextInt(30) + 80);
+            int ShadowL = ShadowH - (rnd.nextInt(150) + 200);
+            result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, ShadowH));
         }
 
 
         return result;
     }
     public ArrayList<CandleEntry> getShootingStar(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -327,7 +319,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getThreeBlackCrows(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -359,7 +351,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getBearishEngulfing(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -394,7 +386,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getBearishThreeLineStrike(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -433,7 +425,7 @@ public class SimulatorHelper {
         return result;
     }
     public ArrayList<CandleEntry> getThreeInsideDown(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
 
         Random rnd = new Random();
 
@@ -441,12 +433,7 @@ public class SimulatorHelper {
         result.add(GetUpEntry(result.get(result.size()-1)));
 
 
-        int StartingPrice;
-        if(result.get(result.size()-1).getClose() > result.get(result.size()-1).getOpen()){
-            StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getOpen();
-        }else{
-            StartingPrice = rnd.nextInt((int) result.get(result.size()-1).getBodyRange()) + (int) result.get(result.size()-1).getClose();
-        }
+
 
         int WickSize = rnd.nextInt(50) + 25;
 
@@ -514,9 +501,7 @@ public class SimulatorHelper {
     public CandleEntry GetFirstEntry(int start){
         Random rnd = new Random();
 
-        int StartingPrice = start;
-
-        int ShadowL = StartingPrice + rnd.nextInt(35);
+        int ShadowL = start + rnd.nextInt(35);
         int Open = ShadowL + rnd.nextInt(100);
         int Close = Open + (rnd.nextInt(200) + 100);
         int ShadowH = Close + rnd.nextInt(35);
@@ -531,7 +516,7 @@ public class SimulatorHelper {
 
     // New System
     public ArrayList<CandleEntry> getRandomCandleChart(ArrayList<Entry> BrownianChart){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
         Random rnd = new Random();
 
         int StartingPrice = 5000;
@@ -546,7 +531,7 @@ public class SimulatorHelper {
                 } else {
                     StartingPrice = rnd.nextInt((int) (LastEntry.getBodyRange())) + (int) LastEntry.getClose();
                 }
-            }catch (Exception e){
+            }catch (Exception ignored){
 
             }
 
@@ -573,12 +558,9 @@ public class SimulatorHelper {
     }
 
     public ArrayList<Entry> GetRandomChartWithBrownian(double drift, double diffusion, double stepSize){
-        ArrayList<Entry> result = new ArrayList<Entry>();
+        ArrayList<Entry> result = new ArrayList<>();
 
-        double localDrift = drift;
-        double diffusionFunction = diffusion;
-
-        GeometricBrownianMotion gbm = new GeometricBrownianMotion(localDrift, diffusionFunction);
+        GeometricBrownianMotion gbm = new GeometricBrownianMotion(drift, diffusion);
         gbm.setValue(200);
         RandomProcess.SimulationResults sr =  gbm.simulate(1,25, stepSize);
 
@@ -591,12 +573,12 @@ public class SimulatorHelper {
     }
 
     public ArrayList<CandleEntry> GetDownTrendWithBrownian(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
         Random rnd = new Random();
         int StartingPrice = (int) LastEntry.getClose();
 
         // Line
-        ArrayList<Entry> BrownianDownTrend = new ArrayList<Entry>();
+        ArrayList<Entry> BrownianDownTrend = new ArrayList<>();
 
         double localDrift = -0.2;
         double diffusionFunction = 0.2;
@@ -622,7 +604,7 @@ public class SimulatorHelper {
                 } else {
                     StartingPrice = rnd.nextInt((int) (LastEntry.getBodyRange())) + (int) LastEntry.getClose();
                 }
-            }catch (Exception e){
+            }catch (Exception ignored){
 
             }
 
@@ -644,16 +626,15 @@ public class SimulatorHelper {
             result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
         }
 
-        result.remove(0);
         return result;
     }
     public ArrayList<CandleEntry> GetUpTrendWithBrownian(CandleEntry LastEntry){
-        ArrayList<CandleEntry> result = new ArrayList<CandleEntry>();
+        ArrayList<CandleEntry> result = new ArrayList<>();
         Random rnd = new Random();
         int StartingPrice = (int) LastEntry.getClose();
 
         // Line
-        ArrayList<Entry> BrownianDownTrend = new ArrayList<Entry>();
+        ArrayList<Entry> BrownianDownTrend = new ArrayList<>();
 
         double localDrift = 0.15;
         double diffusionFunction = 0.2;
@@ -678,7 +659,7 @@ public class SimulatorHelper {
                 } else {
                     StartingPrice = rnd.nextInt((int) (LastEntry.getBodyRange())) + (int) LastEntry.getClose();
                 }
-            }catch (Exception e){
+            }catch (Exception ignored){
 
             }
 
@@ -700,7 +681,6 @@ public class SimulatorHelper {
             result.add(new CandleEntry(CurrentIndex++, ShadowH, ShadowL, Open, Close));
         }
 
-        result.remove(0);
         return result;
     }
 }

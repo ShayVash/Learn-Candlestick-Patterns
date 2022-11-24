@@ -1,7 +1,5 @@
 package com.kovetstech.candlestickpatterns.ui.simulator;
 
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -10,12 +8,9 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,11 +28,8 @@ import com.github.mikephil.charting.data.CandleData;
 import com.github.mikephil.charting.data.CandleDataSet;
 import com.github.mikephil.charting.data.CandleEntry;
 import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineDataSet;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.kovetstech.candlestickpatterns.MainActivity;
 import com.kovetstech.candlestickpatterns.R;
 
 import java.util.ArrayList;
@@ -50,13 +42,6 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 
 public class SimulatorFragment extends Fragment {
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
-
     CandleStickChart candleStickChart;
 
     boolean clickable = true;
@@ -87,10 +72,6 @@ public class SimulatorFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -111,44 +92,28 @@ public class SimulatorFragment extends Fragment {
         }
 
         up_button = v.findViewById(R.id.up_button);
-        up_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                UserInter("UP");
-            }
-        });
+        up_button.setOnClickListener(view -> UserInter("UP"));
 
         down_button = v.findViewById(R.id.down_button);
-        down_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                UserInter("DOWN");
-            }
-        });
+        down_button.setOnClickListener(view -> UserInter("DOWN"));
 
         next_button = v.findViewById(R.id.next_button);
-        next_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                next_button.setVisibility(View.INVISIBLE);
-                DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
+        next_button.setOnClickListener(view -> {
+            next_button.setVisibility(View.INVISIBLE);
+            DebugSpinnerPatterns.setVisibility(View.INVISIBLE);
 
-                if(debug){
-                    GetPattern(DebugSpinnerPatterns.getSelectedItem().toString());
-                }else{
-                    GetRandomPattern();
-                }
-
+            if(debug){
+                GetPattern(DebugSpinnerPatterns.getSelectedItem().toString());
+            }else{
+                GetRandomPattern();
             }
+
         });
 
         simu_title = v.findViewById(R.id.simulator_title);
-        simu_title.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                debug = !debug;
-                Toast.makeText(getContext(), "Debug Mode " + debug, Toast.LENGTH_LONG).show();
-            }
+        simu_title.setOnClickListener(view -> {
+            debug = !debug;
+            Toast.makeText(getContext(), "Debug Mode " + debug, Toast.LENGTH_LONG).show();
         });
 
         DebugSpinnerPatterns = v.findViewById(R.id.spinner);
@@ -157,7 +122,7 @@ public class SimulatorFragment extends Fragment {
         // !-- ADS --!
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(getContext(),"ca-app-pub-1929848249759273/1613723827", adRequest,
+        InterstitialAd.load(Objects.requireNonNull(getContext()),"ca-app-pub-1929848249759273/1613723827", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -209,8 +174,8 @@ public class SimulatorFragment extends Fragment {
         CandleDataSet set1 = new CandleDataSet(CandleyValsCandleStick, "");
         set1.setShadowColor(Color.GRAY);
         set1.setShadowWidth(0.8f);
-        set1.setDecreasingColor(getResources().getColor(R.color.downRed));
-        set1.setIncreasingColor(getResources().getColor(R.color.upGreen));
+        set1.setDecreasingColor(getResources().getColor(R.color.downRed, null));
+        set1.setIncreasingColor(getResources().getColor(R.color.upGreen, null));
         set1.setDecreasingPaintStyle(Paint.Style.FILL);
         set1.setIncreasingPaintStyle(Paint.Style.FILL);
         set1.setNeutralColor(Color.LTGRAY);
@@ -243,21 +208,14 @@ public class SimulatorFragment extends Fragment {
             Go();
             if (CheckIfUserIsRight(result)) {
                 mp = MediaPlayer.create(getContext(), R.raw.correct);
-                mp.start();
             } else {
                 mp = MediaPlayer.create(getContext(), R.raw.wrong);
-                mp.start();
             }
-
-
+            mp.start();
         }
     }
     public boolean CheckIfUserIsRight(String res){
-        if(res.equals(last_answer)){
-            return true;
-        }else{
-            return false;
-        }
+        return res.equals(last_answer);
 
     }
     public void GetRandomPattern(){
@@ -751,8 +709,8 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 next_button.setVisibility(View.VISIBLE);
-                down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed)));
-                up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen)));
+                down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed, null)));
+                up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen, null)));
                 if(debug){
                     DebugSpinnerPatterns.setVisibility(View.VISIBLE);
                 }else{
@@ -787,8 +745,8 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish()
             {
-                down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed)));
-                up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen)));
+                down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed, null)));
+                up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen, null)));
                 next_button.setVisibility(View.VISIBLE);
                 if(debug){
                     DebugSpinnerPatterns.setVisibility(View.VISIBLE);
@@ -810,12 +768,12 @@ public class SimulatorFragment extends Fragment {
         // If Ads are loaded, show Interstitial else show nothing.
         if(ac == 2) {
             if (mInterstitialAd != null) {
-                mInterstitialAd.show(getActivity());
+                mInterstitialAd.show(Objects.requireNonNull(getActivity()));
                 Log.w("MainActivity", "Banner adapter class name: " + mInterstitialAd.getResponseInfo().getMediationAdapterClassName());
                 mInterstitialAd = null;
             } else {
                 AdRequest adRequest = new AdRequest.Builder().build();
-                InterstitialAd.load(getContext(), "ca-app-pub-1929848249759273/1613723827", adRequest,
+                InterstitialAd.load(Objects.requireNonNull(getContext()), "ca-app-pub-1929848249759273/1613723827", adRequest,
                         new InterstitialAdLoadCallback() {
                             @Override
                             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -879,8 +837,8 @@ public class SimulatorFragment extends Fragment {
     public void onResume() {
         super.onResume();
         SetCandleGraph();
-        down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed)));
-        up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen)));
+        down_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed, null)));
+        up_button.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen, null)));
         next_button.setVisibility(View.INVISIBLE);
     }
 }
