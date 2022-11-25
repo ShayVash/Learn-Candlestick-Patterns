@@ -1,11 +1,14 @@
 package com.kovetstech.candlestickpatterns;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -46,6 +49,7 @@ public class Quiz extends Fragment {
 
     ColorStateList DefultButtonColor;
 
+    CountDownTimer cdt;
     MediaPlayer mp;
 
     public Quiz() {
@@ -61,9 +65,6 @@ public class Quiz extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_quiz, container, false);
-
-        QuestionImage = v.findViewById(R.id.quiz_image);
-        Question = v.findViewById(R.id.quiz_question);
 
         AnswerOne = v.findViewById(R.id.quiz_answer_1);
         AnswerTwo = v.findViewById(R.id.quiz_answer_2);
@@ -96,8 +97,15 @@ public class Quiz extends Fragment {
                 break;
         }
 
-        GetRandomQuestion();
+        QuestionImage = v.findViewById(R.id.quiz_image);
+        Question = v.findViewById(R.id.quiz_question);
+
         return v;
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        GetRandomQuestion();
     }
 
     public void UserAnswered(View view){
@@ -119,12 +127,12 @@ public class Quiz extends Fragment {
         int number = rnd.nextInt(NumberOfQuestions) + 1;
 
         String resource = "Q" + number;
-        int ID = this.getResources().getIdentifier(resource, "array", Objects.requireNonNull(getContext()).getPackageName());
+        int ID = this.getResources().getIdentifier(resource, "array", (getContext()).getPackageName());
         String[] Qdata = getResources().getStringArray(ID);
 
         if(!Qdata[0].equals("NONE")) {
             String DrawableResource = Qdata[0];
-            int DrawableID = this.getResources().getIdentifier(DrawableResource, "drawable", getContext().getPackageName());
+            int DrawableID = getResources().getIdentifier(DrawableResource, "drawable", getContext().getPackageName());
 
             QuestionImageDrawable = ContextCompat.getDrawable(getContext(), DrawableID);
         }else{
@@ -173,7 +181,7 @@ public class Quiz extends Fragment {
     public void CorrectAnim(){
         mp = MediaPlayer.create(getContext(), R.raw.correct);
         mp.start();
-        new CountDownTimer(1000, 500) {
+        cdt = new CountDownTimer(1000, 500) {
 
             public void onTick(long millisUntilFinished) {
                 ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen, null)));
@@ -188,7 +196,7 @@ public class Quiz extends Fragment {
     public void WrongAnim(){
         mp = MediaPlayer.create(getContext(), R.raw.wrong);
         mp.start();
-        new CountDownTimer(1000, 500) {
+        cdt = new CountDownTimer(1000, 500) {
 
             public void onTick(long millisUntilFinished) {
                 ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.downRed, null)));
@@ -199,5 +207,27 @@ public class Quiz extends Fragment {
                 GetRandomQuestion();
             }
         }.start();
+    }
+
+
+
+    @Override
+    public void onPause() {
+        if(cdt != null){
+            cdt.cancel();
+        }
+        super.onPause();
+    }
+    @Override
+    public void onDetach() {
+        if(cdt != null){
+            cdt.cancel();
+        }
+        super.onDetach();
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        GetRandomQuestion();
     }
 }
