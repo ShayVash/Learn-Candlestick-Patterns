@@ -45,6 +45,7 @@ public class SimulatorFragment extends Fragment {
     CandleStickChart candleStickChart;
 
     boolean clickable = true;
+    boolean TestRun = false;
 
     public String last_pattern;
     public String last_answer = "UP";
@@ -310,6 +311,16 @@ public class SimulatorFragment extends Fragment {
     }
     public void GetPattern(String name){
         switch (name){
+            case "UPDOWN":
+                TestRun = true;
+                GoUp();
+                Log.w("TESTRUN", "Testing UP");
+                break;
+            case "TESTRUN":
+                TestRun = true;
+                AddHammer();
+                Log.w("TESTRUN", "Testing Hammer");
+                break;
             case "HAMMER":
                 AddHammer();
 
@@ -394,6 +405,7 @@ public class SimulatorFragment extends Fragment {
         Log.w("SimulatorFragment", "Got " + last_pattern + " Pattern");
     }
 
+
     // Up Patterns
     public void AddHammer(){
         ArrayList<CandleEntry> result = sh.getHammer(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
@@ -412,6 +424,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddMorningStar();
+                    Log.w("TESTRUN", "Testing MorningStar");
+                }
             }
         }.start();
     }
@@ -433,6 +449,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddThreeWhiteSoldiers();
+                    Log.w("TESTRUN", "Testing ThreeWhiteSoldiers");
+                }
             }
         }.start();
     }
@@ -454,6 +474,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddBullishEngulfing();
+                    Log.w("TESTRUN", "Testing BullishEngulfing");
+                }
             }
         }.start();
     }
@@ -475,6 +499,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddBullishThreeLineStrike();
+                    Log.w("TESTRUN", "Testing ThreeLineStrike");
+                }
             }
         }.start();
     }
@@ -496,6 +524,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddThreeInsideUp();
+                    Log.w("TESTRUN", "Testing ThreeInsideUp");
+                }
             }
         }.start();
     }
@@ -517,6 +549,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddEveningStar();
+                    Log.w("TESTRUN", "Testing EveningStar");
+                }
             }
         }.start();
     }
@@ -541,6 +577,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddHangingMan();
+                    Log.w("TESTRUN", "Testing HangingMan");
+                }
             }
         }.start();
     }
@@ -562,6 +602,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddShootingStar();
+                    Log.w("TESTRUN", "Testing ShootingStar");
+                }
             }
         }.start();
     }
@@ -583,6 +627,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddThreeBlackCrows();
+                    Log.w("TESTRUN", "Testing ThreeBlackCrows");
+                }
             }
         }.start();
     }
@@ -596,16 +644,20 @@ public class SimulatorFragment extends Fragment {
         final int[] i = {0};
         cdt = new CountDownTimer(time, 500) {
 
-                                                               public void onTick(long millisUntilFinished) {
+            public void onTick(long millisUntilFinished) {
                                                                    AddCandle(result.get(i[0]));
                                                                    i[0]++;
                                                                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
                                                                }
 
-                                                               public void onFinish() {
-                                                                   clickable = true;
-                                                               }
-                                                           }.start();
+            public void onFinish() {
+                clickable = true;
+                if(TestRun){
+                    AddBearishEngulfing();
+                    Log.w("TESTRUN", "Testing BearishEngulfing");
+                }
+            }
+        }.start();
     }
     public void AddBearishEngulfing(){
         ArrayList<CandleEntry> result = sh.getBearishEngulfing(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
@@ -625,6 +677,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddBearishThreeLineStrike();
+                    Log.w("TESTRUN", "Testing BearishThreeLineStrike");
+                }
             }
         }.start();
     }
@@ -646,6 +702,10 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                if(TestRun){
+                    AddThreeInsideDown();
+                    Log.w("TESTRUN", "Testing ThreeInsideDown");
+                }
             }
         }.start();
     }
@@ -667,6 +727,8 @@ public class SimulatorFragment extends Fragment {
 
             public void onFinish() {
                 clickable = true;
+                TestRun = false;
+                Log.w("TESTRUN", "TEST COMPLETE");
             }
         }.start();
     }
@@ -718,6 +780,11 @@ public class SimulatorFragment extends Fragment {
                 }
 
                 displayInterstitial();
+
+                if(TestRun){
+                    GoDown();
+                    Log.w("TESTRUN", "Testing Down");
+                }
             }
         }.start();
 
@@ -755,6 +822,11 @@ public class SimulatorFragment extends Fragment {
                 }
 
                 displayInterstitial();
+
+                if(TestRun){
+                    TestRun = false;
+                    Log.w("TESTRUN", "Testing Complete");
+                }
             }
         }.start();
 

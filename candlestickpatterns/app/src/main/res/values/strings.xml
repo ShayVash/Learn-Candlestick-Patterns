@@ -8,6 +8,8 @@
     <string name="quiz">Quiz</string>
 
     <string-array name="patterns">
+        <item>TESTRUN</item>
+        <item>UPDOWN</item>
         <item>HAMMER</item>
         <item>MORNINGSTAR</item>
         <item>HANGINGMAN</item>
