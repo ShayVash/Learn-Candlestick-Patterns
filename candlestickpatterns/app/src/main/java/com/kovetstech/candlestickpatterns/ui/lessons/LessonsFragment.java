@@ -3,6 +3,8 @@ package com.kovetstech.candlestickpatterns.ui.lessons;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.kovetstech.candlestickpatterns.R;
+import com.kovetstech.candlestickpatterns.ui.lessons.parts.lessonList;
 
 public class LessonsFragment extends Fragment{
 
@@ -32,40 +35,20 @@ public class LessonsFragment extends Fragment{
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_lessons, container, false);
 
-        Button how = v.findViewById(R.id.HowToLessonButton);
-        how.setOnClickListener(view -> LoadLesson("HOW"));
-        Button hammer = v.findViewById(R.id.HammerLessonButton);
-        hammer.setOnClickListener(view -> LoadLesson("HAMMER"));
-        Button evening = v.findViewById(R.id.EveningStarLessonButton);
-        evening.setOnClickListener(view -> LoadLesson("EVENING"));
-        Button morning = v.findViewById(R.id.MorningStarLessonButton);
-        morning.setOnClickListener(view -> LoadLesson("MORNING"));
-        Button crows = v.findViewById(R.id.ThreeBlackCrowslessonButton);
-        crows.setOnClickListener(view -> LoadLesson("CROWS"));
-        Button soldiers = v.findViewById(R.id.ThreeWhiteSoldiersLessonButton);
-        soldiers.setOnClickListener(view -> LoadLesson("SOLDIERS"));
-        Button hanging = v.findViewById(R.id.HangingManLessonButton);
-        hanging.setOnClickListener(view -> LoadLesson("HANGING"));
-        Button shooting = v.findViewById(R.id.ShootingStarLessonButton);
-        shooting.setOnClickListener(view -> LoadLesson("SHOOTING"));
-        Button bullishEng = v.findViewById(R.id.BullishEngulfingLessonButton);
-        bullishEng.setOnClickListener(view -> LoadLesson("BULLISHENG"));
-        Button bearishEng = v.findViewById(R.id.BearishEngulfingLessonButton);
-        bearishEng.setOnClickListener(view -> LoadLesson("BEARISHENG"));
-        Button bullishthree = v.findViewById(R.id.bullishThreeLineStrikeLessonButton);
-        bullishthree.setOnClickListener(view -> LoadLesson("BULLISHTHREELINE"));
-        Button bearishthree = v.findViewById(R.id.bearishThreeLineStrikeLessonButton);
-        bearishthree.setOnClickListener(view -> LoadLesson("BEARISHTHREELINE"));
-        Button threeinsidedown = v.findViewById(R.id.threeInsideDownLessonButton);
-        threeinsidedown.setOnClickListener(view -> LoadLesson("THREEINSIDEDOWN"));
-        Button threeinsideup = v.findViewById(R.id.threeInsideUpLessonButton);
-        threeinsideup.setOnClickListener(view -> LoadLesson("THREEINSIDEUP"));
+        lessonList basics = lessonList.newInstance("Basics");
+        getChildFragmentManager().beginTransaction().replace(R.id.basics, basics).commit();
+
+        lessonList bullishPatterns = lessonList.newInstance("Bullish Candlestick Patterns");
+        getChildFragmentManager().beginTransaction().replace(R.id.patterns, bullishPatterns).commit();
+
+        lessonList bearishPatterns = lessonList.newInstance("Bearish Candlestick Patterns");
+        getChildFragmentManager().beginTransaction().replace(R.id.patterns2, bearishPatterns).commit();
         return v;
     }
-    public void LoadLesson(String lesson){
-        Bundle bundle = new Bundle();
-        bundle.putString("param1", lesson);
-        Navigation.findNavController(v).navigate(R.id.action_navigation_lessons_to_lesson, bundle);
-    }
 
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
 }

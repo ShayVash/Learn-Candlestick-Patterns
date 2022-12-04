@@ -1,4 +1,4 @@
-package com.kovetstech.candlestickpatterns;
+package com.kovetstech.candlestickpatterns.ui.lessons;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.kovetstech.candlestickpatterns.R;
 
 import java.util.Objects;
 import java.util.Random;
@@ -73,46 +74,46 @@ public class lesson extends Fragment {
                 });
 
 
-        if(mParam1.equals("HOW")) {
+        if(mParam1.equals("How To Read Candlestick Patterns")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/intro-to-candle-sticks");
         }
-        if(mParam1.equals("HAMMER")) {
+        if(mParam1.equals("Hammer")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hammer-pattern");
         }
-        if(mParam1.equals("MORNING")) {
+        if(mParam1.equals("Morning Star")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-morning-star-pattern");
         }
-        if(mParam1.equals("EVENING")) {
+        if(mParam1.equals("Evening Star")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-eveningstar-pattern");
         }
-        if(mParam1.equals("SOLDIERS")) {
+        if(mParam1.equals("Three White Soldiers")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-white-soldiers-pattern");
         }
-        if(mParam1.equals("CROWS")) {
+        if(mParam1.equals("Three Black Crows")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-three-black-crows-pattern");
         }
-        if(mParam1.equals("HANGING")) {
+        if(mParam1.equals("Hanging Man")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hanging-man-pattern");
         }
-        if(mParam1.equals("SHOOTING")) {
+        if(mParam1.equals("Shooting Star")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-shooting-star-pattern");
         }
-        if(mParam1.equals("BULLISHENG")) {
+        if(mParam1.equals("Bullish Engulfing")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bullish-engulfing");
         }
-        if(mParam1.equals("BEARISHENG")) {
+        if(mParam1.equals("Bearish Engulfing")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bearish-engulfing");
         }
-        if(mParam1.equals("BULLISHTHREELINE")) {
+        if(mParam1.equals("Bullish Three Line Strike")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bullish-three-line-strike");
         }
-        if(mParam1.equals("BEARISHTHREELINE")) {
+        if(mParam1.equals("Bearish Three Line Strike")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/bearish-three-line-strike");
         }
-        if(mParam1.equals("THREEINSIDEDOWN")) {
+        if(mParam1.equals("Three Inside Up")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/three-inside-down");
         }
-        if(mParam1.equals("THREEINSIDEUP")) {
+        if(mParam1.equals("Three Inside Down")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/three-inside-up");
         }
 

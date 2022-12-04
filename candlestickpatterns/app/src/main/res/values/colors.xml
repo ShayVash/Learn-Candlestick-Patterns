@@ -16,4 +16,7 @@
 
     <color name="buttonColorLight">#EFF0EE</color>
     <color name="buttonColorDark">#0A0A0A</color>
+
+    <color name="learnedDark">#545454</color>
+    <color name="learnedLight">#A5A5A5</color>
 </resources>

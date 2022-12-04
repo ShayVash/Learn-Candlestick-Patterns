@@ -21,12 +21,12 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_quiz"
-        android:name="com.kovetstech.candlestickpatterns.Quiz"
+        android:name="com.kovetstech.candlestickpatterns.ui.quiz.Quiz"
         android:label="Quiz"
         tools:layout="@layout/fragment_quiz" />
     <fragment
         android:id="@+id/lesson"
-        android:name="com.kovetstech.candlestickpatterns.lesson"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.lesson"
         android:label="Lesson"
         tools:layout="@layout/fragment_lesson" >
         <argument

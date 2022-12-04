@@ -64,8 +64,7 @@ public class SimulatorFragment extends Fragment {
     MediaPlayer mp;
 
     private InterstitialAd mInterstitialAd;
-
-
+    
 
     public SimulatorFragment() {
         // Required empty public constructor
@@ -417,9 +416,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -442,9 +443,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -467,9 +470,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -492,9 +497,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -517,9 +524,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -542,9 +551,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -570,9 +581,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -595,9 +608,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -620,9 +635,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -645,10 +662,12 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                                                                   AddCandle(result.get(i[0]));
-                                                                   i[0]++;
-                                                                   candleStickChart.moveViewToX(Integer.MAX_VALUE);
-                                                               }
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
+            }
 
             public void onFinish() {
                 clickable = true;
@@ -670,10 +689,12 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
         public void onTick(long millisUntilFinished) {
-                                                                   AddCandle(result.get(i[0]));
-                                                                   i[0]++;
-                                                                   candleStickChart.moveViewToX(Integer.MAX_VALUE);
-                                                               }
+            if((i[0] != result.size())) {
+                AddCandle(result.get(i[0]));
+                i[0]++;
+                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+            }
+        }
 
             public void onFinish() {
                 clickable = true;
@@ -695,9 +716,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -720,9 +743,11 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                AddCandle(result.get(i[0]));
-                i[0]++;
-                candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                if((i[0] != result.size())) {
+                    AddCandle(result.get(i[0]));
+                    i[0]++;
+                    candleStickChart.moveViewToX(Integer.MAX_VALUE);
+                }
             }
 
             public void onFinish() {
@@ -760,7 +785,7 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                if(i[0] != time) {
+                if(i[0] != result.size()) {
                     AddCandle(result.get(i[0]));
                     Log.w("GoUP", i[0] + "");
                     Log.w("GoUP", result.get(i[0]).getBodyRange() + "");
@@ -801,7 +826,7 @@ public class SimulatorFragment extends Fragment {
         cdt = new CountDownTimer(time, 500) {
 
             public void onTick(long millisUntilFinished) {
-                if(i[0] != time) {
+                if((i[0] != result.size())) {
                     AddCandle(result.get(i[0]));
                     Log.w("GoDOWN", i[0] + "");
                     Log.w("GoDOWN", result.get(i[0]).getBodyRange() + "");
