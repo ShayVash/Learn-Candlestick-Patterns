@@ -1,4 +1,4 @@
-package com.kovetstech.candlestickpatterns;
+package com.kovetstech.candlestickpatterns.ui.quiz;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.kovetstech.candlestickpatterns.R;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -122,7 +122,8 @@ the market, and finally a third red candle representing sellers taking control o
         <item>Opening Price</item>
         <item>Shadows</item>
         <item>Closing Price</item>
-    </string-array><string-array name="Q14">
+    </string-array>
+    <string-array name="Q14">
         <item>NONE</item>
         <item>How is the daily high price represented on a candlestick chart?</item>
         <item>Shadow</item>
