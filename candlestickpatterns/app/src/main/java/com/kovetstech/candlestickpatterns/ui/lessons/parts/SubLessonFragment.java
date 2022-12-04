@@ -3,9 +3,7 @@ package com.kovetstech.candlestickpatterns.ui.lessons.parts;
 import android.content.Context;
 import android.os.Bundle;
 
-import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +17,7 @@ import com.kovetstech.candlestickpatterns.ui.lessons.parts.placeholder.Placehold
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 /**
  * A fragment representing a list of Items.
@@ -85,12 +84,7 @@ public class SubLessonFragment extends Fragment{
             recyclerView.setAdapter(adapter);
             CalculatePrec();
 
-            adapter.setListener(new MySubLessonRecyclerViewAdapter.AdapterListener() {
-                @Override
-                public void refresh() {
-                    CalculatePrec();
-                }
-            });
+            adapter.setListener(() -> CalculatePrec());
         }
 
         return view;
@@ -102,7 +96,7 @@ public class SubLessonFragment extends Fragment{
         double lessons = adapter.mValues.size();
 
         for(int i = 0; i< adapter.mValues.size(); i++){
-            if(adapter.getItemLearned(i, getContext())){
+            if(adapter.getItemLearned(i, Objects.requireNonNull(getContext()))){
                 learned++;
             }
         }
@@ -115,10 +109,7 @@ public class SubLessonFragment extends Fragment{
         df.setRoundingMode(RoundingMode.DOWN);
         prec = Double.parseDouble(df.format(prec));
 
-        ((lessonList) getParentFragment()).SetPrec(String.valueOf(prec)+"%");
-    }
-    public MySubLessonRecyclerViewAdapter getLessonList(){
-        return adapter;
+        ((lessonList) Objects.requireNonNull(getParentFragment())).SetPrec(String.valueOf(prec)+"%");
     }
 
 

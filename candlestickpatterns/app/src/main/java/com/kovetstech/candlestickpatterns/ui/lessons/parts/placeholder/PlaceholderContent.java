@@ -1,7 +1,6 @@
 package com.kovetstech.candlestickpatterns.ui.lessons.parts.placeholder;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,22 +27,22 @@ public class PlaceholderContent {
     static  {
         // Add some sample items.
 
-        addBasicsItem(new PlaceholderItem("0", "How To Read Camdlestick Patterns", ""));
+        addBasicsItem(new PlaceholderItem("0", "How To Read Camdlestick Patterns"));
 
-        addBullishPatternsItem(new PlaceholderItem("0", "Hammer", ""));
-        addBullishPatternsItem(new PlaceholderItem("1", "Morning Star", ""));
-        addBullishPatternsItem(new PlaceholderItem("2", "Three White Soldiers", ""));
-        addBullishPatternsItem(new PlaceholderItem("3", "Shooting Star", ""));
-        addBullishPatternsItem(new PlaceholderItem("4", "Bullish Engulfing", ""));
-        addBullishPatternsItem(new PlaceholderItem("5", "Bullish Three Line Strike", ""));
-        addBullishPatternsItem(new PlaceholderItem("6", "Three Inside Up", ""));
+        addBullishPatternsItem(new PlaceholderItem("0", "Hammer"));
+        addBullishPatternsItem(new PlaceholderItem("1", "Morning Star"));
+        addBullishPatternsItem(new PlaceholderItem("2", "Three White Soldiers"));
+        addBullishPatternsItem(new PlaceholderItem("3", "Shooting Star"));
+        addBullishPatternsItem(new PlaceholderItem("4", "Bullish Engulfing"));
+        addBullishPatternsItem(new PlaceholderItem("5", "Bullish Three Line Strike"));
+        addBullishPatternsItem(new PlaceholderItem("6", "Three Inside Up"));
 
-        addBearishPatternsItem(new PlaceholderItem("0", "Evening Star", ""));
-        addBearishPatternsItem(new PlaceholderItem("1", "Three Black Crows", ""));
-        addBearishPatternsItem(new PlaceholderItem("2", "Hanging Man", ""));
-        addBearishPatternsItem(new PlaceholderItem("3", "Bearish Engulfing", ""));
-        addBearishPatternsItem(new PlaceholderItem("4", "Bearish Three Line Strike", ""));
-        addBearishPatternsItem(new PlaceholderItem("5", "Three Inside Down", ""));
+        addBearishPatternsItem(new PlaceholderItem("0", "Evening Star"));
+        addBearishPatternsItem(new PlaceholderItem("1", "Three Black Crows"));
+        addBearishPatternsItem(new PlaceholderItem("2", "Hanging Man"));
+        addBearishPatternsItem(new PlaceholderItem("3", "Bearish Engulfing"));
+        addBearishPatternsItem(new PlaceholderItem("4", "Bearish Three Line Strike"));
+        addBearishPatternsItem(new PlaceholderItem("5", "Three Inside Down"));
     }
 
     private static void addBasicsItem(PlaceholderItem item) {
@@ -63,14 +62,13 @@ public class PlaceholderContent {
     public static class PlaceholderItem {
         public final String id;
         public final String content;
-        public final String details;
 
-        public PlaceholderItem(String id, String content, String details) {
+        public PlaceholderItem(String id, String content) {
             this.id = id;
             this.content = content;
-            this.details = details;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return content;

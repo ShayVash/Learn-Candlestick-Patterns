@@ -23,7 +23,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetDownEntry(LastEntry));
-        result.add(GetDownEntry(result.get(result.size()-1)));
+        result.add(GetDownEntry(result.get(0)));
         result.add(GetDownEntry(result.get(result.size()-1)));
 
         int StartingPrice;
@@ -50,7 +50,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetDownEntry(LastEntry));
-        result.add(GetDownEntry(result.get(result.size()-1)));
+        result.add(GetDownEntry(result.get(0)));
 
 
         int StartingPrice;
@@ -89,7 +89,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetDownEntry(LastEntry));
-        result.add(GetDownEntry(result.get(result.size()-1)));
+        result.add(GetDownEntry(result.get(0)));
         result.add(GetDownEntry(result.get(result.size()-1)));
 
         int ShadowH = (int) result.get(result.size()-1).getClose() + (rnd.nextInt(50) + 85);
@@ -120,7 +120,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetDownEntry(LastEntry));
-        result.add(GetDownEntry(result.get(result.size()-1)));
+        result.add(GetDownEntry(result.get(0)));
         result.add(GetDownEntry(result.get(result.size()-1)));
 
 
@@ -154,7 +154,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetUpEntry(LastEntry));
-        result.add(GetUpEntry(result.get(result.size()-1)));
+        result.add(GetUpEntry(result.get(0)));
 
         int Top;
 
@@ -195,7 +195,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetUpEntry(LastEntry));
-        result.add(GetUpEntry(result.get(result.size()-1)));
+        result.add(GetUpEntry(result.get(0)));
 
 
 
@@ -229,7 +229,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetDownEntry(LastEntry));
-        result.add(GetDownEntry(result.get(result.size()-1)));
+        result.add(GetDownEntry(result.get(0)));
         int StartingPrice;
 
         if(result.get(result.size()-1).getClose() > result.get(result.size()-1).getOpen()){
@@ -268,7 +268,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetUpEntry(LastEntry));
-        result.add(GetUpEntry(result.get(result.size()-1)));
+        result.add(GetUpEntry(result.get(0)));
         result.add(GetUpEntry(result.get(result.size()-1)));
 
 
@@ -293,7 +293,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetUpEntry(LastEntry));
-        result.add(GetUpEntry(result.get(result.size()-1)));
+        result.add(GetUpEntry(result.get(0)));
         result.add(GetUpEntry(result.get(result.size()-1)));
 
 
@@ -324,7 +324,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetUpEntry(LastEntry));
-        result.add(GetUpEntry(result.get(result.size()-1)));
+        result.add(GetUpEntry(result.get(0)));
         result.add(GetUpEntry(result.get(result.size()-1)));
 
         int ShadowH = (int) result.get(result.size()-1).getClose() + (rnd.nextInt(50) + 85);
@@ -356,7 +356,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetUpEntry(LastEntry));
-        result.add(GetUpEntry(result.get(result.size()-1)));
+        result.add(GetUpEntry(result.get(0)));
         result.add(GetUpEntry(result.get(result.size()-1)));
 
 
@@ -391,7 +391,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetDownEntry(LastEntry));
-        result.add(GetDownEntry(result.get(result.size()-1)));
+        result.add(GetDownEntry(result.get(0)));
 
         int Top;
 
@@ -430,7 +430,7 @@ public class SimulatorHelper {
         Random rnd = new Random();
 
         result.add(GetUpEntry(LastEntry));
-        result.add(GetUpEntry(result.get(result.size()-1)));
+        result.add(GetUpEntry(result.get(0)));
 
 
 

@@ -1,6 +1,5 @@
 package com.kovetstech.candlestickpatterns.ui.quiz;
 
-import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -129,7 +128,7 @@ public class Quiz extends Fragment {
         int number = rnd.nextInt(NumberOfQuestions) + 1;
 
         String resource = "Q" + number;
-        int ID = this.getResources().getIdentifier(resource, "array", (getContext()).getPackageName());
+        int ID = this.getResources().getIdentifier(resource, "array", (Objects.requireNonNull(getContext())).getPackageName());
         String[] Qdata = getResources().getStringArray(ID);
 
         if(!Qdata[0].equals("NONE")) {

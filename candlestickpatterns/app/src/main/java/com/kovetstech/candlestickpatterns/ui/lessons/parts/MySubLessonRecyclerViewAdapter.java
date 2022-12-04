@@ -1,17 +1,13 @@
 package com.kovetstech.candlestickpatterns.ui.lessons.parts;
 
-import androidx.fragment.app.FragmentManager;
+import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,8 +42,9 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
     public Context context;
     SharedPreferences prefs;
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         v = new ViewHolder(FragmentSubBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
 
         context = v.itemView.getContext();
@@ -70,37 +67,35 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
             holder.mCheckmark.setVisibility(View.VISIBLE);
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences prefs = context.getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putBoolean(mValues.get(position).content, true);
-                editor.commit();
+        holder.itemView.setOnClickListener(view -> {
+            SharedPreferences prefs = context.getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean(mValues.get(position).content, true);
+            editor.commit();
 
-                holder.mCheckmark.setVisibility(View.VISIBLE);
+            holder.mCheckmark.setVisibility(View.VISIBLE);
 
+            try {
                 Bundle bundle = new Bundle();
                 bundle.putString("param1", holder.mContentView.getText().toString());
                 Navigation.findNavController(v.mContentView).navigate(R.id.action_navigation_lessons_to_lesson, bundle);
+            }catch (Exception e){
+
             }
         });
-        holder.mCheckmark.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(holder.mCheckmark.getVisibility() == View.VISIBLE){
-                    holder.mCheckmark.setVisibility(View.INVISIBLE);
-                    SharedPreferences prefs = context.getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = prefs.edit();
-                    editor.putBoolean(mValues.get(position).content, false);
-                    editor.commit();
+        holder.mCheckmark.setOnClickListener(view -> {
+            if(holder.mCheckmark.getVisibility() == View.VISIBLE){
+                holder.mCheckmark.setVisibility(View.INVISIBLE);
+                SharedPreferences prefs = context.getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean(mValues.get(position).content, false);
+                editor.commit();
 
 
 
-                }
-                if (listener != null)
-                    listener.refresh(); // <---- fire listener here
             }
+            if (listener != null)
+                listener.refresh(); // <---- fire listener here
         });
     }
     @Override
@@ -114,7 +109,7 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
 
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView mContentView;
         public final ImageView mCheckmark;
         public PlaceholderItem mItem;
@@ -125,6 +120,7 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
             mCheckmark = binding.checkmark;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return super.toString() + " '" + mContentView.getText() + "'";

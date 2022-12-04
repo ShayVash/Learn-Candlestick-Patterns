@@ -10,8 +10,8 @@
         motion:motionInterpolator="easeInOut">
        <KeyFrameSet>
        </KeyFrameSet>
-        <OnClick />
         <OnClick motion:targetId="@+id/textView2" />
+        <OnClick />
     </Transition>
 
     <ConstraintSet android:id="@+id/start"></ConstraintSet>

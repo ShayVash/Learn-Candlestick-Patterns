@@ -19,7 +19,6 @@ import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.kovetstech.candlestickpatterns.R;
 
-import java.util.Objects;
 import java.util.Random;
 
 public class lesson extends Fragment {
@@ -55,7 +54,7 @@ public class lesson extends Fragment {
         // !-- ADS --!
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(Objects.requireNonNull(getContext()),"ca-app-pub-1929848249759273/1613723827", adRequest,
+        InterstitialAd.load(requireContext(),"ca-app-pub-1929848249759273/1613723827", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -132,12 +131,12 @@ public class lesson extends Fragment {
 
         if(ac == 2) {
             if (mInterstitialAd != null) {
-                mInterstitialAd.show(Objects.requireNonNull(getActivity()));
+                mInterstitialAd.show(requireActivity());
                 Log.w("MainActivity", "Banner adapter class name: " + mInterstitialAd.getResponseInfo().getMediationAdapterClassName());
                 mInterstitialAd = null;
             } else {
                 AdRequest adRequest = new AdRequest.Builder().build();
-                InterstitialAd.load(Objects.requireNonNull(getContext()), "ca-app-pub-1929848249759273/1613723827", adRequest,
+                InterstitialAd.load(requireContext(), "ca-app-pub-1929848249759273/1613723827", adRequest,
                         new InterstitialAdLoadCallback() {
                             @Override
                             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
