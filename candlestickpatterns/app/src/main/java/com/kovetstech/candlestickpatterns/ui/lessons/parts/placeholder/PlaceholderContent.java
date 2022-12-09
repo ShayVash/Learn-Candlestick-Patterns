@@ -27,7 +27,7 @@ public class PlaceholderContent {
     static  {
         // Add some sample items.
 
-        addBasicsItem(new PlaceholderItem("0", "How To Read Camdlestick Patterns"));
+        addBasicsItem(new PlaceholderItem("0", "How To Read Candlestick Patterns"));
 
         addBullishPatternsItem(new PlaceholderItem("0", "Hammer"));
         addBullishPatternsItem(new PlaceholderItem("1", "Morning Star"));
