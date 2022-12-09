@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +31,7 @@ public class SubLessonFragment extends Fragment{
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private String mCategory = "";
-    public double prec = 0;
+    public double prec = 0.0;
     MySubLessonRecyclerViewAdapter adapter;
 
     View view;
@@ -92,24 +93,25 @@ public class SubLessonFragment extends Fragment{
 
 
     public void CalculatePrec(){
-        double learned = 0;
+        double learned = 0.0;
         double lessons = adapter.mValues.size();
 
         for(int i = 0; i< adapter.mValues.size(); i++){
-            if(adapter.getItemLearned(i, Objects.requireNonNull(getContext()))){
+            if(adapter.getItemLearned(i, requireContext())){
                 learned++;
             }
         }
 
 
-        prec = (learned/lessons)*100;
-
+        prec = (learned/lessons)*100.0;
+        Log.w("Sublesson", String.valueOf(prec));
 
         DecimalFormat df = new DecimalFormat("#.#");
         df.setRoundingMode(RoundingMode.DOWN);
-        prec = Double.parseDouble(df.format(prec));
 
-        ((lessonList) Objects.requireNonNull(getParentFragment())).SetPrec(String.valueOf(prec)+"%");
+
+        Log.w("NewSublesson", String.valueOf(prec));
+        ((lessonList) requireParentFragment()).SetPrec(df.format(prec)+"%");
     }
 
 
