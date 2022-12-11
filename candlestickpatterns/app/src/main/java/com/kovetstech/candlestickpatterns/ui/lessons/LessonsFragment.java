@@ -39,6 +39,9 @@ public class LessonsFragment extends Fragment{
 
         lessonList bearishPatterns = lessonList.newInstance("Bearish Candlestick Patterns");
         getChildFragmentManager().beginTransaction().replace(R.id.patterns2, bearishPatterns).commit();
+
+        lessonList indicators = lessonList.newInstance("Indicators");
+        getChildFragmentManager().beginTransaction().replace(R.id.indicators, indicators).commit();
         return v;
     }
 }

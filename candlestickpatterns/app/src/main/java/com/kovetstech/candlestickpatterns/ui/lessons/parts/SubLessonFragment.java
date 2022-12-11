@@ -80,6 +80,9 @@ public class SubLessonFragment extends Fragment{
                 case "Bearish Candlestick Patterns":
                     adapter = new MySubLessonRecyclerViewAdapter(PlaceholderContent.BEARISH_PATTERNS_ITEMS);
                     break;
+                case "Indicators":
+                    adapter = new MySubLessonRecyclerViewAdapter(PlaceholderContent.INDICATORS_ITEMS);
+                    break;
             }
 
             recyclerView.setAdapter(adapter);

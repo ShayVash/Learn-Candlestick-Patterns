@@ -30,7 +30,7 @@ import java.util.Random;
 
 public class Quiz extends Fragment {
 
-    final int NumberOfQuestions = 11;
+    final int NumberOfQuestions = 34;
 
     ImageView QuestionImage;
     TextView Question;
@@ -128,7 +128,7 @@ public class Quiz extends Fragment {
         int number = rnd.nextInt(NumberOfQuestions) + 1;
 
         String resource = "Q" + number;
-        int ID = this.getResources().getIdentifier(resource, "array", (Objects.requireNonNull(getContext())).getPackageName());
+        int ID = this.getResources().getIdentifier(resource, "array", (requireContext()).getPackageName());
         String[] Qdata = getResources().getStringArray(ID);
 
         if(!Qdata[0].equals("NONE")) {

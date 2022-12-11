@@ -24,10 +24,16 @@ public class PlaceholderContent {
     public static final List<PlaceholderItem> BEARISH_PATTERNS_ITEMS = new ArrayList<PlaceholderItem>();
     public static final Map<String, PlaceholderItem> BEARISH_PATTERNS_ITEM_MAP = new HashMap<String, PlaceholderItem>();
 
+    public static final List<PlaceholderItem> INDICATORS_ITEMS = new ArrayList<PlaceholderItem>();
+    public static final Map<String, PlaceholderItem> INDICATORS_ITEM_MAP = new HashMap<String, PlaceholderItem>();
+
     static  {
         // Add some sample items.
 
-        addBasicsItem(new PlaceholderItem("0", "How To Read Candlestick Patterns"));
+        addBasicsItem(new PlaceholderItem("0", "What Is Technical Analysis"));
+        addBasicsItem(new PlaceholderItem("1", "How To Read Candlestick Patterns"));
+        addBasicsItem(new PlaceholderItem("2","Charting On Different Time Frames"));
+        addBasicsItem(new PlaceholderItem("3","How To Identify Up & Down Trends"));
 
         addBullishPatternsItem(new PlaceholderItem("0", "Hammer"));
         addBullishPatternsItem(new PlaceholderItem("1", "Morning Star"));
@@ -43,6 +49,11 @@ public class PlaceholderContent {
         addBearishPatternsItem(new PlaceholderItem("3", "Bearish Engulfing"));
         addBearishPatternsItem(new PlaceholderItem("4", "Bearish Three Line Strike"));
         addBearishPatternsItem(new PlaceholderItem("5", "Three Inside Down"));
+
+        addIndicatorsItem(new PlaceholderItem("0", "Moving Averages"));
+        addIndicatorsItem(new PlaceholderItem("1", "On Balance Volume (OBV)"));
+        addIndicatorsItem(new PlaceholderItem("2", "Relative Strength Index (RSI)"));
+
     }
 
     private static void addBasicsItem(PlaceholderItem item) {
@@ -57,7 +68,10 @@ public class PlaceholderContent {
         BEARISH_PATTERNS_ITEMS.add(item);
         BEARISH_PATTERNS_ITEM_MAP.put(item.id, item);
     }
-
+    private static void addIndicatorsItem(PlaceholderItem item) {
+        INDICATORS_ITEMS.add(item);
+        INDICATORS_ITEM_MAP.put(item.id, item);
+    }
 
     public static class PlaceholderItem {
         public final String id;

@@ -248,4 +248,25 @@ the market, and finally a third red candle representing sellers taking control o
         <item>bullish reversal pattern</item>
         <item>reversal pattern to any direction</item>
     </string-array>
+    <string-array name="Q32">
+        <item>NONE</item>
+        <item>Which describes a moving average the best?</item>
+        <item>an indicator that shows the average price of an asset over a period of time.</item>
+        <item>an indicator that measures the strength of an assets price movement.</item>
+        <item>an indicator that shows the volatility of an assets price.</item>
+    </string-array>
+    <string-array name="Q33">
+        <item>NONE</item>
+        <item>Which describes an RSI the best?</item>
+        <item>an indicator that measures the strength of an assets price movement.</item>
+        <item>an indicator that shows the average price of an asset over a period of time.</item>
+        <item>an indicator that shows the volatility of an assets price.</item>
+    </string-array>
+    <string-array name="Q34">
+        <item>NONE</item>
+        <item>Which describes an OBV the best?</item>
+        <item>an indicator that shows the relationship between an assets price and its volume.</item>
+        <item>an indicator that shows the average price of an asset over a period of time.</item>
+        <item>an indicator that shows the volatility of an assets price.</item>
+    </string-array>
 </resources>

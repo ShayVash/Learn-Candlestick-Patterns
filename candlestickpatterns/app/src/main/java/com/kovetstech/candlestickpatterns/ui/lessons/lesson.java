@@ -73,9 +73,29 @@ public class lesson extends Fragment {
                 });
 
 
+        if(mParam1.equals("What Is Technical Analysis")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/what-is-technical-analysis");
+        }
         if(mParam1.equals("How To Read Candlestick Patterns")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/intro-to-candle-sticks");
         }
+        if(mParam1.equals("Charting On Different Time Frames")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/charting-on-different-time-frames");
+        }
+        if(mParam1.equals("How To Identify Up & Down Trends")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/how-to-identify-up-and-down-trends");
+        }
+
+        if(mParam1.equals("Moving Averages")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/moving-averages");
+        }
+        if(mParam1.equals("On Balance Volume (OBV)")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/obv");
+        }
+        if(mParam1.equals("Relative Strength Index (RSI)")) {
+            wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/rsi");
+        }
+
         if(mParam1.equals("Hammer")) {
             wv.loadUrl("https://sites.google.com/view/candle-pattern-lessons/the-hammer-pattern");
         }
