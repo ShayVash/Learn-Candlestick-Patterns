@@ -29,11 +29,12 @@ public class PlaceholderContent {
 
     static  {
         // Add some sample items.
-
         addBasicsItem(new PlaceholderItem("0", "What Is Technical Analysis"));
-        addBasicsItem(new PlaceholderItem("1", "How To Read Candlestick Patterns"));
-        addBasicsItem(new PlaceholderItem("2","Charting On Different Time Frames"));
-        addBasicsItem(new PlaceholderItem("3","How To Identify Up & Down Trends"));
+        addBasicsItem(new PlaceholderItem("1", "Key Terms Used In Technical Analysis"));
+        addBasicsItem(new PlaceholderItem("2", "The Limitations Of Technical Analysis"));
+        addBasicsItem(new PlaceholderItem("3", "How To Read Candlestick Patterns"));
+        addBasicsItem(new PlaceholderItem("4","Charting On Different Time Frames"));
+        addBasicsItem(new PlaceholderItem("5","How To Identify Up & Down Trends"));
 
         addBullishPatternsItem(new PlaceholderItem("0", "Hammer"));
         addBullishPatternsItem(new PlaceholderItem("1", "Morning Star"));

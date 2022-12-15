@@ -77,6 +77,8 @@ public class lesson extends Fragment {
 
         // Basics
         urls.put("What Is Technical Analysis", "https://sites.google.com/view/candle-pattern-lessons/what-is-technical-analysis");
+        urls.put("Key Terms Used In Technical Analysis", "https://sites.google.com/view/candle-pattern-lessons/key-terms-used-in-technical-analysis");
+        urls.put("The Limitations Of Technical Analysis", "https://sites.google.com/view/candle-pattern-lessons/the-limitations-of-technical-analysis");
         urls.put("How To Read Candlestick Patterns", "https://sites.google.com/view/candle-pattern-lessons/intro-to-candle-sticks");
         urls.put("Charting On Different Time Frames", "https://sites.google.com/view/candle-pattern-lessons/charting-on-different-time-frames");
         urls.put("How To Identify Up & Down Trends", "https://sites.google.com/view/candle-pattern-lessons/how-to-identify-up-and-down-trends");
