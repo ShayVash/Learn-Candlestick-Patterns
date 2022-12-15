@@ -1,5 +1,6 @@
 package com.kovetstech.candlestickpatterns.ui.quiz;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -29,6 +30,8 @@ import java.util.Objects;
 import java.util.Random;
 
 public class Quiz extends Fragment {
+
+    Context context;
 
     final int NumberOfQuestions = 34;
 
@@ -66,6 +69,8 @@ public class Quiz extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_quiz, container, false);
+
+        context = v.getContext();
 
         AnswerOne = v.findViewById(R.id.quiz_answer_1);
         AnswerTwo = v.findViewById(R.id.quiz_answer_2);
@@ -180,12 +185,12 @@ public class Quiz extends Fragment {
     }
 
     public void CorrectAnim(){
-        mp = MediaPlayer.create(getContext(), R.raw.correct);
+        mp = MediaPlayer.create(context, R.raw.correct);
         mp.start();
         cdt = new CountDownTimer(1000, 500) {
 
             public void onTick(long millisUntilFinished) {
-                ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.upGreen, null)));
+                ButtonClicked.setBackgroundTintList(ColorStateList.valueOf(context.getResources().getColor(R.color.upGreen, null)));
             }
 
             public void onFinish() {
@@ -195,7 +200,7 @@ public class Quiz extends Fragment {
         }.start();
     }
     public void WrongAnim(){
-        mp = MediaPlayer.create(getContext(), R.raw.wrong);
+        mp = MediaPlayer.create(context, R.raw.wrong);
         mp.start();
         cdt = new CountDownTimer(1000, 500) {
 
@@ -230,5 +235,10 @@ public class Quiz extends Fragment {
     public void onResume() {
         super.onResume();
         GetRandomQuestion();
+    }
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.context = context;
     }
 }

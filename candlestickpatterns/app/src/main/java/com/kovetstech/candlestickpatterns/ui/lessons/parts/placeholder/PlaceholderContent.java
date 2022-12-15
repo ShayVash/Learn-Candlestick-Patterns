@@ -38,21 +38,26 @@ public class PlaceholderContent {
         addBullishPatternsItem(new PlaceholderItem("0", "Hammer"));
         addBullishPatternsItem(new PlaceholderItem("1", "Morning Star"));
         addBullishPatternsItem(new PlaceholderItem("2", "Three White Soldiers"));
-        addBullishPatternsItem(new PlaceholderItem("3", "Shooting Star"));
-        addBullishPatternsItem(new PlaceholderItem("4", "Bullish Engulfing"));
-        addBullishPatternsItem(new PlaceholderItem("5", "Bullish Three Line Strike"));
-        addBullishPatternsItem(new PlaceholderItem("6", "Three Inside Up"));
+        addBullishPatternsItem(new PlaceholderItem("3", "Bullish Engulfing"));
+        addBullishPatternsItem(new PlaceholderItem("4", "Bullish Three Line Strike"));
+        addBullishPatternsItem(new PlaceholderItem("5", "Three Inside Up"));
 
         addBearishPatternsItem(new PlaceholderItem("0", "Evening Star"));
         addBearishPatternsItem(new PlaceholderItem("1", "Three Black Crows"));
         addBearishPatternsItem(new PlaceholderItem("2", "Hanging Man"));
-        addBearishPatternsItem(new PlaceholderItem("3", "Bearish Engulfing"));
-        addBearishPatternsItem(new PlaceholderItem("4", "Bearish Three Line Strike"));
-        addBearishPatternsItem(new PlaceholderItem("5", "Three Inside Down"));
+        addBullishPatternsItem(new PlaceholderItem("3", "Shooting Star"));
+        addBearishPatternsItem(new PlaceholderItem("4", "Bearish Engulfing"));
+        addBearishPatternsItem(new PlaceholderItem("5", "Bearish Three Line Strike"));
+        addBearishPatternsItem(new PlaceholderItem("6", "Three Inside Down"));
 
         addIndicatorsItem(new PlaceholderItem("0", "Moving Averages"));
         addIndicatorsItem(new PlaceholderItem("1", "On Balance Volume (OBV)"));
         addIndicatorsItem(new PlaceholderItem("2", "Relative Strength Index (RSI)"));
+        addIndicatorsItem(new PlaceholderItem("3", "Stochastic Oscillator"));
+        addIndicatorsItem(new PlaceholderItem("4", "Bollinger Bands"));
+        addIndicatorsItem(new PlaceholderItem("5", "MACD"));
+        addIndicatorsItem(new PlaceholderItem("6", "Fibonacci Retracement"));
+        addIndicatorsItem(new PlaceholderItem("7", "Ichimoku Cloud"));
 
     }
 
