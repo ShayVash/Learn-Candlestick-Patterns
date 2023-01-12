@@ -25,6 +25,7 @@
         <item>THREEINSIDEDOWN</item>
     </string-array>
 
+    // Quiz Questions
     <string-array name="Q1">
         <item>hammer</item>
         <item>What Is The Name Of This Pattern?</item>
@@ -268,5 +269,380 @@ the market, and finally a third red candle representing sellers taking control o
         <item>an indicator that shows the relationship between an assets price and its volume.</item>
         <item>an indicator that shows the average price of an asset over a period of time.</item>
         <item>an indicator that shows the volatility of an assets price.</item>
+    </string-array>
+
+
+    // Basics Test Questions
+    <string-array name="basics_1">
+        <item>NONE</item>
+        <item>Which of the following answers best describe technical analysis?</item>
+        <item>A method of evaluating assets using technical indicators, calculations and candlestick patterns</item>
+        <item>A method of evaluating assets using technical indicators, calculations and news</item>
+        <item>A method that helps people make money easily</item>
+    </string-array>
+    <string-array name="basics_2">
+        <item>test_upper_wick</item>
+        <item>What part of the candlestick is the arrow pointing to?</item>
+        <item>The upper wick/shadow</item>
+        <item>The Buying wick/shadow</item>
+        <item>the open price</item>
+        <item>the close price</item>
+    </string-array>
+    <string-array name="basics_3">
+        <item>NONE</item>
+        <item>how does a candlestick chart differ from a bar chart?</item>
+        <item>Candlestick charts display the high, low, open, and close prices of an asset while bar charts only show direction and strength</item>
+        <item>Bar charts display the high, low, open, and close prices of an asset while candlestick charts only show direction and strength</item>
+        <item>Candlestick charts and bar charts and different names for the same thing</item>
+    </string-array>
+    <string-array name="basics_4">
+        <item>test_red_close</item>
+        <item>What part of the candlestick is the arrow pointing to?</item>
+        <item>the close price</item>
+        <item>The Buying wick/shadow</item>
+        <item>the open price</item>
+        <item>the lowest price </item>
+    </string-array>
+    <string-array name="basics_5">
+        <item>NONE</item>
+        <item>What is the definition of the range of a candlestick?</item>
+        <item>The difference between the highest and lowest price of a candle</item>
+        <item>The difference between the open and close price</item>
+        <item>The difference between the first price traded and the last price traded during the period of the candle formation</item>
+        <item>the close price</item>
+    </string-array>
+    <string-array name="basics_6">
+        <item>NONE</item>
+        <item>What dictates the time frame you trade on?</item>
+        <item>individual traders personal trading style.</item>
+        <item>The platform you trade on.</item>
+        <item>The trade volume of the market.</item>
+    </string-array>
+    <string-array name="basics_7">
+        <item>test_green_open</item>
+        <item>What part of the candlestick is the arrow pointing to?</item>
+        <item>the open price</item>
+        <item>The Buying wick/shadow</item>
+        <item>The buying point</item>
+        <item>the close price</item>
+    </string-array>
+    <string-array name="basics_8">
+        <item>NONE</item>
+        <item>The open price of a candle is indicated by?</item>
+        <item>The Body</item>
+        <item>The Wicks</item>
+    </string-array>
+    <string-array name="basics_9">
+        <item>NONE</item>
+        <item>The direction of a candles is indicated by?</item>
+        <item>The color of the candle</item>
+        <item>The wicks of the candle</item>
+        <item>The range of the candle</item>
+    </string-array>
+    <string-array name="basics_10">
+        <item>NONE</item>
+        <item>what is not considered a part of the candlestick chart?</item>
+        <item>Volume Of Trading</item>
+        <item>Opening Price</item>
+        <item>Shadows</item>
+        <item>Closing Price</item>
+    </string-array>
+    <string-array name="basics_11">
+        <item>NONE</item>
+        <item>What is one of the limitations of technical analysis?</item>
+        <item>Technical Analysis does not take into account any external factors, such as economic news or global events</item>
+        <item>Technical analysis is a foreword-looking tool, meaning that it only considers future market data</item>
+        <item>Technical analysis has no limitations</item>
+    </string-array>
+    <string-array name="basics_12">
+        <item>NONE</item>
+        <item>What is the definition of an up-trend</item>
+        <item>A series of higher highs and higher lows.</item>
+        <item>A series of lower highs and lower lows.</item>
+        <item>a series of higher highs and lower lows.</item>
+        <item>a series of lower highs and higher lows.</item>
+    </string-array>
+
+    // Bullish Patterns Test Questions
+    <string-array name="bullish_patterns_1">
+        <item>hammer</item>
+        <item>What is the most ideal length of the lower shadow of a hammer?</item>
+        <item>2x longer than the real body</item>
+        <item>1x longer than the real body</item>
+        <item>half of the length of the real body</item>
+        <item>1.5x longer than the real body</item>
+    </string-array>
+    <string-array name="bullish_patterns_2">
+        <item>threewhitesoldiers</item>
+        <item>The color of the candles in three white soldiers is not importent</item>
+        <item>false</item>
+        <item>true</item>
+    </string-array>
+    <string-array name="bullish_patterns_3">
+        <item>NONE</item>
+        <item>It has a long upper shadow with a tiny real body, when it appears with a confirmation the price is likely to fall. it is…</item>
+        <item>Shooting Star</item>
+        <item>Hammer</item>
+        <item>Three White Soldiers</item>
+        <item>Morning Star</item>
+    </string-array>
+    <string-array name="bullish_patterns_4">
+        <item>hammer</item>
+        <item>What is the color of the real body of a hammer</item>
+        <item>Red Or Green</item>
+        <item>Red</item>
+        <item>Green</item>
+    </string-array>
+    <string-array name="bullish_patterns_5">
+        <item>quizinvertedhammer</item>
+        <item>What pattern is this?</item>
+        <item>Inverted Hammer Pattern</item>
+        <item>Shooting Star Pattern</item>
+        <item>This isn\'t a pattern</item>
+    </string-array>
+    <string-array name="bullish_patterns_6">
+        <item>morningstar</item>
+        <item>What is it? What does it show?</item>
+        <item>Morning Star - strong buying pressure</item>
+        <item>Hammer - strong buying pressure</item>
+        <item>Shooting Star - strong selling pressure</item>
+        <item>Evening Star - strong selling pressure</item>
+    </string-array>
+    <string-array name="bullish_patterns_7">
+        <item>hammer</item>
+        <item>What does this pattern represent?</item>
+        <item>This pattern indicates a potential reversal from a bearish to a bullish trend.</item>
+        <item>This pattern indicates a potential reversal from a bullish to a bearish trend.</item>
+        <item>This pattern indicates the market is going to continue the bullish trend</item>
+    </string-array>
+    <string-array name="bullish_patterns_8">
+        <item>NONE</item>
+        <item>What does the morning star pattern look like?</item>
+        <item>It is composed of a large bearish candlestick, a small bullish candlestick, and a large bullish candlestick, in this order.</item>
+        <item>It is composed of a small bearish candlestick, a large bullish candlestick, and a small bullish candlestick, in this order.</item>
+        <item>It is composed of a small bearish candlestick and a large bullish candlestick.</item>
+    </string-array>
+    <string-array name="bullish_patterns_9">
+        <item>morningstar</item>
+        <item>What does this pattern represent?</item>
+        <item>This pattern indicates a potential reversal from a bearish to a bullish trend.</item>
+        <item>This pattern indicates a potential reversal from a bullish to a bearish trend.</item>
+        <item>This pattern indicates the market is going to continue the bullish trend</item>
+    </string-array>
+    <string-array name="bullish_patterns_10">
+        <item>threewhitesoldiers</item>
+        <item>Choose the most correct statement</item>
+        <item>The three white soldiers pattern suggests a strong change in market sentiment.</item>
+        <item>The three white soldiers pattern shows a strong change in market volume</item>
+    </string-array>
+
+    // Bearish Patterns Test Questions
+    <string-array name="bearish_patterns_1">
+        <item>bearishengulfing</item>
+        <item>What is the name of this pattern?</item>
+        <item>Bearish Engulfing</item>
+        <item>hammer and nail</item>
+        <item>two inside down</item>
+        <item>two black crows</item>
+    </string-array>
+    <string-array name="bearish_patterns_2">
+        <item>NONE</item>
+        <item>Which of the following is not a bearish candlestick pattern?</item>
+        <item>Hammer</item>
+        <item>Three Inside Down</item>
+        <item>Three Black Crows</item>
+    </string-array>
+    <string-array name="bearish_patterns_3">
+        <item>hangingman</item>
+        <item>What does the bearish hanging man pattern indicate?</item>
+        <item>A possible trend reversal to the downside</item>
+        <item>A bullish trend continuation</item>
+        <item>A bearish trend continuation</item>
+        <item>A bullish trend reversal</item>
+    </string-array>
+    <string-array name="bearish_patterns_4">
+        <item>NONE</item>
+        <item>What is the shooting star pattern?</item>
+        <item>A single candlestick pattern with a small real body and a long upper shadow</item>
+        <item>A single candlestick pattern with a small real body and a long lower shadow</item>
+        <item>A formation where a small bearish candle is contained within the previous larger bullish candle</item>
+        <item>A formation where a large bearish candle engulfs the previous smaller bullish candle</item>
+    </string-array><string-array name="bearish_patterns_5">
+        <item>NONE</item>
+        <item>What is the evening star pattern?</item>
+        <item>A bearish reversal pattern formed by three candlesticks</item>
+        <item>A bearish continuation pattern</item>
+        <item>A bullish reversal pattern</item>
+        <item>A bullish continuation pattern</item>
+    </string-array>
+    <string-array name="bearish_patterns_6">
+        <item>threeblackcrows</item>
+        <item>The three black crows pattern must include</item>
+        <item>3 Bearish Candles</item>
+        <item>3 Bullish Candles</item>
+        <item>3 Candles of equal size</item>
+    </string-array>
+    <string-array name="bearish_patterns_7">
+        <item>hangingman</item>
+        <item>The hanging man cant have any upper wick</item>
+        <item>False</item>
+        <item>True</item>
+    </string-array>
+    <string-array name="bearish_patterns_8">
+        <item>NONE</item>
+        <item>It has a long upper shadow with a tiny real body, when it appears with a confirmation the price is likely to fall. it is…</item>
+        <item>Shooting Star</item>
+        <item>Hammer</item>
+        <item>Three White Soldiers</item>
+        <item>Morning Star</item>
+    </string-array>
+    <string-array name="bearish_patterns_9">
+        <item>hangingman</item>
+        <item>The hanging man pattern is a</item>
+        <item>bearish reversal pattern</item>
+        <item>bullish reversal pattern</item>
+        <item>reversal pattern to any direction</item>
+    </string-array>
+    <string-array name="bearish_patterns_10">
+        <item>eveningstar</item>
+        <item>An evening star must have…</item>
+        <item>3 Candles with the middle one being the shortest</item>
+        <item>3 Bullish Candles</item>
+        <item>3 Bearish Candles</item>
+    </string-array>
+
+    // Indicators Patterns Test Questions
+    <string-array name="indicators_1">
+        <item>NONE</item>
+        <item>What technical indicator is used to measure the strength of a trend and predict future price movements?</item>
+        <item>Moving Average</item>
+        <item>Relative Strength Index (RSI)</item>
+        <item>Bollinger Bands</item>
+        <item>Fibonacci retracement</item>
+    </string-array>
+    <string-array name="indicators_2">
+        <item>NONE</item>
+        <item>What technical indicator measures the difference between two moving averages and is used to identify a new trend?</item>
+        <item>Fibonacci retracement</item>
+        <item>Bollinger Bands</item>
+        <item>Relative Strength Index (RSI)</item>
+    </string-array>
+    <string-array name="indicators_3">
+        <item>NONE</item>
+        <item>What technical indicator is used to determine overbought and oversold conditions in a market?</item>
+        <item>Relative Strength Index (RSI)</item>
+        <item>Fibonacci retracement</item>
+        <item>Bollinger Bands</item>
+    </string-array>
+    <string-array name="indicators_4">
+        <item>NONE</item>
+        <item>What technical indicator is used to measure volatility and identify potential areas of support and resistance?</item>
+        <item>Bollinger Bands</item>
+        <item>Relative Strength Index (RSI)</item>
+        <item>Fibonacci retracement</item>
+    </string-array>
+    <string-array name="indicators_5">
+        <item>NONE</item>
+        <item>Which describes a moving average the best?</item>
+        <item>an indicator that shows the average price of an asset over a period of time.</item>
+        <item>an indicator that measures the strength of an assets price movement.</item>
+        <item>an indicator that shows the volatility of an assets price.</item>
+    </string-array>
+    <string-array name="indicators_6">
+        <item>NONE</item>
+        <item>Which describes an RSI the best?</item>
+        <item>an indicator that measures the strength of an assets price movement.</item>
+        <item>an indicator that shows the average price of an asset over a period of time.</item>
+        <item>an indicator that shows the volatility of an assets price.</item>
+    </string-array>
+    <string-array name="indicators_7">
+        <item>NONE</item>
+        <item>Which describes an OBV the best?</item>
+        <item>an indicator that shows the relationship between an assets price and its volume.</item>
+        <item>an indicator that shows the average price of an asset over a period of time.</item>
+        <item>an indicator that shows the volatility of an assets price.</item>
+    </string-array>
+    <string-array name="indicators_8">
+        <item>NONE</item>
+        <item>What technical indicator is used to identify potential trend exhaustion and indicate possible price reversal?</item>
+        <item>The Relative Vigor Index (RVI)</item>
+        <item>Relative Strength Index (RSI)</item>
+        <item>Moving Average</item>
+    </string-array>
+    <string-array name="indicators_9">
+        <item>NONE</item>
+        <item>What technical indicator is used to measure the rate of change in a securitys price and identify potential trend reversals?</item>
+        <item>Moving Average Convergence Divergence (MACD)</item>
+        <item>On-Balance Volume (OBV)</item>
+        <item>Relative Strength Index (RSI)</item>
+    </string-array>
+    <string-array name="indicators_10">
+        <item>NONE</item>
+        <item>What technical indicator is used to identify potential trend changes and generate buy and sell signals?</item>
+        <item>Moving Average Convergence Divergence (MACD)</item>
+        <item>Bollinger Bands</item>
+        <item>Relative Strength Index (RSI)</item>
+        <item>Ichimoku Cloud</item>
+    </string-array>
+    <string-array name="indicators_11">
+        <item>NONE</item>
+        <item>What technical indicator is used to measure the cumulative buying and selling pressure in a market?</item>
+        <item>On-Balance Volume (OBV)</item>
+        <item>Accumulation/Distribution Line (ADL)</item>
+        <item>Relative Strength Index (RSI)</item>
+        <item>Ichimoku Cloud</item>
+    </string-array>
+    <string-array name="indicators_12">
+        <item>NONE</item>
+        <item>What technical indicator is used to identify potential support and resistance levels in a market?</item>
+        <item>Pivot Points</item>
+        <item>Fibonacci retracement</item>
+        <item>Moving Average</item>
+    </string-array>
+
+    // fundamental analysis Test Questions
+    <string-array name="fundamental_analysis_1">
+        <item>NONE</item>
+        <item>What is the most important financial statement for understanding a companys profitability?</item>
+        <item>Income Statement</item>
+        <item>Balance Sheet</item>
+        <item>Cash Flow Statement</item>
+    </string-array>
+    <string-array name="fundamental_analysis_2">
+        <item>NONE</item>
+        <item>What financial ratio is used to measure a companys ability to meet its short-term obligations?</item>
+        <item>Current Ratio</item>
+        <item>Debt-to-Equity Ratio</item>
+        <item>Price-to-Earnings Ratio (P/E Ratio)</item>
+        <item>Dividend Yield</item>
+    </string-array>
+    <string-array name="fundamental_analysis_3">
+        <item>NONE</item>
+        <item>What financial ratio is used to measure a companys efficiency in using its assets to generate revenue?</item>
+        <item>Return on Assets (ROA)</item>
+        <item>Return on Investment (ROI)</item>
+        <item>Return on Equity (ROE)</item>
+    </string-array>
+    <string-array name="fundamental_analysis_4">
+        <item>NONE</item>
+        <item>What financial ratio is used to measure a companys ability to generate cash flow compared to its debt obligations?</item>
+        <item>Interest Coverage Ratio</item>
+        <item>Debt-to-Equity Ratio</item>
+        <item>Cash Flow Coverage Ratio</item>
+    </string-array>
+    <string-array name="fundamental_analysis_5">
+        <item>NONE</item>
+        <item>What financial metric is used to measure the value of a company in relation to its earnings?</item>
+        <item>Price-to-Earnings Ratio (P/E Ratio)</item>
+        <item>Dividend Yield</item>
+        <item>Enterprise Value (EV)</item>
+        <item>Market Capitalization</item>
+    </string-array>
+    <string-array name="fundamental_analysis_6">
+        <item>NONE</item>
+        <item>What financial metric is used to measure a companys ability to generate cash flow relative to its size?</item>
+        <item>Price-to-Cash Flow Ratio (P/CF Ratio)</item>
+        <item>Enterprise Value (EV)</item>
+        <item>Market Capitalization</item>
     </string-array>
 </resources>

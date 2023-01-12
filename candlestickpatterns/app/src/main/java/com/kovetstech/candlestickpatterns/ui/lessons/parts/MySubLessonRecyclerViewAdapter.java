@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,13 +75,31 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
             editor.commit();
 
             holder.mCheckmark.setVisibility(View.VISIBLE);
-
-            try {
+            Log.w("Recycler", "Content View " + holder.mContentView.getText().toString());
+            if(holder.mContentView.getText().toString().contains("Test")){
                 Bundle bundle = new Bundle();
                 bundle.putString("param1", holder.mContentView.getText().toString());
-                Navigation.findNavController(v.mContentView).navigate(R.id.action_navigation_lessons_to_lesson, bundle);
-            }catch (Exception e){
-
+                if (is_learned) {
+                    try {
+                        Navigation.findNavController(v.mContentView).navigate(R.id.action_navigation_lessons_to_lesson_finished_test, bundle);
+                    }catch (Exception e){
+                        Log.w("Recycler", e.getMessage());
+                    }
+                }else{
+                    try {
+                        Navigation.findNavController(v.mContentView).navigate(R.id.action_navigation_lessons_to_lesson_test, bundle);
+                    }catch (Exception e){
+                        Log.w("Recycler", e.getMessage());
+                    }
+                }
+            }else{
+                try {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("param1", holder.mContentView.getText().toString());
+                    Navigation.findNavController(v.mContentView).navigate(R.id.action_navigation_lessons_to_lesson, bundle);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
         });
         holder.mCheckmark.setOnClickListener(view -> {

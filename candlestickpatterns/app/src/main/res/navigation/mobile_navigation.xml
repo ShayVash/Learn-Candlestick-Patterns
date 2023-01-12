@@ -18,6 +18,13 @@
         <action
             android:id="@+id/action_navigation_lessons_to_lesson"
             app:destination="@id/lesson" />
+        <action
+            android:id="@+id/action_navigation_lessons_to_lesson_test"
+            app:destination="@id/lesson_test" />
+        <action
+            android:id="@+id/action_navigation_lessons_to_lesson_finished_test"
+            app:destination="@id/lesson_finished_test"
+            app:popUpTo="@id/navigation_lessons" />
     </fragment>
     <fragment
         android:id="@+id/navigation_quiz"
@@ -32,5 +39,29 @@
         <argument
             android:name="param1"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesson_test"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.tests.Lesson_test"
+        android:label="fragment_lesson_test"
+        tools:layout="@layout/fragment_lesson_test" >
+        <action
+            android:id="@+id/action_lesson_test_to_lesson_finished_test"
+            app:destination="@id/lesson_finished_test"
+            app:popUpTo="@id/navigation_lessons" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesson_finished_test"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.tests.Lesson_finished_test"
+        android:label="fragment_lesson_finished_test"
+        tools:layout="@layout/fragment_lesson_finished_test" >
+        <action
+            android:id="@+id/action_lesson_finished_test_to_lesson_test"
+            app:destination="@id/lesson_test"
+            app:popUpTo="@id/navigation_lessons" />
+        <action
+            android:id="@+id/action_lesson_finished_test_to_navigation_lessons"
+            app:destination="@id/navigation_lessons"
+            app:popUpTo="@id/navigation_lessons" />
     </fragment>
 </navigation>

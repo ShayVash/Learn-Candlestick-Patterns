@@ -51,7 +51,7 @@ public class PlaceholderContent {
         addBearishPatternsItem(new PlaceholderItem("0", "Evening Star"));
         addBearishPatternsItem(new PlaceholderItem("1", "Three Black Crows"));
         addBearishPatternsItem(new PlaceholderItem("2", "Hanging Man"));
-        addBullishPatternsItem(new PlaceholderItem("3", "Shooting Star"));
+        addBearishPatternsItem(new PlaceholderItem("3", "Shooting Star"));
         addBearishPatternsItem(new PlaceholderItem("4", "Bearish Engulfing"));
         addBearishPatternsItem(new PlaceholderItem("5", "Bearish Three Line Strike"));
         addBearishPatternsItem(new PlaceholderItem("6", "Three Inside Down"));
@@ -70,6 +70,7 @@ public class PlaceholderContent {
         addFundamentalItem(new PlaceholderItem("0", "Fundamental Analysis Basics"));
         addFundamentalItem(new PlaceholderItem("1", "Financial Statements"));
         addFundamentalItem(new PlaceholderItem("2", "Company Fundamentals"));
+        addFundamentalItem(new PlaceholderItem("7", "Fundamental Analysis Test"));
     }
 
     private static void addBasicsItem(PlaceholderItem item) {
