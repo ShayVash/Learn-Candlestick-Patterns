@@ -27,6 +27,9 @@ public class PlaceholderContent {
     public static final List<PlaceholderItem> INDICATORS_ITEMS = new ArrayList<PlaceholderItem>();
     public static final Map<String, PlaceholderItem> INDICATORS_ITEM_MAP = new HashMap<String, PlaceholderItem>();
 
+    public static final List<PlaceholderItem> FUNDAMENTAL_ITEMS = new ArrayList<PlaceholderItem>();
+    public static final Map<String, PlaceholderItem> FUNDAMENTAL_ITEM_MAP = new HashMap<String, PlaceholderItem>();
+
     static  {
         // Add some sample items.
         addBasicsItem(new PlaceholderItem("0", "What Is Technical Analysis"));
@@ -35,6 +38,7 @@ public class PlaceholderContent {
         addBasicsItem(new PlaceholderItem("3", "How To Read Candlestick Patterns"));
         addBasicsItem(new PlaceholderItem("4","Charting On Different Time Frames"));
         addBasicsItem(new PlaceholderItem("5","How To Identify Up & Down Trends"));
+        addBasicsItem(new PlaceholderItem("6","Basics Test"));
 
         addBullishPatternsItem(new PlaceholderItem("0", "Hammer"));
         addBullishPatternsItem(new PlaceholderItem("1", "Morning Star"));
@@ -42,6 +46,7 @@ public class PlaceholderContent {
         addBullishPatternsItem(new PlaceholderItem("3", "Bullish Engulfing"));
         addBullishPatternsItem(new PlaceholderItem("4", "Bullish Three Line Strike"));
         addBullishPatternsItem(new PlaceholderItem("5", "Three Inside Up"));
+        addBullishPatternsItem(new PlaceholderItem("6", "Bullish Patterns Test"));
 
         addBearishPatternsItem(new PlaceholderItem("0", "Evening Star"));
         addBearishPatternsItem(new PlaceholderItem("1", "Three Black Crows"));
@@ -50,6 +55,7 @@ public class PlaceholderContent {
         addBearishPatternsItem(new PlaceholderItem("4", "Bearish Engulfing"));
         addBearishPatternsItem(new PlaceholderItem("5", "Bearish Three Line Strike"));
         addBearishPatternsItem(new PlaceholderItem("6", "Three Inside Down"));
+        addBearishPatternsItem(new PlaceholderItem("7", "Bearish Patterns Test"));
 
         addIndicatorsItem(new PlaceholderItem("0", "Moving Averages"));
         addIndicatorsItem(new PlaceholderItem("1", "On Balance Volume (OBV)"));
@@ -59,7 +65,11 @@ public class PlaceholderContent {
         addIndicatorsItem(new PlaceholderItem("5", "MACD"));
         addIndicatorsItem(new PlaceholderItem("6", "Fibonacci Retracement"));
         addIndicatorsItem(new PlaceholderItem("7", "Ichimoku Cloud"));
+        addIndicatorsItem(new PlaceholderItem("8", "Indicators Test"));
 
+        addFundamentalItem(new PlaceholderItem("0", "Fundamental Analysis Basics"));
+        addFundamentalItem(new PlaceholderItem("1", "Financial Statements"));
+        addFundamentalItem(new PlaceholderItem("2", "Company Fundamentals"));
     }
 
     private static void addBasicsItem(PlaceholderItem item) {
@@ -77,6 +87,10 @@ public class PlaceholderContent {
     private static void addIndicatorsItem(PlaceholderItem item) {
         INDICATORS_ITEMS.add(item);
         INDICATORS_ITEM_MAP.put(item.id, item);
+    }
+    private static void addFundamentalItem(PlaceholderItem item) {
+        FUNDAMENTAL_ITEMS.add(item);
+        FUNDAMENTAL_ITEM_MAP.put(item.id, item);
     }
 
     public static class PlaceholderItem {

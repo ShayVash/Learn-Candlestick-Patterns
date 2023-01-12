@@ -83,6 +83,9 @@ public class SubLessonFragment extends Fragment{
                 case "Indicators":
                     adapter = new MySubLessonRecyclerViewAdapter(PlaceholderContent.INDICATORS_ITEMS);
                     break;
+                case "Fundamentals":
+                    adapter = new MySubLessonRecyclerViewAdapter(PlaceholderContent.FUNDAMENTAL_ITEMS);
+                    break;
             }
 
             recyclerView.setAdapter(adapter);

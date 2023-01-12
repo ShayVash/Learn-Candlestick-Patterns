@@ -108,6 +108,11 @@ public class lesson extends Fragment {
         urls.put("Three Inside Up", "https://sites.google.com/view/candle-pattern-lessons/three-inside-down");
         urls.put("Three Inside Down", "https://sites.google.com/view/candle-pattern-lessons/three-inside-up");
 
+        // Fundamental
+        urls.put("Fundamental Analysis Basics", "https://sites.google.com/view/candle-pattern-lessons/fundamental-analysis-basics");
+        urls.put("Financial Statements", "https://sites.google.com/view/candle-pattern-lessons/financial-statements");
+        urls.put("Company Fundamentals", "https://sites.google.com/view/candle-pattern-lessons/company-fundamentals");
+
         // Load the lesson using the map searching for mParam1
         wv.loadUrl(urls.get(mParam1));
 

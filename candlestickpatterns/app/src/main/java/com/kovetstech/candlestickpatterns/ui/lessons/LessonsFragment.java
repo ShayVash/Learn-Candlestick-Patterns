@@ -42,6 +42,9 @@ public class LessonsFragment extends Fragment{
 
         lessonList indicators = lessonList.newInstance("Indicators");
         getChildFragmentManager().beginTransaction().replace(R.id.indicators, indicators).commit();
+
+        lessonList fundamentals = lessonList.newInstance("Fundamentals");
+        getChildFragmentManager().beginTransaction().replace(R.id.fundamental, fundamentals).commit();
         return v;
     }
 }
