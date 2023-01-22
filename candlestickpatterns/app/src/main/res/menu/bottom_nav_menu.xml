@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <item
         android:id="@+id/navigation_lessons"
@@ -12,8 +14,19 @@
         android:title="@string/simulator" />
 
     <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_nav_profile"
+        android:title="Profile" />
+
+    <item
         android:id="@+id/navigation_quiz"
         android:icon="@drawable/ic_nav_quiz"
         android:title="@string/quiz" />
+
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_nav_settings"
+        android:title="@string/settings" />
+
 
 </menu>

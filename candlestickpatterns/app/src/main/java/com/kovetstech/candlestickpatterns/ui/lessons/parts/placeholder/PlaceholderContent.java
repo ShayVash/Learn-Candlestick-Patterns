@@ -32,45 +32,45 @@ public class PlaceholderContent {
 
     static  {
         // Add some sample items.
-        addBasicsItem(new PlaceholderItem("0", "What Is Technical Analysis"));
-        addBasicsItem(new PlaceholderItem("1", "Key Terms Used In Technical Analysis"));
-        addBasicsItem(new PlaceholderItem("2", "The Limitations Of Technical Analysis"));
-        addBasicsItem(new PlaceholderItem("3", "How To Read Candlestick Patterns"));
-        addBasicsItem(new PlaceholderItem("4","Charting On Different Time Frames"));
-        addBasicsItem(new PlaceholderItem("5","How To Identify Up & Down Trends"));
-        addBasicsItem(new PlaceholderItem("6","Basics Test"));
+        addBasicsItem(new PlaceholderItem("0", "What Is Technical Analysis", "48 Sec To Read"));
+        addBasicsItem(new PlaceholderItem("1", "Key Terms Used In Technical Analysis", "1m 13s To Read"));
+        addBasicsItem(new PlaceholderItem("2", "The Limitations Of Technical Analysis", "1m 30s To Read"));
+        addBasicsItem(new PlaceholderItem("3", "How To Read Candlestick Patterns", "1m 28s To Read"));
+        addBasicsItem(new PlaceholderItem("4","Charting On Different Time Frames", "2m 33s To Read"));
+        addBasicsItem(new PlaceholderItem("5","How To Identify Up & Down Trends", "1m 39s To Read"));
+        addBasicsItem(new PlaceholderItem("6","Basics Test", ""));
 
-        addBullishPatternsItem(new PlaceholderItem("0", "Hammer"));
-        addBullishPatternsItem(new PlaceholderItem("1", "Morning Star"));
-        addBullishPatternsItem(new PlaceholderItem("2", "Three White Soldiers"));
-        addBullishPatternsItem(new PlaceholderItem("3", "Bullish Engulfing"));
-        addBullishPatternsItem(new PlaceholderItem("4", "Bullish Three Line Strike"));
-        addBullishPatternsItem(new PlaceholderItem("5", "Three Inside Up"));
-        addBullishPatternsItem(new PlaceholderItem("6", "Bullish Patterns Test"));
+        addBullishPatternsItem(new PlaceholderItem("0", "Hammer", "52s To Read"));
+        addBullishPatternsItem(new PlaceholderItem("1", "Morning Star", "1m To Read"));
+        addBullishPatternsItem(new PlaceholderItem("2", "Three White Soldiers", "42s To Read"));
+        addBullishPatternsItem(new PlaceholderItem("3", "Bullish Engulfing", "41s To Read"));
+        addBullishPatternsItem(new PlaceholderItem("4", "Bullish Three Line Strike", "1m 14s To Read"));
+        addBullishPatternsItem(new PlaceholderItem("5", "Three Inside Up", "55s To Read"));
+        addBullishPatternsItem(new PlaceholderItem("6", "Bullish Patterns Test", ""));
 
-        addBearishPatternsItem(new PlaceholderItem("0", "Evening Star"));
-        addBearishPatternsItem(new PlaceholderItem("1", "Three Black Crows"));
-        addBearishPatternsItem(new PlaceholderItem("2", "Hanging Man"));
-        addBearishPatternsItem(new PlaceholderItem("3", "Shooting Star"));
-        addBearishPatternsItem(new PlaceholderItem("4", "Bearish Engulfing"));
-        addBearishPatternsItem(new PlaceholderItem("5", "Bearish Three Line Strike"));
-        addBearishPatternsItem(new PlaceholderItem("6", "Three Inside Down"));
-        addBearishPatternsItem(new PlaceholderItem("7", "Bearish Patterns Test"));
+        addBearishPatternsItem(new PlaceholderItem("0", "Evening Star", "1m 9s To Read"));
+        addBearishPatternsItem(new PlaceholderItem("1", "Three Black Crows", "41s To Read"));
+        addBearishPatternsItem(new PlaceholderItem("2", "Hanging Man", "54s To Read"));
+        addBearishPatternsItem(new PlaceholderItem("3", "Shooting Star", "58s To Read"));
+        addBearishPatternsItem(new PlaceholderItem("4", "Bearish Engulfing", "42s To Read"));
+        addBearishPatternsItem(new PlaceholderItem("5", "Bearish Three Line Strike","1m 7s To Read"));
+        addBearishPatternsItem(new PlaceholderItem("6", "Three Inside Down", "55s To Read"));
+        addBearishPatternsItem(new PlaceholderItem("7", "Bearish Patterns Test", ""));
 
-        addIndicatorsItem(new PlaceholderItem("0", "Moving Averages"));
-        addIndicatorsItem(new PlaceholderItem("1", "On Balance Volume (OBV)"));
-        addIndicatorsItem(new PlaceholderItem("2", "Relative Strength Index (RSI)"));
-        addIndicatorsItem(new PlaceholderItem("3", "Stochastic Oscillator"));
-        addIndicatorsItem(new PlaceholderItem("4", "Bollinger Bands"));
-        addIndicatorsItem(new PlaceholderItem("5", "MACD"));
-        addIndicatorsItem(new PlaceholderItem("6", "Fibonacci Retracement"));
-        addIndicatorsItem(new PlaceholderItem("7", "Ichimoku Cloud"));
-        addIndicatorsItem(new PlaceholderItem("8", "Indicators Test"));
+        addIndicatorsItem(new PlaceholderItem("0", "Moving Averages", "1m 31s To Read"));
+        addIndicatorsItem(new PlaceholderItem("1", "On Balance Volume (OBV)", "1m 10s To Read"));
+        addIndicatorsItem(new PlaceholderItem("2", "Relative Strength Index (RSI)", "1m To Read"));
+        addIndicatorsItem(new PlaceholderItem("3", "Stochastic Oscillator", "1m 35s To Read"));
+        addIndicatorsItem(new PlaceholderItem("4", "Bollinger Bands", "1m 41s To Read"));
+        addIndicatorsItem(new PlaceholderItem("5", "MACD", "1m 35s To Read"));
+        addIndicatorsItem(new PlaceholderItem("6", "Fibonacci Retracement", "1m 25s To Read"));
+        addIndicatorsItem(new PlaceholderItem("7", "Ichimoku Cloud", "1m 46s To Read"));
+        addIndicatorsItem(new PlaceholderItem("8", "Indicators Test", ""));
 
-        addFundamentalItem(new PlaceholderItem("0", "Fundamental Analysis Basics"));
-        addFundamentalItem(new PlaceholderItem("1", "Financial Statements"));
-        addFundamentalItem(new PlaceholderItem("2", "Company Fundamentals"));
-        addFundamentalItem(new PlaceholderItem("7", "Fundamental Analysis Test"));
+        addFundamentalItem(new PlaceholderItem("0", "Fundamental Analysis Basics", "2m 7s To Read"));
+        addFundamentalItem(new PlaceholderItem("1", "Financial Statements", "2m 34s To Read"));
+        addFundamentalItem(new PlaceholderItem("2", "Company Fundamentals", "1m 41s To Read"));
+        addFundamentalItem(new PlaceholderItem("7", "Fundamental Analysis Test", ""));
     }
 
     private static void addBasicsItem(PlaceholderItem item) {
@@ -97,10 +97,12 @@ public class PlaceholderContent {
     public static class PlaceholderItem {
         public final String id;
         public final String content;
+        public final String read_time;
 
-        public PlaceholderItem(String id, String content) {
+        public PlaceholderItem(String id, String content, String read_time) {
             this.id = id;
             this.content = content;
+            this.read_time = read_time;
         }
 
         @NonNull

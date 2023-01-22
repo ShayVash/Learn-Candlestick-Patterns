@@ -11,6 +11,11 @@
         android:label="Simulator"
         tools:layout="@layout/fragment_simulator" />
     <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.kovetstech.candlestickpatterns.settings"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
         android:id="@+id/navigation_lessons"
         android:name="com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment"
         android:label="fragment_lessons"
@@ -64,4 +69,8 @@
             app:destination="@id/navigation_lessons"
             app:popUpTo="@id/navigation_lessons" />
     </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.kovetstech.candlestickpatterns.ui.profile.profile"
+        android:label="Profile" />
 </navigation>

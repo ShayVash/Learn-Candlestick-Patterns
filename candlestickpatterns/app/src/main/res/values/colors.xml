@@ -19,4 +19,22 @@
 
     <color name="learnedDark">#545454</color>
     <color name="learnedLight">#A5A5A5</color>
+
+    <color name="profile_background_dark">#1F1F1F</color>
+    <color name="profile_background_light">#FFFFFF</color>
+    <color name="progress_tab_background_dark">#000000</color>
+    <color name="progress_tab_background_light">#E5E6E4</color>
+
+    <color name="blue_progress_background_dark">#071E30</color>
+    <color name="blue_progress_background_light">#A4C4DD</color>
+    <color name="blue_progress_foreground">#3794E1</color>
+
+    <color name="red_progress_background_dark">#2C1C1D</color>
+    <color name="red_progress_background_light">#EBB4B3</color>
+    <color name="red_progress_foreground">#B83636</color>
+
+    <color name="green_progress_background_dark">#1C7838</color>
+    <color name="green_progress_background_light">#7CD898</color>
+    <color name="green_progress_foreground">#2EC25B</color>
+
 </resources>

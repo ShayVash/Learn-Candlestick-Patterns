@@ -215,8 +215,6 @@ public class Quiz extends Fragment {
         }.start();
     }
 
-
-
     @Override
     public void onPause() {
         if(cdt != null){

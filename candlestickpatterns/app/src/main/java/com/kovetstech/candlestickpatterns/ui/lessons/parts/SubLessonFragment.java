@@ -120,5 +120,4 @@ public class SubLessonFragment extends Fragment{
         ((lessonList) requireParentFragment()).SetPrec(df.format(prec)+"%");
     }
 
-
 }

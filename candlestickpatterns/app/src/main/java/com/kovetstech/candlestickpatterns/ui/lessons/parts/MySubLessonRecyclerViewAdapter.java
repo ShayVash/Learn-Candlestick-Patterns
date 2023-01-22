@@ -50,7 +50,6 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
 
         context = v.itemView.getContext();
 
-
         return v;
     }
     @Override
@@ -62,7 +61,9 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
 
         holder.mItem = mValues.get(position);
         holder.mContentView.setText(mValues.get(position).content);
+        holder.mReadTimeView.setText(mValues.get(position).read_time);
         holder.mCheckmark.setVisibility(View.INVISIBLE);
+
 
         if(is_learned){
             holder.mCheckmark.setVisibility(View.VISIBLE);
@@ -130,6 +131,7 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView mContentView;
+        public final TextView mReadTimeView;
         public final ImageView mCheckmark;
         public PlaceholderItem mItem;
 
@@ -137,6 +139,7 @@ public class MySubLessonRecyclerViewAdapter extends RecyclerView.Adapter<MySubLe
             super(binding.getRoot());
             mContentView = binding.content;
             mCheckmark = binding.checkmark;
+            mReadTimeView = binding.readTime;
         }
 
         @NonNull

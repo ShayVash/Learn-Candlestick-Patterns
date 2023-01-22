@@ -5,6 +5,8 @@
 
     <string name="lessons">lessons</string>
     <string name="simulator">Simulator</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
     <string name="quiz">Quiz</string>
 
     <string-array name="patterns">
@@ -467,7 +469,8 @@ the market, and finally a third red candle representing sellers taking control o
         <item>A single candlestick pattern with a small real body and a long lower shadow</item>
         <item>A formation where a small bearish candle is contained within the previous larger bullish candle</item>
         <item>A formation where a large bearish candle engulfs the previous smaller bullish candle</item>
-    </string-array><string-array name="bearish_patterns_5">
+    </string-array>
+    <string-array name="bearish_patterns_5">
         <item>NONE</item>
         <item>What is the evening star pattern?</item>
         <item>A bearish reversal pattern formed by three candlesticks</item>

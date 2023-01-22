@@ -24,6 +24,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.kovetstech.candlestickpatterns.R;
 
 import java.util.Arrays;
@@ -63,6 +68,9 @@ public class Lesson_test extends Fragment {
     private int current_question = 0;
     private double question_amount;
     private double correct_answers;
+
+    AdView adView;
+
 
     public Lesson_test() {
     }
@@ -112,6 +120,17 @@ public class Lesson_test extends Fragment {
         QuestionImage = v.findViewById(R.id.quiz_image);
         Question = v.findViewById(R.id.quiz_question);
         Question_number = v.findViewById(R.id.question_amount);
+
+        MobileAds.initialize(context, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        adView = v.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
         return v;
     }
     @Override
@@ -214,17 +233,18 @@ public class Lesson_test extends Fragment {
         }catch (IndexOutOfBoundsException ex){
             AnswerFour.setVisibility(View.INVISIBLE);
         }
+
     }
 
     public void UserAnswered(View view){
-        if(((Button) view).getText().equals(TrueAnswer)){
-            Toast.makeText(getContext(), "Correct", Toast.LENGTH_SHORT).show();
-            correct_answers++;
-            CorrectAnim();
-        }else{
-            Toast.makeText(getContext(), "Wrong", Toast.LENGTH_SHORT).show();
-            WrongAnim();
-        }
+            if(((Button) view).getText().equals(TrueAnswer)){
+                Toast.makeText(getContext(), "Correct", Toast.LENGTH_SHORT).show();
+                correct_answers++;
+                CorrectAnim();
+            }else{
+                Toast.makeText(getContext(), "Wrong", Toast.LENGTH_SHORT).show();
+                WrongAnim();
+            }
     }
 
     public void CorrectAnim(){

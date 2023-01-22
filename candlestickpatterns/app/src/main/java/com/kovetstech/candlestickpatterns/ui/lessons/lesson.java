@@ -65,6 +65,7 @@ public class lesson extends Fragment {
                         // an ad is loaded.
                         mInterstitialAd = interstitialAd;
                         Log.i("SIMULATOR", "onAdLoaded");
+                        displayInterstitial();
                     }
 
                     @Override
@@ -117,7 +118,7 @@ public class lesson extends Fragment {
         wv.loadUrl(urls.get(mParam1));
 
 
-        displayInterstitial();
+
         return v;
     }
 
