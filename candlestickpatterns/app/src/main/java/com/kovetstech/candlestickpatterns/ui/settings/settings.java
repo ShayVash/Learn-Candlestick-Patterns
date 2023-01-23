@@ -1,4 +1,4 @@
-package com.kovetstech.candlestickpatterns;
+package com.kovetstech.candlestickpatterns.ui.settings;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.kovetstech.candlestickpatterns.R;
 
 /**
  * A simple {@link Fragment} subclass.
