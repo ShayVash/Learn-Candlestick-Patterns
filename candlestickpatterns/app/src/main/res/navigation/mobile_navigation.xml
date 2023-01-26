@@ -14,7 +14,17 @@
         android:id="@+id/navigation_settings"
         android:name="com.kovetstech.candlestickpatterns.ui.settings.settings"
         android:label="Settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_navigation_settings_to_simulator_settings"
+            app:destination="@id/simulator_settings" />
+        <action
+            android:id="@+id/action_navigation_settings_to_quiz_settings"
+            app:destination="@id/quiz_settings" />
+        <action
+            android:id="@+id/action_navigation_settings_to_info_settings"
+            app:destination="@id/info_settings" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_lessons"
         android:name="com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment"
@@ -73,4 +83,19 @@
         android:id="@+id/navigation_profile"
         android:name="com.kovetstech.candlestickpatterns.ui.profile.profile"
         android:label="Profile" />
+    <fragment
+        android:id="@+id/simulator_settings"
+        android:name="com.kovetstech.candlestickpatterns.ui.settings.simulator.simulator_settings"
+        android:label="fragment_simulator_settings"
+        tools:layout="@layout/fragment_simulator_settings" />
+    <fragment
+        android:id="@+id/quiz_settings"
+        android:name="com.kovetstech.candlestickpatterns.ui.settings.quiz.quiz_settings"
+        android:label="fragment_quiz_settings"
+        tools:layout="@layout/fragment_quiz_settings" />
+    <fragment
+        android:id="@+id/info_settings"
+        android:name="com.kovetstech.candlestickpatterns.ui.settings.info.info_settings"
+        android:label="fragment_info_settings"
+        tools:layout="@layout/fragment_info_settings" />
 </navigation>
