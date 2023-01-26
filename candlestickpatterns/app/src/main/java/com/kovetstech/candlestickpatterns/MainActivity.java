@@ -1,5 +1,6 @@
 package com.kovetstech.candlestickpatterns;
 
+import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import com.onesignal.OneSignal;
 public class MainActivity extends AppCompatActivity {
 
     private static final String ONESIGNAL_APP_ID = "2ed0a473-11cf-46a3-b082-410a992360f7";
+    public static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         com.kovetstech.candlestickpatterns.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        context = MainActivity.this;
+        context.setTheme(R.style.AlertDialog_AppCompat);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
