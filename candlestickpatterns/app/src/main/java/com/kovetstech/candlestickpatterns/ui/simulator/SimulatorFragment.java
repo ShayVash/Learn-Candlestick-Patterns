@@ -1,5 +1,7 @@
 package com.kovetstech.candlestickpatterns.ui.simulator;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -63,7 +65,12 @@ public class SimulatorFragment extends Fragment {
     MediaPlayer mp;
 
     private InterstitialAd mInterstitialAd;
-    
+
+    int Inc_color;
+    int Dec_color;
+
+    int Shadow_color;
+    int Border_color;
 
     public SimulatorFragment() {
         // Required empty public constructor
@@ -143,13 +150,22 @@ public class SimulatorFragment extends Fragment {
     }
 
     // Set
+    public void get_colors_from_settings(){
+        SharedPreferences prefs = getContext().getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
+
+        Inc_color = prefs.getInt("Bullish Candle Colorc", getResources().getColor(R.color.downRed, null));
+        Dec_color = prefs.getInt("Bearish Candle Colorc", getResources().getColor(R.color.upGreen, null));
+        Shadow_color = prefs.getInt("Shadow Colorc", Color.GRAY);
+        Border_color = prefs.getInt("Chart Border Colorc", Color.LTGRAY);
+    }
     public void SetCandleGraph(){
+        get_colors_from_settings();
         candleStickChart.clear();
 
         candleStickChart.setHighlightPerDragEnabled(true);
 
         candleStickChart.setDrawBorders(true);
-        candleStickChart.setBorderColor(Color.LTGRAY);
+        candleStickChart.setBorderColor(Border_color);
         YAxis yAxis = candleStickChart.getAxisLeft();
         YAxis rightAxis = candleStickChart.getAxisRight();
         yAxis.setDrawGridLines(false);
@@ -171,14 +187,18 @@ public class SimulatorFragment extends Fragment {
         ArrayList<CandleEntry> CandleyValsCandleStick = sh.getRandomCandleChart(LineyValsCandleStick) ;
 
         CandleDataSet set1 = new CandleDataSet(CandleyValsCandleStick, "");
-        set1.setShadowColor(Color.GRAY);
+        set1.setShadowColor(Shadow_color);
         set1.setShadowWidth(0.8f);
-        set1.setDecreasingColor(getResources().getColor(R.color.downRed, null));
-        set1.setIncreasingColor(getResources().getColor(R.color.upGreen, null));
+        set1.setDecreasingColor(Dec_color);
+        set1.setIncreasingColor(Inc_color);
         set1.setDecreasingPaintStyle(Paint.Style.FILL);
         set1.setIncreasingPaintStyle(Paint.Style.FILL);
         set1.setNeutralColor(Color.LTGRAY);
         set1.setDrawValues(false);
+
+        // Set Colors from settings
+
+
 
         // create a data object with the datasets
         CandleData data = new CandleData(set1);
