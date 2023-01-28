@@ -153,8 +153,8 @@ public class SimulatorFragment extends Fragment {
     public void get_colors_from_settings(){
         SharedPreferences prefs = getContext().getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
 
-        Inc_color = prefs.getInt("Bullish Candle Colorc", getResources().getColor(R.color.downRed, null));
-        Dec_color = prefs.getInt("Bearish Candle Colorc", getResources().getColor(R.color.upGreen, null));
+        Inc_color = prefs.getInt("Bullish Candle Colorc", getResources().getColor(R.color.upGreen, null));
+        Dec_color = prefs.getInt("Bearish Candle Colorc", getResources().getColor(R.color.downRed, null));
         Shadow_color = prefs.getInt("Shadow Colorc", Color.GRAY);
         Border_color = prefs.getInt("Chart Border Colorc", Color.LTGRAY);
     }
