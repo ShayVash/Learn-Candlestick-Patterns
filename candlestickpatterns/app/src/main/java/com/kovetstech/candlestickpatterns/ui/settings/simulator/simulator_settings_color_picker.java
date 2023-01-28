@@ -11,6 +11,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,8 +32,8 @@ public class simulator_settings_color_picker extends Fragment {
     private static final String ARG_PARAM1 = "param1";
 
     int chosen_color;
-    private String colorpicker_title;
-    private static Context c;
+    int defult_color;
+    private String colorpicker_title = "Bullish Candle Color";
 
     private TextView title;
     private ImageView color_circle;
@@ -62,7 +63,7 @@ public class simulator_settings_color_picker extends Fragment {
         title = v.findViewById(R.id.colorpicker_title);
         color_circle = v.findViewById(R.id.colorpicker_circle);
 
-        setColors();
+        setDefultColors();
         set();
 
         return v;
@@ -70,7 +71,7 @@ public class simulator_settings_color_picker extends Fragment {
 
     public void set(){
         SharedPreferences prefs = getContext().getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
-        int chosen_color = prefs.getInt(colorpicker_title+"c", Color.WHITE); //0 is the default value
+        int chosen_color = prefs.getInt(colorpicker_title+"c", defult_color); //0 is the default value
 
         title.setText(colorpicker_title);
         color_circle.setImageTintList(ColorStateList.valueOf(chosen_color));
@@ -82,16 +83,25 @@ public class simulator_settings_color_picker extends Fragment {
             }
         });
     }
-    public void setColors(){
-        c = context;
-        c.setTheme(R.style.Widget_Custom_AlertDialog);
+    public void setDefultColors(){
+        switch (colorpicker_title){
+            case "Bullish Candle Color":
+                defult_color = getResources().getColor(R.color.upGreen, null);
+                break;
+            case "Bearish Candle Color":
+                defult_color = getResources().getColor(R.color.downRed, null);
+                break;
+            case "Chart Border Color":
+                defult_color = Color.LTGRAY;
+                break;
+            case "Shadow Color":
+                defult_color = Color.GRAY;
+                break;
+        }
     }
     public void open_colorpicker(){
-        Context c = context;
-        context.setTheme(R.style.AlertDialog_AppCompat);
-
         ColorPickerDialogBuilder
-                .with(c)
+                .with(context,R.style.Widget_Custom_AlertDialog )
                 .setTitle("Choose color")
                 .initialColor(Color.WHITE)
                 .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
