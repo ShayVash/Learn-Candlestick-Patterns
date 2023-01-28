@@ -1,6 +1,7 @@
 package com.kovetstech.candlestickpatterns.ui.quiz;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
@@ -13,11 +14,13 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +59,9 @@ public class Quiz extends Fragment {
     CountDownTimer cdt;
     MediaPlayer mp;
 
+    Boolean DisplayByOrder = false;
+    int Question_Number = 1;
+
     public Quiz() {
         // Required empty public constructor
     }
@@ -69,6 +75,9 @@ public class Quiz extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_quiz, container, false);
+
+        SharedPreferences prefs = getContext().getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
+        DisplayByOrder = prefs.getBoolean("quizbyorder", false);
 
         context = v.getContext();
 
@@ -111,7 +120,16 @@ public class Quiz extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        GetRandomQuestion();
+        SharedPreferences prefs = getContext().getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
+        DisplayByOrder = prefs.getBoolean("quizbyorder", false);
+        Question_Number = 1;
+        Log.w("DISPLAYBYORDER", "Display By Order Is: " + DisplayByOrder);
+        if(DisplayByOrder){
+            GetQuestionByOrder();
+        }else{
+            GetRandomQuestion();
+        }
+
     }
 
     public void UserAnswered(View view){
@@ -158,6 +176,37 @@ public class Quiz extends Fragment {
 
         SetNewQuestion(QuestionImageDrawable, QuestionText, OtherAnswers);
     }
+    public void GetQuestionByOrder(){
+        QuestionImage.setVisibility(View.VISIBLE);
+        AnswerThree.setVisibility(View.VISIBLE);
+        AnswerFour.setVisibility(View.VISIBLE);
+
+        String resource = "Q" + Question_Number;
+        int ID = this.getResources().getIdentifier(resource, "array", (requireContext()).getPackageName());
+        String[] Qdata = getResources().getStringArray(ID);
+
+        if(!Qdata[0].equals("NONE")) {
+            String DrawableResource = Qdata[0];
+            int DrawableID = getResources().getIdentifier(DrawableResource, "drawable", getContext().getPackageName());
+
+            QuestionImageDrawable = ContextCompat.getDrawable(getContext(), DrawableID);
+        }else{
+            QuestionImageDrawable = null;
+        }
+
+        QuestionText = Qdata[1];
+        TrueAnswer = Qdata[2];
+        if(Qdata.length == 6){
+            OtherAnswers = new String[]{Qdata[2], Qdata[3], Qdata[4], Qdata[5]};
+        }else if (Qdata.length == 5){
+            OtherAnswers = new String[]{Qdata[2], Qdata[3], Qdata[4]};
+        }else{
+            OtherAnswers = new String[]{Qdata[2], Qdata[3]};
+        }
+
+        Question_Number++;
+        SetNewQuestion(QuestionImageDrawable, QuestionText, OtherAnswers);
+    }
     public void SetNewQuestion(Drawable image, String QuestionText, String[] Answers){
         if(image != null) {
             QuestionImage.setImageDrawable(image);
@@ -195,7 +244,11 @@ public class Quiz extends Fragment {
 
             public void onFinish() {
                 ButtonClicked.setBackgroundTintList(DefultButtonColor);
-                GetRandomQuestion();
+                if(DisplayByOrder){
+                    GetQuestionByOrder();
+                }else{
+                    GetRandomQuestion();
+                }
             }
         }.start();
     }
@@ -210,7 +263,11 @@ public class Quiz extends Fragment {
 
             public void onFinish() {
                 ButtonClicked.setBackgroundTintList(DefultButtonColor);
-                GetRandomQuestion();
+                if(DisplayByOrder){
+                    GetQuestionByOrder();
+                }else{
+                    GetRandomQuestion();
+                }
             }
         }.start();
     }
@@ -232,7 +289,15 @@ public class Quiz extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        GetRandomQuestion();
+        SharedPreferences prefs = getContext().getSharedPreferences("CSPPREFS", Context.MODE_PRIVATE);
+        DisplayByOrder = prefs.getBoolean("quizbyorder", false);
+        Question_Number = 1;
+
+        if(DisplayByOrder){
+            GetQuestionByOrder();
+        }else{
+            GetRandomQuestion();
+        }
     }
     @Override
     public void onAttach(Context context) {
