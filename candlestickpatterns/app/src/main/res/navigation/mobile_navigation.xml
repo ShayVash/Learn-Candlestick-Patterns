@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_simulator">
+    app:startDestination="@id/navigation_profile">
 
     <fragment
         android:id="@+id/navigation_simulator"
@@ -17,13 +17,20 @@
         tools:layout="@layout/fragment_settings" >
         <action
             android:id="@+id/action_navigation_settings_to_simulator_settings"
-            app:destination="@id/simulator_settings" />
+            app:destination="@id/simulator_settings"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/mobile_navigation" />
         <action
             android:id="@+id/action_navigation_settings_to_quiz_settings"
-            app:destination="@id/quiz_settings" />
+            app:destination="@id/quiz_settings"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
         <action
             android:id="@+id/action_navigation_settings_to_info_settings"
-            app:destination="@id/info_settings" />
+            app:destination="@id/info_settings"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/navigation_lessons"
@@ -87,15 +94,27 @@
         android:id="@+id/simulator_settings"
         android:name="com.kovetstech.candlestickpatterns.ui.settings.simulator.simulator_settings"
         android:label="fragment_simulator_settings"
-        tools:layout="@layout/fragment_simulator_settings" />
+        tools:layout="@layout/fragment_simulator_settings" >
+        <action
+            android:id="@+id/action_simulator_settings_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
     <fragment
         android:id="@+id/quiz_settings"
         android:name="com.kovetstech.candlestickpatterns.ui.settings.quiz.quiz_settings"
         android:label="fragment_quiz_settings"
-        tools:layout="@layout/fragment_quiz_settings" />
+        tools:layout="@layout/fragment_quiz_settings" >
+        <action
+            android:id="@+id/action_quiz_settings_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
     <fragment
         android:id="@+id/info_settings"
         android:name="com.kovetstech.candlestickpatterns.ui.settings.info.info_settings"
         android:label="fragment_info_settings"
-        tools:layout="@layout/fragment_info_settings" />
+        tools:layout="@layout/fragment_info_settings" >
+        <action
+            android:id="@+id/action_info_settings_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
 </navigation>
