@@ -35,6 +35,7 @@ public class sub_settings_button extends Fragment {
     private static final int UI_MODE_NIGHT_NO = Configuration.UI_MODE_NIGHT_NO;
 
     int action_id;
+
     public sub_settings_button() {
         // Required empty public constructor
     }
@@ -136,6 +137,8 @@ public class sub_settings_button extends Fragment {
         action_id = R.id.action_navigation_settings_to_info_settings;
     }
     private void openSubSetting(){
-        Navigation.findNavController(v).navigate(action_id, null);
+        Navigation.findNavController(v).navigate(action_id);
     }
+
+
 }
