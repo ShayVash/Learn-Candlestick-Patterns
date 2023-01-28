@@ -46,6 +46,7 @@
     <style name="Widget.Custom.AlertDialog" parent="Theme.AppCompat.Dialog.Alert">
         <item name="android:background">@drawable/rounded</item>
         <item name="android:backgroundTint">#E5E6E4</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textAlignment">center</item>
         <item name="android:windowNoTitle">true</item>
         <item name="alertDialogCenterButtons">true</item>
