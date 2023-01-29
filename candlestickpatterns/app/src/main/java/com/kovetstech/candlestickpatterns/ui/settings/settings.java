@@ -36,9 +36,6 @@ public class settings extends Fragment {
         quiz_sub = sub_settings_button.newInstance("Quiz");
         getChildFragmentManager().beginTransaction().replace(R.id.quiz_sub, quiz_sub).commit();
 
-        info_sub = sub_settings_button.newInstance("Info");
-        getChildFragmentManager().beginTransaction().replace(R.id.info_sub, info_sub).commit();
-
         return v;
     }
 }

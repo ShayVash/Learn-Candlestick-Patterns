@@ -25,12 +25,8 @@
             android:id="@+id/action_navigation_settings_to_quiz_settings"
             app:destination="@id/quiz_settings"
             app:launchSingleTop="true"
-            app:popUpToInclusive="true"/>
-        <action
-            android:id="@+id/action_navigation_settings_to_info_settings"
-            app:destination="@id/info_settings"
-            app:launchSingleTop="true"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/mobile_navigation" />
     </fragment>
     <fragment
         android:id="@+id/navigation_lessons"
@@ -108,13 +104,5 @@
             android:id="@+id/action_quiz_settings_to_navigation_settings"
             app:destination="@id/navigation_settings" />
     </fragment>
-    <fragment
-        android:id="@+id/info_settings"
-        android:name="com.kovetstech.candlestickpatterns.ui.settings.info.info_settings"
-        android:label="fragment_info_settings"
-        tools:layout="@layout/fragment_info_settings" >
-        <action
-            android:id="@+id/action_info_settings_to_navigation_settings"
-            app:destination="@id/navigation_settings" />
-    </fragment>
+
 </navigation>

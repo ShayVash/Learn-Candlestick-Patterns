@@ -98,9 +98,7 @@ public class sub_settings_button extends Fragment {
             case "Quiz":
                 setQuiz();
                 break;
-            case "Info":
-                setInfo();
-                break;
+
             default:
                 Log.w("subsettings", "Sub setting is not set");
                 break;
@@ -126,16 +124,7 @@ public class sub_settings_button extends Fragment {
 
         action_id = R.id.action_navigation_settings_to_quiz_settings;
     }
-    private void setInfo(){
-        subsetting_icon = getResources().getDrawable(R.drawable.ic_info);
-        subsetting_icon.setTint(iconColor.getDefaultColor());
 
-        titleView.setText(subsetting_title);
-        iconView.setImageDrawable(subsetting_icon);
-        arrowView.setImageTintList(ColorStateList.valueOf(iconColor.getDefaultColor()));
-
-        action_id = R.id.action_navigation_settings_to_info_settings;
-    }
     private void openSubSetting(){
         Navigation.findNavController(v).navigate(action_id);
     }

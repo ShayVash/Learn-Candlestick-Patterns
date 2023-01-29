@@ -41,15 +41,4 @@
         app:layout_constraintTop_toBottomOf="@+id/simulator_sub"
         tools:layout="@layout/fragment_sub_settings_button" />
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/info_sub"
-        android:name="com.kovetstech.candlestickpatterns.ui.settings.sub_settings_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_sub"
-        tools:layout="@layout/fragment_sub_settings_button" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
