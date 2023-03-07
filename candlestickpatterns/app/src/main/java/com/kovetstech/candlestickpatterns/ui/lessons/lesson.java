@@ -83,6 +83,7 @@ public class lesson extends Fragment {
         urls.put("How To Read Candlestick Patterns", "https://sites.google.com/view/candle-pattern-lessons/intro-to-candle-sticks");
         urls.put("Charting On Different Time Frames", "https://sites.google.com/view/candle-pattern-lessons/charting-on-different-time-frames");
         urls.put("How To Identify Up & Down Trends", "https://sites.google.com/view/candle-pattern-lessons/how-to-identify-up-and-down-trends");
+        urls.put("Support & Resistance", "https://sites.google.com/view/candle-pattern-lessons/support-resistance");
 
         // Indicators
         urls.put("Moving Averages", "https://sites.google.com/view/candle-pattern-lessons/moving-averages");

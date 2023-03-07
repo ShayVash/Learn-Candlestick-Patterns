@@ -38,7 +38,8 @@ public class PlaceholderContent {
         addBasicsItem(new PlaceholderItem("3", "How To Read Candlestick Patterns", "1m 28s To Read"));
         addBasicsItem(new PlaceholderItem("4","Charting On Different Time Frames", "2m 33s To Read"));
         addBasicsItem(new PlaceholderItem("5","How To Identify Up & Down Trends", "1m 39s To Read"));
-        addBasicsItem(new PlaceholderItem("6","Basics Test", ""));
+        addBasicsItem(new PlaceholderItem("6","Support & Resistance", "2m 55s To Read"));
+        addBasicsItem(new PlaceholderItem("7","Basics Test", ""));
 
         addBullishPatternsItem(new PlaceholderItem("0", "Hammer", "52s To Read"));
         addBullishPatternsItem(new PlaceholderItem("1", "Morning Star", "1m To Read"));
