@@ -53,6 +53,7 @@ public class SimulatorFragment extends Fragment {
 
     SimulatorHelper sh;
 
+    View v;
     Button up_button;
     Button down_button;
     Button next_button;
@@ -83,7 +84,7 @@ public class SimulatorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_simulator, container, false);
+        v = inflater.inflate(R.layout.fragment_simulator, container, false);
 
         sh = new SimulatorHelper();
 
@@ -128,7 +129,7 @@ public class SimulatorFragment extends Fragment {
         // !-- ADS --!
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(requireContext(),"ca-app-pub-1929848249759273/1613723827", adRequest,
+        InterstitialAd.load(requireContext(),"ca-app-pub-1929848249759273/2811173588", adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -426,6 +427,9 @@ public class SimulatorFragment extends Fragment {
 
     // Up Patterns
     public void AddHammer(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getHammer(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -452,6 +456,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddMorningStar(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getMorningStar(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -479,6 +486,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddThreeWhiteSoldiers(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getThreeWhiteSoldiers(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -506,6 +516,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddBullishEngulfing(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getBullishEngulfing(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -533,6 +546,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddBullishThreeLineStrike(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getBullishThreeLineStrike(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -560,6 +576,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddThreeInsideUp(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getThreeInsideUp(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -590,6 +609,9 @@ public class SimulatorFragment extends Fragment {
 
     // Down Patterns
     public void AddEveningStar(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getEveningStar(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount()-1));
 
         clickable = false;
@@ -617,6 +639,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddHangingMan(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getHangingMan(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -644,6 +669,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddShootingStar(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getShootingStar(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -671,6 +699,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddThreeBlackCrows(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getThreeBlackCrows(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -698,6 +729,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddBearishEngulfing(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getBearishEngulfing(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -725,6 +759,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddBearishThreeLineStrike(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getBearishThreeLineStrike(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -752,6 +789,9 @@ public class SimulatorFragment extends Fragment {
         }.start();
     }
     public void AddThreeInsideDown(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.getThreeInsideDown(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -794,6 +834,9 @@ public class SimulatorFragment extends Fragment {
         }
     }
     public void GoUp(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.GetUpTrendWithBrownian(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -835,6 +878,9 @@ public class SimulatorFragment extends Fragment {
 
     }
     public void GoDown(){
+        if(candleStickChart == null){
+            candleStickChart = v.findViewById(R.id.candle_stick_chart);
+        }
         ArrayList<CandleEntry> result = sh.GetDownTrendWithBrownian(candleStickChart.getCandleData().getDataSets().get(0).getEntryForIndex(candleStickChart.getCandleData().getDataSets().get(0).getEntryCount() -1));
 
         clickable = false;
@@ -889,7 +935,7 @@ public class SimulatorFragment extends Fragment {
                 mInterstitialAd = null;
             } else {
                 AdRequest adRequest = new AdRequest.Builder().build();
-                InterstitialAd.load(requireContext(), "ca-app-pub-1929848249759273/1613723827", adRequest,
+                InterstitialAd.load(requireContext(), "ca-app-pub-1929848249759273/2811173588", adRequest,
                         new InterstitialAdLoadCallback() {
                             @Override
                             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
