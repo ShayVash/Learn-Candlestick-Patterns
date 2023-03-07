@@ -248,7 +248,7 @@ public class Lesson_test extends Fragment {
     }
 
     public void CorrectAnim(){
-        mp = MediaPlayer.create(context, R.raw.correct);
+        mp = MediaPlayer.create(getContext(), R.raw.correct);
         mp.start();
         cdt = new CountDownTimer(1000, 500) {
 
@@ -263,7 +263,7 @@ public class Lesson_test extends Fragment {
         }.start();
     }
     public void WrongAnim(){
-        mp = MediaPlayer.create(context, R.raw.wrong);
+        mp = MediaPlayer.create(getContext(), R.raw.wrong);
         mp.start();
         cdt = new CountDownTimer(1000, 500) {
 
