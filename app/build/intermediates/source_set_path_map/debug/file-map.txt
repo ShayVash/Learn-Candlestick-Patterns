@@ -1,0 +1,50 @@
+com.kovetstech.candlestickpatterns.app-fragment-1.4.1-0 C:\Users\Shay\.gradle\caches\transforms-3\02a6edd639355165afa2f2bdd385ab78\transformed\fragment-1.4.1\res
+com.kovetstech.candlestickpatterns.app-jetified-lifecycle-viewmodel-ktx-2.5.1-1 C:\Users\Shay\.gradle\caches\transforms-3\0a9dbd134c1462371729658f8b484031\transformed\jetified-lifecycle-viewmodel-ktx-2.5.1\res
+com.kovetstech.candlestickpatterns.app-lifecycle-livedata-core-2.5.1-2 C:\Users\Shay\.gradle\caches\transforms-3\0bb8199d243f8c7e33043d76a9911183\transformed\lifecycle-livedata-core-2.5.1\res
+com.kovetstech.candlestickpatterns.app-jetified-window-1.0.0-3 C:\Users\Shay\.gradle\caches\transforms-3\0f82eaa056aa9d1bea8a807d17e67ce1\transformed\jetified-window-1.0.0\res
+com.kovetstech.candlestickpatterns.app-jetified-eazegraph-1.2.5l-4 C:\Users\Shay\.gradle\caches\transforms-3\2122d3bfb1bff804173892e1ec460df5\transformed\jetified-eazegraph-1.2.5l\res
+com.kovetstech.candlestickpatterns.app-jetified-activity-1.5.1-5 C:\Users\Shay\.gradle\caches\transforms-3\304a73ca7354a657dda7c1f739c42ea9\transformed\jetified-activity-1.5.1\res
+com.kovetstech.candlestickpatterns.app-jetified-startup-runtime-1.1.1-6 C:\Users\Shay\.gradle\caches\transforms-3\33f343c5c7568373e3d3c22c19e66461\transformed\jetified-startup-runtime-1.1.1\res
+com.kovetstech.candlestickpatterns.app-drawerlayout-1.1.1-7 C:\Users\Shay\.gradle\caches\transforms-3\372dcfeb75ab655b70ddcfbecec08a09\transformed\drawerlayout-1.1.1\res
+com.kovetstech.candlestickpatterns.app-coordinatorlayout-1.1.0-8 C:\Users\Shay\.gradle\caches\transforms-3\3925081f46f6c60b140b4b65d6784a6d\transformed\coordinatorlayout-1.1.0\res
+com.kovetstech.candlestickpatterns.app-jetified-lifecycle-livedata-ktx-2.4.1-9 C:\Users\Shay\.gradle\caches\transforms-3\3a37ca4a60822194895d3c908ebcab28\transformed\jetified-lifecycle-livedata-ktx-2.4.1\res
+com.kovetstech.candlestickpatterns.app-navigation-runtime-2.5.3-10 C:\Users\Shay\.gradle\caches\transforms-3\3ad71689274db6f2c3a8da91892cd3e4\transformed\navigation-runtime-2.5.3\res
+com.kovetstech.candlestickpatterns.app-jetified-viewpager2-1.0.0-11 C:\Users\Shay\.gradle\caches\transforms-3\3d4be6ba5613654b49add7227cbd6c73\transformed\jetified-viewpager2-1.0.0\res
+com.kovetstech.candlestickpatterns.app-transition-1.4.1-12 C:\Users\Shay\.gradle\caches\transforms-3\489935f88fca4887036373b3f887948f\transformed\transition-1.4.1\res
+com.kovetstech.candlestickpatterns.app-jetified-emoji2-1.2.0-13 C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\res
+com.kovetstech.candlestickpatterns.app-material-1.7.0-14 C:\Users\Shay\.gradle\caches\transforms-3\5afb25ad92b7e0708b05db4fcbd873c4\transformed\material-1.7.0\res
+com.kovetstech.candlestickpatterns.app-jetified-core-ktx-1.8.0-15 C:\Users\Shay\.gradle\caches\transforms-3\6f4831768a12aa8d514cd88d34c47916\transformed\jetified-core-ktx-1.8.0\res
+com.kovetstech.candlestickpatterns.app-jetified-appcompat-resources-1.5.0-16 C:\Users\Shay\.gradle\caches\transforms-3\71ee26ea9401e93c4a6fb884a0c4f81c\transformed\jetified-appcompat-resources-1.5.0\res
+com.kovetstech.candlestickpatterns.app-jetified-savedstate-1.2.0-17 C:\Users\Shay\.gradle\caches\transforms-3\73c2ccff46e50e8d2c22735b797981d8\transformed\jetified-savedstate-1.2.0\res
+com.kovetstech.candlestickpatterns.app-jetified-lifecycle-process-2.4.1-18 C:\Users\Shay\.gradle\caches\transforms-3\76f36b79bc88d62a3ccce0528913e01d\transformed\jetified-lifecycle-process-2.4.1\res
+com.kovetstech.candlestickpatterns.app-media-1.0.0-19 C:\Users\Shay\.gradle\caches\transforms-3\772aab72e05d0e7aad23a1b73a601781\transformed\media-1.0.0\res
+com.kovetstech.candlestickpatterns.app-appcompat-1.5.0-20 C:\Users\Shay\.gradle\caches\transforms-3\77ecef221d7ddd0e5252787fe38331ff\transformed\appcompat-1.5.0\res
+com.kovetstech.candlestickpatterns.app-lifecycle-livedata-2.4.1-21 C:\Users\Shay\.gradle\caches\transforms-3\7b7bd59eaf617261961d54d177ed809c\transformed\lifecycle-livedata-2.4.1\res
+com.kovetstech.candlestickpatterns.app-navigation-fragment-2.4.1-22 C:\Users\Shay\.gradle\caches\transforms-3\7ddb105ec9009b0a49a0137639aaeb69\transformed\navigation-fragment-2.4.1\res
+com.kovetstech.candlestickpatterns.app-jetified-colorpicker-0.0.15-23 C:\Users\Shay\.gradle\caches\transforms-3\8525d66c1cf264c2cf16ce348d5f898c\transformed\jetified-colorpicker-0.0.15\res
+com.kovetstech.candlestickpatterns.app-navigation-ui-2.5.3-24 C:\Users\Shay\.gradle\caches\transforms-3\88470f90e302966f84b999727098c79e\transformed\navigation-ui-2.5.3\res
+com.kovetstech.candlestickpatterns.app-recyclerview-1.2.1-25 C:\Users\Shay\.gradle\caches\transforms-3\89a2df582bc85654c4dd544e0ee02a75\transformed\recyclerview-1.2.1\res
+com.kovetstech.candlestickpatterns.app-jetified-emoji2-views-helper-1.2.0-26 C:\Users\Shay\.gradle\caches\transforms-3\93860a7c0730b160f3ee3b3c1076be58\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.kovetstech.candlestickpatterns.app-slidingpanelayout-1.2.0-27 C:\Users\Shay\.gradle\caches\transforms-3\a5566e48b0d30da850a53f142a152b4b\transformed\slidingpanelayout-1.2.0\res
+com.kovetstech.candlestickpatterns.app-navigation-common-2.5.3-28 C:\Users\Shay\.gradle\caches\transforms-3\aaba4a3aa68d682a14d5675f8e72e5c8\transformed\navigation-common-2.5.3\res
+com.kovetstech.candlestickpatterns.app-cardview-1.0.0-29 C:\Users\Shay\.gradle\caches\transforms-3\ad09a5313ed994a9ebff9e5c22c20d50\transformed\cardview-1.0.0\res
+com.kovetstech.candlestickpatterns.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-30 C:\Users\Shay\.gradle\caches\transforms-3\adb86e99940e8b0fb0a522bf41ea6136\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.kovetstech.candlestickpatterns.app-jetified-lifecycle-livedata-core-ktx-2.4.1-31 C:\Users\Shay\.gradle\caches\transforms-3\b4e2b4b403b27273e58fb8799814b35e\transformed\jetified-lifecycle-livedata-core-ktx-2.4.1\res
+com.kovetstech.candlestickpatterns.app-jetified-lifecycle-runtime-ktx-2.5.1-32 C:\Users\Shay\.gradle\caches\transforms-3\ba1e182a1857796b5b915e76b2d34e69\transformed\jetified-lifecycle-runtime-ktx-2.5.1\res
+com.kovetstech.candlestickpatterns.app-jetified-savedstate-ktx-1.2.0-33 C:\Users\Shay\.gradle\caches\transforms-3\c5d3ce1a5562eb15d225f7ba1a8b4188\transformed\jetified-savedstate-ktx-1.2.0\res
+com.kovetstech.candlestickpatterns.app-core-1.8.0-34 C:\Users\Shay\.gradle\caches\transforms-3\d43287e5cc155acd59f980a741e113ab\transformed\core-1.8.0\res
+com.kovetstech.candlestickpatterns.app-lifecycle-runtime-2.5.1-35 C:\Users\Shay\.gradle\caches\transforms-3\d4bd7c31f917d4ada95150d63c70bd04\transformed\lifecycle-runtime-2.5.1\res
+com.kovetstech.candlestickpatterns.app-jetified-fragment-ktx-1.4.1-36 C:\Users\Shay\.gradle\caches\transforms-3\d8ae6bd6beb26962b5af99c4adfe8fa7\transformed\jetified-fragment-ktx-1.4.1\res
+com.kovetstech.candlestickpatterns.app-jetified-activity-ktx-1.5.1-37 C:\Users\Shay\.gradle\caches\transforms-3\dae46b3405572332a405e25fd6026238\transformed\jetified-activity-ktx-1.5.1\res
+com.kovetstech.candlestickpatterns.app-jetified-annotation-experimental-1.1.0-38 C:\Users\Shay\.gradle\caches\transforms-3\e4fbc1af7206b1ab47338766cf376cd5\transformed\jetified-annotation-experimental-1.1.0\res
+com.kovetstech.candlestickpatterns.app-constraintlayout-2.1.3-39 C:\Users\Shay\.gradle\caches\transforms-3\ec3a3925386e50582b3561c1e12cab27\transformed\constraintlayout-2.1.3\res
+com.kovetstech.candlestickpatterns.app-lifecycle-viewmodel-2.5.1-40 C:\Users\Shay\.gradle\caches\transforms-3\f4980bbd585c8bf349a29f8263d81cb8\transformed\lifecycle-viewmodel-2.5.1\res
+com.kovetstech.candlestickpatterns.app-res-41 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\build\generated\crashlytics\res\debug
+com.kovetstech.candlestickpatterns.app-pngs-42 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\build\generated\res\pngs\debug
+com.kovetstech.candlestickpatterns.app-resValues-43 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\build\generated\res\resValues\debug
+com.kovetstech.candlestickpatterns.app-rs-44 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\build\generated\res\rs\debug
+com.kovetstech.candlestickpatterns.app-mergeDebugResources-45 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.kovetstech.candlestickpatterns.app-mergeDebugResources-46 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.kovetstech.candlestickpatterns.app-merged_res-47 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\build\intermediates\merged_res\debug
+com.kovetstech.candlestickpatterns.app-debug-48 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\debug\res
+com.kovetstech.candlestickpatterns.app-main-49 D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\res

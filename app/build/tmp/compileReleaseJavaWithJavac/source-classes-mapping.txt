@@ -1,0 +1,46 @@
+com/kovetstech/candlestickpatterns/lesson.java
+ com.kovetstech.candlestickpatterns.lesson
+ com.kovetstech.candlestickpatterns.lesson$1
+ com.kovetstech.candlestickpatterns.lesson$2
+com/kovetstech/candlestickpatterns/BuildConfig.java
+ com.kovetstech.candlestickpatterns.BuildConfig
+com/kovetstech/candlestickpatterns/MainActivity.java
+ com.kovetstech.candlestickpatterns.MainActivity
+ com.kovetstech.candlestickpatterns.MainActivity$1
+com/kovetstech/candlestickpatterns/databinding/FragmentLessonBinding.java
+ com.kovetstech.candlestickpatterns.databinding.FragmentLessonBinding
+com/kovetstech/candlestickpatterns/ui/lessons/LessonsFragment.java
+ com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment
+com/kovetstech/candlestickpatterns/databinding/FragmentQuizBinding.java
+ com.kovetstech.candlestickpatterns.databinding.FragmentQuizBinding
+com/kovetstech/candlestickpatterns/databinding/FragmentLessonsBinding.java
+ com.kovetstech.candlestickpatterns.databinding.FragmentLessonsBinding
+com/kovetstech/candlestickpatterns/Quiz.java
+ com.kovetstech.candlestickpatterns.Quiz
+ com.kovetstech.candlestickpatterns.Quiz$1
+ com.kovetstech.candlestickpatterns.Quiz$2
+com/kovetstech/candlestickpatterns/databinding/FragmentSimulatorBinding.java
+ com.kovetstech.candlestickpatterns.databinding.FragmentSimulatorBinding
+com/kovetstech/candlestickpatterns/databinding/ActivityMainBinding.java
+ com.kovetstech.candlestickpatterns.databinding.ActivityMainBinding
+com/kovetstech/candlestickpatterns/ui/simulator/SimulatorHelper.java
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorHelper
+com/kovetstech/candlestickpatterns/ui/simulator/SimulatorFragment.java
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$1
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$10
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$11
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$12
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$13
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$14
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$15
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$16
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$17
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$2
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$3
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$4
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$5
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$6
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$7
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$8
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment$9

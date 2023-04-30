@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_simulator.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_simulator.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_lesson.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_lesson.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_lesson_test.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_lesson_test.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_sub_settings_button.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_sub_settings_button.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_quiz_settings.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_quiz_settings.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/activity_main.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_lesson_list.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_lesson_list.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_profile.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_simulator_settings_color_picker.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_simulator_settings_color_picker.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_sub.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_sub.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_lessons.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_lessons.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_settings.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_lesson_finished_test.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_lesson_finished_test.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_simulator_settings.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_simulator_settings.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_sub_list.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_sub_list.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_progress_tab.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_progress_tab.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-56:/layout/fragment_quiz.xml",
+        "source": "com.kovetstech.candlestickpatterns.app-main-58:/layout/fragment_quiz.xml"
+    }
+]

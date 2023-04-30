@@ -1,0 +1,6 @@
+com/kovetstech/candlestickpatterns/ExampleInstrumentedTest.java
+ com.kovetstech.candlestickpatterns.ExampleInstrumentedTest
+com/kovetstech/candlestickpatterns/ui/simulator/SimulatorFragmentTest.java
+ com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragmentTest
+com/kovetstech/candlestickpatterns/test/BuildConfig.java
+ com.kovetstech.candlestickpatterns.test.BuildConfig

@@ -1,0 +1,306 @@
+[
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_threeblackcrows.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/threeblackcrows.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_threeinsideup.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/threeinsideup.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_quizdoji.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/quizdoji.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_rounded.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/rounded.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_bullishengulfing.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/bullishengulfing.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_bullishthreelinestrike.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/bullishthreelinestrike.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_settings.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_howto.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/howto.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_info.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_info.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_ic_csp_notif.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/ic_csp_notif.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_lesson.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_lesson.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_simulator_settings_color_picker.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_simulator_settings_color_picker.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_nav_profile.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_nav_profile.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xxhdpi_ic_csp_notif.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xxhdpi/ic_csp_notif.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_lesson_list.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_lesson_list.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_sub_list.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_sub_list.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_dark_mode.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_dark_mode.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/color_bottom_nav_light.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/color/bottom_nav_light.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_threeinsidedown.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/threeinsidedown.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_nav_lessons.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_nav_lessons.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xxxhdpi_ic_csp_notif.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xxxhdpi/ic_csp_notif.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_nav_settings.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_nav_settings.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_simulator.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_simulator.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-mdpi_ic_csp_notif.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-mdpi/ic_csp_notif.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_test_green_open.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/test_green_open.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_lesson_test.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_lesson_test.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_quiz.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_quiz.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_hangingman.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/hangingman.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_bearishengulfing.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/bearishengulfing.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_nav_simulator.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_nav_simulator.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/xml_fragment_lesson_list_scene.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/xml/fragment_lesson_list_scene.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_quiz_settings.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_quiz_settings.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_activity_main.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_test_red_close.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/test_red_close.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_nav_quiz.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_nav_quiz.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_test_upper_wick.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/test_upper_wick.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_simulator_settings.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_simulator_settings.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/navigation_mobile_navigation.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/navigation/mobile_navigation.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_circular_shape.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/circular_shape.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_progress_tab.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_progress_tab.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_ic_launcher_foreground.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_chart.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_chart.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_bearishthreelinestrike.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/bearishthreelinestrike.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-xhdpi_ic_csp_notif.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-xhdpi/ic_csp_notif.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/raw_wrong.wav.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/raw/wrong.wav"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_lesson_finished_test.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_lesson_finished_test.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/raw_correct.wav.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/raw/correct.wav"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_lessons.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_lessons.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_circular_progress_bar.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/circular_progress_bar.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_profile.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_check.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_check.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_quizinvertedhammer.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/quizinvertedhammer.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_hammer.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/hammer.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_sub.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_sub.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_launcher_background.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/layout_fragment_sub_settings_button.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/layout/fragment_sub_settings_button.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_morningstar.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/morningstar.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_shootingstar.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/shootingstar.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/mipmap-hdpi_ic_csp_notif.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/mipmap-hdpi/ic_csp_notif.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable-v24_threewhitesoldiers.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable-v24/threewhitesoldiers.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_eveningstar.png.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/eveningstar.png"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/drawable_ic_arrow.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/drawable/ic_arrow.xml"
+    },
+    {
+        "merged": "com.kovetstech.candlestickpatterns.app-merged_res-47:/color_bottom_nav_dark.xml.flat",
+        "source": "com.kovetstech.candlestickpatterns.app-main-49:/color/bottom_nav_dark.xml"
+    }
+]

@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.kovetstech.candlestickpatterns.app-mergeReleaseResources-55:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Shay\\.gradle\\caches\\transforms-3\\864bdaf2341f666a1e5c3e57a62befae\\transformed\\appcompat-1.5.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

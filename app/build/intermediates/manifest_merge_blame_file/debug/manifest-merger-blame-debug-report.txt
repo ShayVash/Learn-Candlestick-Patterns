@@ -1,0 +1,107 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.kovetstech.candlestickpatterns"
+4    android:versionCode="16"
+5    android:versionName="1.44" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="28"
+8-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:31:5-67
+11-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:31:22-64
+12
+13    <application
+13-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:4:5-30:19
+14        android:allowBackup="true"
+14-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:5:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.8.0] C:\Users\Shay\.gradle\caches\transforms-3\d43287e5cc155acd59f980a741e113ab\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:extractNativeLibs="false"
+18        android:icon="@mipmap/ic_launcher"
+18-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:6:9-43
+19        android:label="@string/app_name"
+19-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:7:9-41
+20        android:roundIcon="@mipmap/ic_launcher_round"
+20-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:8:9-54
+21        android:supportsRtl="true"
+21-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:9:9-35
+22        android:testOnly="true"
+23        android:theme="@style/Theme.CandlestickPatterns" >
+23-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:10:9-57
+24        <activity
+24-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:11:9-17:20
+25            android:name="com.kovetstech.candlestickpatterns.sub_settings_activity"
+25-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:12:13-50
+26            android:exported="false" >
+26-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:13:13-37
+27            <meta-data
+27-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:14:13-16:36
+28                android:name="android.app.lib_name"
+28-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:15:17-52
+29                android:value="" />
+29-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:16:17-33
+30        </activity>
+31        <activity
+31-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:19:9-29:20
+32            android:name="com.kovetstech.candlestickpatterns.MainActivity"
+32-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:20:13-41
+33            android:configChanges="uiMode"
+33-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:21:13-43
+34            android:exported="true"
+34-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:22:13-36
+35            android:label="@string/app_name" >
+35-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:23:13-45
+36            <intent-filter>
+36-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:24:13-28:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:25:17-69
+37-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:25:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:27:17-77
+39-->D:\Projects\Github\Github Learn Candlestick Patterns\Learn-Candlestick-Patterns\app\src\main\AndroidManifest.xml:27:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <provider
+43-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+44            android:name="androidx.startup.InitializationProvider"
+44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+45            android:authorities="com.kovetstech.candlestickpatterns.androidx-startup"
+45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+46            android:exported="false" >
+46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+47            <meta-data
+47-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+48                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+48-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+49                android:value="androidx.startup" />
+49-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Shay\.gradle\caches\transforms-3\52acc17ab4a4863ed14529dc16bf6516\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+50            <meta-data
+50-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Shay\.gradle\caches\transforms-3\76f36b79bc88d62a3ccce0528913e01d\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+51                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+51-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Shay\.gradle\caches\transforms-3\76f36b79bc88d62a3ccce0528913e01d\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+52                android:value="androidx.startup" />
+52-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Shay\.gradle\caches\transforms-3\76f36b79bc88d62a3ccce0528913e01d\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+53        </provider>
+54
+55        <uses-library
+55-->[androidx.window:window:1.0.0] C:\Users\Shay\.gradle\caches\transforms-3\0f82eaa056aa9d1bea8a807d17e67ce1\transformed\jetified-window-1.0.0\AndroidManifest.xml:25:9-27:40
+56            android:name="androidx.window.extensions"
+56-->[androidx.window:window:1.0.0] C:\Users\Shay\.gradle\caches\transforms-3\0f82eaa056aa9d1bea8a807d17e67ce1\transformed\jetified-window-1.0.0\AndroidManifest.xml:26:13-54
+57            android:required="false" />
+57-->[androidx.window:window:1.0.0] C:\Users\Shay\.gradle\caches\transforms-3\0f82eaa056aa9d1bea8a807d17e67ce1\transformed\jetified-window-1.0.0\AndroidManifest.xml:27:13-37
+58        <uses-library
+58-->[androidx.window:window:1.0.0] C:\Users\Shay\.gradle\caches\transforms-3\0f82eaa056aa9d1bea8a807d17e67ce1\transformed\jetified-window-1.0.0\AndroidManifest.xml:28:9-30:40
+59            android:name="androidx.window.sidecar"
+59-->[androidx.window:window:1.0.0] C:\Users\Shay\.gradle\caches\transforms-3\0f82eaa056aa9d1bea8a807d17e67ce1\transformed\jetified-window-1.0.0\AndroidManifest.xml:29:13-51
+60            android:required="false" />
+60-->[androidx.window:window:1.0.0] C:\Users\Shay\.gradle\caches\transforms-3\0f82eaa056aa9d1bea8a807d17e67ce1\transformed\jetified-window-1.0.0\AndroidManifest.xml:30:13-37
+61    </application>
+62
+63</manifest>
