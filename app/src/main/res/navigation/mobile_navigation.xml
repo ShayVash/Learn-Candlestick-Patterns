@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_profile">
+
+    <fragment
+        android:id="@+id/navigation_simulator"
+        android:name="com.kovetstech.candlestickpatterns.ui.simulator.SimulatorFragment"
+        android:label="Simulator"
+        tools:layout="@layout/fragment_simulator" />
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.kovetstech.candlestickpatterns.ui.settings.settings"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_navigation_settings_to_simulator_settings"
+            app:destination="@id/simulator_settings"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/mobile_navigation" />
+        <action
+            android:id="@+id/action_navigation_settings_to_quiz_settings"
+            app:destination="@id/quiz_settings"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/mobile_navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_lessons"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.LessonsFragment"
+        android:label="fragment_lessons"
+        tools:layout="@layout/fragment_lessons" >
+        <action
+            android:id="@+id/action_navigation_lessons_to_lesson"
+            app:destination="@id/lesson" />
+        <action
+            android:id="@+id/action_navigation_lessons_to_lesson_test"
+            app:destination="@id/lesson_test" />
+        <action
+            android:id="@+id/action_navigation_lessons_to_lesson_finished_test"
+            app:destination="@id/lesson_finished_test"
+            app:popUpTo="@id/navigation_lessons" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_quiz"
+        android:name="com.kovetstech.candlestickpatterns.ui.quiz.Quiz"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/lesson"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.lesson"
+        android:label="Lesson"
+        tools:layout="@layout/fragment_lesson" >
+        <argument
+            android:name="param1"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesson_test"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.tests.Lesson_test"
+        android:label="fragment_lesson_test"
+        tools:layout="@layout/fragment_lesson_test" >
+        <action
+            android:id="@+id/action_lesson_test_to_lesson_finished_test"
+            app:destination="@id/lesson_finished_test"
+            app:popUpTo="@id/navigation_lessons" />
+    </fragment>
+    <fragment
+        android:id="@+id/lesson_finished_test"
+        android:name="com.kovetstech.candlestickpatterns.ui.lessons.tests.Lesson_finished_test"
+        android:label="fragment_lesson_finished_test"
+        tools:layout="@layout/fragment_lesson_finished_test" >
+        <action
+            android:id="@+id/action_lesson_finished_test_to_lesson_test"
+            app:destination="@id/lesson_test"
+            app:popUpTo="@id/navigation_lessons" />
+        <action
+            android:id="@+id/action_lesson_finished_test_to_navigation_lessons"
+            app:destination="@id/navigation_lessons"
+            app:popUpTo="@id/navigation_lessons" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.kovetstech.candlestickpatterns.ui.profile.profile"
+        android:label="Profile" />
+    <fragment
+        android:id="@+id/simulator_settings"
+        android:name="com.kovetstech.candlestickpatterns.ui.settings.simulator.simulator_settings"
+        android:label="fragment_simulator_settings"
+        tools:layout="@layout/fragment_simulator_settings" >
+        <action
+            android:id="@+id/action_simulator_settings_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/quiz_settings"
+        android:name="com.kovetstech.candlestickpatterns.ui.settings.quiz.quiz_settings"
+        android:label="fragment_quiz_settings"
+        tools:layout="@layout/fragment_quiz_settings" >
+        <action
+            android:id="@+id/action_quiz_settings_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
+
+</navigation>
